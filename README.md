@@ -1,7 +1,8 @@
 # Hexo-Theme-Acrylic-Next
-Hexo-Theme-Acrylic重构仓库
 
 ![封面图](https://raw.githubusercontent.com/hexo-theme-Acrylic/JS-Acrylic/main/hhis5p.webp)
+
+Hexo-Theme-Acrylic重构仓库
 
 主题预览:  🤟[Heo](https://blog.zhheo.com/)
 
@@ -24,8 +25,6 @@ git clone -b main https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic.git t
 ```
 theme: Acrylic
 ```
-
->如果你没有pug以及stylus的渲染器，请下载安装： ```npm install hexo-renderer-pug hexo-renderer-stylus --save```
 
 ## 更好的配置
 - macos/linux
