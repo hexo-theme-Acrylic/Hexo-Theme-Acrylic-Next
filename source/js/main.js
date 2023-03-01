@@ -228,6 +228,11 @@ class acrylic {
     static lightbox(){
         window.ViewImage && ViewImage.init('#article-container img');
     }
+    static initTheme(){
+       const nowMode = localStorage.getItem('theme')
+       if(nowMode === 'dark')document.documentElement.setAttribute('data-theme', 'dark')
+       if(nowMode === 'light')document.documentElement.setAttribute('data-theme', 'light')
+    }
 }
 
 const onlyHome = () => {
@@ -235,7 +240,7 @@ const onlyHome = () => {
         showTodayCard()
         if (typeof randomLinksList === 'function') {
             randomLinksList();
-          }
+        }
     }
 }
 
@@ -250,7 +255,7 @@ const onlyPostandPage = () => {
         acrylic.lightbox()
         if (typeof initComment === 'function') {
             initComment();
-          }
+        }
     }
 }
 
@@ -261,6 +266,7 @@ window.addEventListener('DOMContentLoaded', () => {
     onlyPost()
     onlyPostandPage()
     setTimeState()
+    acrylic.initTheme()
 })
 document.addEventListener('pjax:complete', function () {
     sidebarFn()
