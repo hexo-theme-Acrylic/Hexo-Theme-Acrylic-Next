@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>" data-theme="light">
+    <head>
+        <%- partial('partial/head', {cache: true}) %>
+    </head>
+    <body id="body">
+        <%- partial('partial/console', {cache: true}) %>
+        <%- partial('partial/sidebar', {cache: true}) %>
+        <div class="<%= is_post() ? 'post' : 'page' %>" id="body-wrap">
+            <%- partial('partial/header') %>
+            <%- body %>
+        </div>
+        <%- partial('partial/body', {cache: true}) %>
+        <footer id="footer">
+            <%- partial('partial/footer', {cache: true}) %>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<div id="footer_deal">
+    <% for(const i in theme.footer.information.left){ %>
+        <a class="deal_link" href="<%= url_for(theme.footer.information.left[i].url) %>" rel="external nofollow" title="<%= i %>">
+            <i class="<%= theme.footer.information.left[i].icon %>"></i>
+        </a>
+    <% } %>
+    <img class="footer_mini_logo" src="<%= theme.site.icon %>"
+        title="返回顶部" onclick="acrylic.toTop()">
+    <% for(const i in theme.footer.information.right){ %>
+        <a class="deal_link" href="<%= url_for(theme.footer.information.right[i].url) %>" rel="external nofollow" title="<%= i %>">
+            <i class="<%= theme.footer.information.right[i].icon %>"></i>
+        </a>
+    <% } %>
+</div>    
+<div id="heo-footer">
+    <% for(const x in theme.footer.group){ %>
+        <div class="footer-group">
+            <h3 class="footer-title"><%= x %></h3>
+            <div class="footer-links">
+                <% for(const y in theme.footer.group[x]){ %>
+                    <a class="footer-item" href="<%= url_for(theme.footer.group[x][y]) %>" title="<%= y %>" rel="noopener external nofollow noreferrer"><%= y %></a>
+                <% } %>    
+            </div>
+        </div>
+    <% } %>
+    <% if(theme.footer.ramdonlink){ %>
+        <div class="footer-group">
+            <div class="footer-title-group">
+                <h3 class="footer-title">友链</h3>
+                <a class="random-friends-btn" href="javascript:randomLinksList();" rel="external nofollow">
+                    <i class="fa-solid fa-arrow-rotate-right"></i>
+                </a>
+            </div>
+            <% if(theme.footer.ramdonlink){ %>
+                <div class="footer-links" id="friend-links-in-footer">
+                </div>
+            <% } %>    
+        </div>
+    <% } %>
+</div>
+<div id="footer-banner">
+    <div class="footer-banner-links">
+        <div class="footer-banner-left">
+            <div id="footer-banner-tips">
+                <div class="copyright">©<%= moment(theme.aside.analytics.runtime).year() %> - <%= new Date().getFullYear() %> By 
+                    <a class="footer-banner-link" href="/" rel="external nofollow"><%= config.author %></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-banner-right">
+            <a class="footer-banner-link" href="/rss/">订阅</a>
+            <% if(theme.site.icp){ %>
+                <a class="footer-banner-link" target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index" rel="noopener external nofollow noreferrer noopener">
+                    <%= theme.site.icp %>
+                </a>
+            <% } %>
+            <a class="footer-banner-link cc" target="_blank" href="https://creativecommons.org/licenses/by/4.0/" title="cc协议">
+                <i class="fa-solid fa-closed-captioning"></i>
+            </a>
+        </div>
+    </div>
+</div>

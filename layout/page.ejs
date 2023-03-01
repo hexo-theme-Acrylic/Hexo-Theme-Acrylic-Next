@@ -1,0 +1,23 @@
+<main class="layout <%= page.aside ? '' : 'hide-aside' %>" id="content-inner">
+    <div id="page">
+        <% switch (page.type) {
+            case 'categories': %>
+                <%- partial('page/categories') %>
+            <% break;
+            case 'tags': %>
+            <%- partial('page/tags') %>
+            <% break;
+            case 'links': %>
+                <%- partial('page/links') %>
+            <% break;
+            case 'says': %>
+                <%- partial('page/says') %>
+            <% break;
+            default: %>
+                <%- partial('page/page') %>
+            <% break; } %> 
+    </div>
+    <% if(page.aside){ %>
+        <%- partial('partial/compoment/aside') %> 
+    <% } %>   
+</main>     

@@ -1,0 +1,35 @@
+<div class="card-widget card-tags card-archives card-webinfo card-allinfo">
+    <div class="card-tag-cloud">
+        <% site.tags.data.forEach(data => { %>
+            <a href="<%= url_for(data.path) %>" style="font-size: 0.8rem; color: #d3d3d3"><%= data.name %><sup><%= data.length %></sup></a>
+        <% }) %>
+        <%- partial('partial/compoment/asideArchive.ejs', {cache: true}) %>
+        <hr>
+        <div class="webinfo">
+            <div class="webinfo-item">
+                <div class="webinfo-item-title">
+                    <i class="item-icon fas fa-file-alt"></i>
+                    <div class="item-name">文章总数 :</div>
+                </div>
+                <div class="item-count"><%= site.posts.length %></div>
+            </div>
+            <div class="webinfo-item">
+                <div class="webinfo-item-title">
+                    <i class="item-icon fas fa-stopwatch"></i>
+                    <div class="item-name">建站天数 :</div>
+                </div>
+                <div class="item-count"><%= Math.floor(moment(new Date()).diff(moment(theme.aside.analytics.runtime)) / (1000 * 3600 * 24)) %> 天
+                </div>
+            </div>
+            <% if(theme.thirdparty.wordcount){ %>
+                <div class="webinfo-item">
+                    <div class="webinfo-item-title">
+                        <i class="item-icon fas fa-font"></i>
+                        <div class="item-name">全站字数 :</div>
+                    </div>
+                    <div class="item-count"><%= totalcount(site) %></div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>

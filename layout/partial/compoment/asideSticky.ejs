@@ -1,0 +1,17 @@
+<% if(is_post()){ %>
+    <div class="card-widget" id="card-toc">
+        <div class="item-headline">
+            <i class="fas fa-bars"></i>
+            <span>文章目录</span>
+        </div>
+        <div class="toc-content">
+            <%- toc(page.content, {
+                list_number: false,
+            }) %>
+        </div>
+    </div>
+    <%- partial('partial/compoment/newestPost', {cache: true}) %>
+<% }else{ %>
+    <%- partial('partial/compoment/newestPost', {cache: true}) %>
+    <%- partial('partial/compoment/siteInfo', {cache: true}) %>
+<% } %>

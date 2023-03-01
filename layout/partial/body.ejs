@@ -1,0 +1,17 @@
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/utils.js"></script>
+<script type="text/javascript" src="/lib/pjax.min.js"></script>
+<script type="text/javascript" src="/lib/snackbar.min.js"></script>
+<script type="text/javascript" src="/lib/view-image.min.js"></script>
+<% if(theme.comment.enable){ %>
+    <script src="https://cdn.staticfile.org/twikoo/1.6.10/twikoo.all.min.js"></script>
+<% } %>    
+<!-- <link rel="stylesheet" href="/js/libs/swiper.min.css">
+<script type="text/javascript" src="/js/libs/wiper.min.js"></script> -->
+<%- partial('partial/pjax') %>
+<% if(theme.footer.ramdonlink){ %>
+    <%- randomLinks() %>
+<% } %>
+<% if (theme.extends.body) for (const i of theme.extends.body){ %>
+    <%- i %>
+<% } %>

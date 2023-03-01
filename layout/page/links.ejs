@@ -1,0 +1,18 @@
+<div class="flink" id="banners">
+    <%- partial('partial/compoment/links/banner') %>
+</div>
+<div class="flink" id="article-container">
+    <% site.data.links.links.forEach(data => { %>
+        <h2><%= data.class_name %></h2>
+        <div class="flink-desc"><%= data.descr %></div>
+        <% switch (data.type) {
+            case 'card': %>
+                <%- partial('partial/compoment/links/linksCard',{data:data.link_list}) %>
+            <% break;
+            case 'item': %>
+            <%- partial('partial/compoment/links/linksItem', {data:data.link_list}) %>
+            <% break;
+            default: %>
+            <% break; } %> 
+    <% }); %>
+</div>

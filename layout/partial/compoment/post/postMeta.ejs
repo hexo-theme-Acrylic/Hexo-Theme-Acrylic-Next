@@ -1,0 +1,58 @@
+<div class="coverdiv loaded" id="coverdiv">
+    <img id="post-cover" src="<%= page.cover %>" alt="cover">
+</div>
+<div id="post-info">
+    <div id="post-firstinfo">
+        <div class="meta-firstline">
+            <a class="post-meta-original" title="该文章为<%= page.cc %>文章，注意版权协议">
+                <%= page.cc %>
+            </a>
+            <span class="post-meta-categories">
+                <% page.categories.data.forEach(item => { %>
+                    <a class="post-meta-categories" href="<%= url_for(item.path) %>"><%= item.name %></a>
+                <% }) %>
+            </span>
+            <div class="tag_share">
+                <div class="post-meta__tag-list">
+                    <% page.tags.data.forEach(tags => { %>
+                        <a class="post-meta__tags" href="<%= url_for(tags.path) %>">
+                            <span class="tags-punctuation">#</span>
+                            <span class="tags-name"><%= tags.name %></span>
+                        </a>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="post-title"><%= page.title %></h1>
+    <div id="post-meta">
+        <div class="meta-secondline">
+            <span class="post-meta-date">
+                <i class="fa-fw post-meta-icon fas fa-calendar"></i>
+                <span><%- timeFormat(page.date) %></span>
+            </span>
+            <span class="post-meta-position" title="作者IP归属地为<%= page.locate %>">
+                <i class="fas fa-location-dot post-meta-icon"></i>
+                <span><%= page.locate %></span>
+            </span>
+            <% if(theme.thirdparty.wordcount){ %>
+                <span class="post-meta-wordcount">
+                    <i class="fas fa-file-word fa-fw post-meta-icon" title="字数"></i>
+                    <span class="word-count"><%= wordcount(page.content) %></span>
+                </span>
+                <span class="post-meta-time">
+                    <i class="fas fa-clock post-meta-icon" title="阅读耗时"></i>
+                    <span><%= min2read(page.content) %></span>
+                </span>
+            <% } %>
+            <span class="post-meta-pv" data-flag-title="热度">
+                <i class="fab fa-hotjar fa-fw post-meta-icon"></i>
+                <span id="busuanzi_value_page_pv">2686369</span>
+            </span>
+            <!-- <span class="post-meta-commentcount" title="评论数" onclick="heo.scrollTo('post-comment');"><i
+                    class="fa-solid fa-message"></i><span class="post-meta-label">评论:</span><a
+                    href="/p/bdabd8a.html#post-comment" data-pjax-state=""><span id="twikoo-count">15</span></a></span> -->
+        </div>
+    </div>
+</div>
+<%- partial('partial/compoment/post/wave', {cache: true}) %>

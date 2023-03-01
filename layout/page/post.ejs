@@ -1,0 +1,32 @@
+<div id="post">
+    <article class="post-content" id="article-container">
+        <%- page.content %>
+    </article>
+    <div class="post-tools" id="post-tools">
+        <div class="post-tools-left">
+            <% if (theme.post.award.enable) {%>
+                <%- partial('partial/compoment/post/award', {cache: true}) %>
+            <% } %>
+            <%- partial('partial/compoment/post/qrcode') %>
+            <%- partial('partial/compoment/post/share') %>
+        </div>
+        <div class="post-tools-right">
+            <div class="tag_share">
+                <div class="post-meta__tag-list">
+                    <% site.tags.data.forEach(data => { %>
+                        <a href="<%= url_for(data.path) %>" class="post-meta__tags">
+                            <span class="tags-punctuation">#</span>
+                            <%= data.name %>
+                            <span class="tagsPageCount"><%= data.length %></span>
+                        </a>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- partial('partial/compoment/post/copyright') %>
+    <%- partial('partial/compoment/post/postNav') %>
+    <% if(page.comments && theme.comment.enable){ %>
+        <%- partial('partial/compoment/comment') %>
+    <% } %>    
+</div>

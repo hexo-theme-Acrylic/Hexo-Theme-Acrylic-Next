@@ -1,0 +1,10 @@
+<ul class="card-archive-list">
+    <% for(const [key, value] of Object.entries(getArchiveLength())){ %>
+        <li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/<%= key %>/" data-pjax-state=""><span
+            class="card-archive-list-date"><%= key %></span>
+            <div class="card-archive-list-count-group"><span class="card-archive-list-count"><%= value %></span><span
+                    class="card-archive-list-count-unit">篇</span></div>
+            </a>
+        </li>
+    <% } %>    
+</ul>

@@ -1,0 +1,31 @@
+@media screen and (min-width: 900px){
+    #page-header #nav a:hover .heoicon{
+        transition: .3s;
+        opacity: 0;
+    }
+}
+
+#sidebar-menus .menus_item .not-child{
+    padding: 4px 8px !important;
+    width: 100%;
+    background: var(--heo-card-bg);
+    border-radius: 8px;
+    border: var(--style-border-always);
+    align-items: center;
+    font-size: 14px !important;
+    margin: 10px 0;
+    justify-content: center;
+}
+#sidebar-menus .menus_item .not-child span{
+    color: var(--heo-fontcolor) !important;
+}
+
+.meta-secondline > span{
+    opacity: .6;
+    transition: .3s;
+    margin-right: 1.1rem;
+}
+
+#category #category-bar{
+    border-radius: 0;
+}

@@ -1,0 +1,33 @@
+<nav id="nav" class="show">
+    <div id="nav-group">
+        <div id="blog_name">
+            <% if(theme.nav.left.enable){ %>
+                <div class="back-home-button" tabindex="-1">
+                    <i class="back-home-button-icon fas fa-grip-vertical"></i>
+                    <%- partial('partial/compoment/nav_left_menu') %>
+                </div>
+            <% } %>
+            <a id="site-name" href="/" title="返回博客主页">
+                <span class="heoicon">
+                    <%= theme.site.name %>
+                </span>
+            </a>
+        </div>
+        <div id="page-name-mask">
+            <div id="page-name">
+                <a id="page-name-text" onclick="acrylic.toTop()"><%= page.title || config.title %></a>
+            </div>
+        </div>
+        <div id="menus">
+            <%- partial('partial/compoment/nav_menu') %>
+        </div>
+        <!-- <div id="nav-left">
+            <div id="fps-group">
+                <div id="fps">145</div><span class="fpsText">FPS</span>
+            </div>
+        </div> -->
+        <div id="nav-right">
+            <%- partial('partial/compoment/nav_right') %>
+        </div>
+    </div>
+</nav>

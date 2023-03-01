@@ -1,0 +1,38 @@
+<div class="aside-content" id="aside-content">
+    <div class="card-widget card-info">
+        <div class="card-content">
+            <div class="card-info-avatar is-center">
+                <div class="author-info__sayhi" id="author-info__sayhi">
+                </div>
+                <div class="author-info__name">
+                    <%= config.author %>
+                </div>
+                <div class="author-info__description"><%- theme.aside.card.content %></div>
+            </div>
+        </div>
+        <div class="banner-button-group">
+            <a class="banner-button" href="<%= url_for(theme.aside.card.button.url) %>">
+                <i class="fas fa-circle-chevron-right"></i>
+                <span class="banner-button-text"><%= theme.aside.card.button.text %></span>
+            </a>
+        </div>
+        <div class="card-info-social-icons is-center">
+            <% for(const i in theme.aside.card.information){ %>
+                <a class="social-icon" href="<%= url_for(theme.aside.card.information[i].url) %>" title="<%= i %>">
+                    <i class="<%= theme.aside.card.information[i].icon %>"></i>
+                </a>
+            <% } %>
+        </div>
+    </div>
+    <!-- <div class="card-widget heo-right-widget" id="card-wechat" onclick="window.open('/wechat/')">
+        <div id="flip-wrapper">
+            <div id="flip-content">
+                <div class="face"></div>
+                <div class="back face"></div>
+            </div>
+        </div>
+    </div> -->
+    <div class="sticky_layout">
+        <%- partial('partial/compoment/asideSticky') %>
+    </div>
+</div>
