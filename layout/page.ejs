@@ -16,6 +16,9 @@
             default: %>
                 <%- partial('page/page') %>
             <% break; } %> 
+            <% if(page.comments && theme.comment.enable){ %>
+                <%- partial('partial/compoment/comment') %>
+            <% } %>    
     </div>
     <% if(page.aside){ %>
         <%- partial('partial/compoment/aside') %> 
