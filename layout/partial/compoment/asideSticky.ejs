@@ -12,6 +12,8 @@
     </div>
     <%- partial('partial/compoment/newestPost', {cache: true}) %>
 <% }else{ %>
-    <%- partial('partial/compoment/newestPost', {cache: true}) %>
+    <% if(is_home()){ %>
+       <%- partial('partial/compoment/newestPost', {cache: true}) %> 
+    <% } %>    
     <%- partial('partial/compoment/siteInfo', {cache: true}) %>
 <% } %>
