@@ -11088,8 +11088,7 @@ figure {
 .post-copyright-copybtn {
   margin-left: 0.5rem;
   color: var(--heo-fontcolor);
-  opacity: 0.4;
-  transition: 0.3s;
+  z-index: 1;
 }
 
 .post-copyright-copybtn:hover {
