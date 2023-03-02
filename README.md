@@ -2,9 +2,9 @@
 
 ![封面图](https://raw.githubusercontent.com/hexo-theme-Acrylic/JS-Acrylic/main/hhis5p.webp)
 
-Hexo-Theme-Acrylic重构仓库
+下一个Acrylic何必是butterfly
 
-主题预览:  🤟[Heo](https://blog.zhheo.com/)
+主题预览:  🤟[Heo](https://blog.zhheo.com/) 👋[acrylic](https://acrylic.zhheo.com/) 
 
 文档: 📖 [https://acrylic.zhheo.com/](https://acrylic.zhheo.com/)
 
@@ -15,7 +15,7 @@ Hexo-Theme-Acrylic重构仓库
 在博客根目录里安装稳定版【推荐】
 
 ```powershell
-git clone -b main https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic.git themes/Acrylic
+git clone -b main https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next.git themes/Acrylic
 ```
 
 ## ⚙ 应用主题
