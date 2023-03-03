@@ -889,66 +889,6 @@ blockquote footer cite::before {
   border-bottom-color: var(--hl-color);
 }
 
-#article-container .highlight-tools {
-  position: relative;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  overflow: hidden;
-  min-height: 1.2rem;
-  height: 2.15em;
-  background: var(--hltools-bg);
-  color: var(--hltools-color);
-  font-size: var(--global-font-size);
-}
-
-#article-container .highlight-tools.closed+table {
-  display: none;
-}
-
-#article-container .highlight-tools .expand {
-  position: absolute;
-  padding: 0.4rem 0.7rem;
-  cursor: pointer;
-  transition: transform 0.3s ease 0s;
-}
-
-#article-container .highlight-tools .expand+.code-lang {
-  left: 1.7rem;
-}
-
-#article-container .highlight-tools .expand.closed {
-  transition: all 0.3s ease 0s;
-  transform: rotate(-90deg) !important;
-}
-
-#article-container .highlight-tools .code-lang {
-  position: absolute;
-  left: 0.7rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1.15em;
-  user-select: none;
-}
-
-#article-container .highlight-tools .copy-notice {
-  position: absolute;
-  right: 1.7rem;
-  opacity: 0;
-  transition: opacity 0.4s ease 0s;
-}
-
-#article-container .highlight-tools .copy-button {
-  position: absolute;
-  right: 0.7rem;
-  cursor: pointer;
-  transition: color 0.2s ease 0s;
-}
-
-#article-container .highlight-tools .copy-button:hover {
-  color: rgb(48, 122, 246);
-}
-
 #article-container .gist table {
   width: auto;
 }
@@ -7667,7 +7607,6 @@ a.categoryButton i {
 
   .recent-post-top .categoryGroup {
     min-width: 130px !important;
-    margin-bottom: 0.5rem;
     margin-left: 1rem;
     max-height: 164px;
     overflow: hidden;
@@ -10847,12 +10786,6 @@ figure {
   margin-top: 0.5rem !important;
 }
 
-#article-container figure.highlight .highlight-tools {
-  background: var(--heo-secondbg);
-  border-bottom: var(--style-border-always);
-  color: var(--heo-fontcolor);
-}
-
 #article-container .gutter {
   opacity: 0.6;
   user-select: none;
@@ -10860,11 +10793,6 @@ figure {
 
 #article-container .code-lang {
   margin-left: 6px;
-}
-
-#article-container .highlight-tools .code-lang {
-  text-transform: capitalize;
-  left: 1.9rem;
 }
 
 #article-container figure.highlight table::-webkit-scrollbar {
@@ -13762,19 +13690,19 @@ figure.gallery-group:hover .gallery-group-name::after {
 #bber .bber-content-img img {
   object-fit: cover;
   max-height: 100%;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 #bber .bber-content-img {
   height: 100px;
-  margin: auto;
   margin-top: 0.2rem;
   margin-bottom: 0.3rem;
   margin-left: 0;
-  border-radius: 12px;
   overflow: hidden;
   display: flex;
+  flex-wrap: wrap;
   position: relative;
+  gap: 10px;
 }
 
 /* 时间 */
@@ -15211,8 +15139,6 @@ a.bb-link-info:hover {
 /* 即刻短文 */
 .author-content.author-content-item.essayPage {
   height: 19rem;
-  background: url(https://p.zhheo.com/2023e02cff7c3ddef5c06b908fef079fbcfe081902.png!cover) no-repeat center;
-  background-size: cover;
   color: var(--heo-white);
   overflow: hidden;
   margin-top: 0;

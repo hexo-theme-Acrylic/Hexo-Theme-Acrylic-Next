@@ -1,11 +1,15 @@
-<i class="bber-logo fa-regular fa-bell icon-bblogo"></i>
-<div class="swiper-container swiper-no-swiping swiper-container-initialized swiper-container-vertical swiper-container-pointer-events"
-    id="bbtalk" tabindex="-1">
-    <div class="swiper-wrapper" id="bber-talk">
-        <div class="li-style swiper-slide">
-            网站主页这次重构了一下，自从上次wordpress被我意外删库以后，准备完全写成本地静态了。（当时那个wordpress样式也完全可以做成静态，一点php都没用到）。新版主页的某果味道太重了，不会被告吧（误
-            [图片]
+<div class="bbTimeList container" id="bbTimeList">
+    <i class="bber-logo fa-regular fa-bell icon-bblogo" onclick="pjax.loadUrl('/says/')"></i>
+    <div class="swiper-container swiper-no-swiping swiper-container-initialized swiper-container-vertical swiper-container-pointer-events"
+        id="bbtalk" tabindex="-1" onclick="pjax.loadUrl('/says/')">
+        <div class="swiper-wrapper" id="bber-talk">
+            <% for(i in site.data.essay.essay_list){ %>
+                <% const item = site.data.essay.essay_list[i];if(i >= 10)break; %>
+                <div class="li-style swiper-slide">
+                    <%= item.image ? item.content + '【图片】' : item.content %>
+                </div>
+            <% } %>
         </div>
     </div>
+    <i class="bber-gotobb fas fa-arrow-circle-right" title="查看全文" onclick="pjax.loadUrl('/says/')"></i>
 </div>
-<i class="bber-gotobb fas fa-arrow-circle-right" title="查看全文"></i>

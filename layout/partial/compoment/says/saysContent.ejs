@@ -1,0 +1,10 @@
+<div class="bber-content">
+    <p class="datacont"><%= item.content %></p>
+    <% if(item.image){ %>
+        <div class="bber-content-img">
+            <% item.image.forEach(img => { %>
+                <img src="<%= img %>">
+            <% }); %>
+        </div>
+    <% } %>    
+</div>

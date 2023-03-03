@@ -43,6 +43,7 @@ nav:
 
 
 hometop:
+  bbtime: true
   banner:
     title: 分享设计<br>与科技生活
     url: blog.zhheo.com
