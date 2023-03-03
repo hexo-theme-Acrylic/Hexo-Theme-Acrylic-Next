@@ -1,5 +1,7 @@
 <div id="home_top">
-    <%- partial('partial/compoment/bbTimeList') %>
+    <% if(theme.hometop.bbtime){ %>
+        <%- partial('partial/compoment/bbTimeList') %>
+    <% } %>
     <%- partial('partial/hometop') %>
 </div>
 <main class="layout" id="content-inner">
