@@ -15,9 +15,9 @@ hexo.extend.helper.register('timeFormat', function(query){
         timeString = daysDiff + "天前";
       } else {
         if(time.year() === now.year()){
-            timeString = time.month() + '/' + time.day()
+            timeString = (time.month() + 1) + '/' + time.date()
         }else{
-            timeString = time.year() + '/' + time.month() + '/' + time.day()
+            timeString = time.year() + '/' + (time.month() + 1) + '/' + time.date()
         }
     }
     return timeString;

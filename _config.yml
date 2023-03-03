@@ -11,36 +11,30 @@ nav:
           icon: /img/avatar.webp
           url: / 
   menu:  
-    文库:
-      url: false
-      child:
-        文章列表:
-          url: /archives/
-          icon: fas fa-box-archive
-        全部分类:
-          url: /categories/
-          icon: fas fa-cube
-        全部标签:
-          url: /tags/
-          icon: fas fa-tags
-    友链:
-      url: false
-      child:
-        友链鱼塘:
-          url: /fcircle/
-          icon: fas fa-fish-fins
-        友情链接:
-          url: /links/
-          icon: fas fa-user-group
-        宝藏博主:
-          url: javascript:travelling()
-          icon: fas fa-bus
-    我的:
-      url: /me
-      child:
-    仓库:
-      url: /
-      child:
+    # 文库:
+    #   url: false
+    #   child:
+    #     文章列表:
+    #       url: /archives/
+    #       icon: fas fa-box-archive
+    #     全部分类:
+    #       url: /categories/
+    #       icon: fas fa-cube
+    #     全部标签:
+    #       url: /tags/
+    #       icon: fas fa-tags
+    # 友链:
+    #   url: false
+    #   child:
+    #     友链鱼塘:
+    #       url: /fcircle/
+    #       icon: fas fa-fish-fins
+    #     友情链接:
+    #       url: /links/
+    #       icon: fas fa-user-group
+    #     宝藏博主:
+    #       url: javascript:travelling()
+    #       icon: fas fa-bus
       
   right: # @todo 允许用户自定义
     random: true
