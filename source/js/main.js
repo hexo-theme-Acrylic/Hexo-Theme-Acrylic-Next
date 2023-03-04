@@ -1,39 +1,44 @@
-let initTop = 0
-function navFixed(){
-    const $header = document.getElementById('page-header')
+function setFixed(el){
     const currentTop = window.scrollY || document.documentElement.scrollTop
-    const isDown = scrollDirection(currentTop)
     if (currentTop > 0) {
-        if (isDown) {
-            if ($header.classList.contains('nav-visible')) $header.classList.remove(
-                'nav-visible')
-        } else {
-            if (!$header.classList.contains('nav-visible')) $header.classList.add(
-                'nav-visible')
-        }
-        $header.classList.add('nav-fixed')
-    } else {
-        if (currentTop === 0) {
-            $header.classList.remove('nav-fixed', 'nav-visible')
-        }
+        el.classList.add('nav-fixed')
+    }else{
+        el.classList.remove('nav-fixed')
     }
-    percent()
-}
-function scrollDirection(currentTop) {
-    const result = currentTop > initTop
-    initTop = currentTop
-    return result
 }
 
 const scrollFn = function () {
     const innerHeight = window.innerHeight + 0
+    const $header = document.getElementById('page-header')
+    setFixed($header)
     if (document.body.scrollHeight <= innerHeight) {
         return
     }
-    initTop = 0
+    let initTop = 0
     window.addEventListener('scroll', utils.throttle(function (e) {
-        navFixed()
+        const currentTop = window.scrollY || document.documentElement.scrollTop
+        const isDown = scrollDirection(currentTop)
+        if (currentTop > 0) {
+            if (isDown) {
+                if ($header.classList.contains('nav-visible')) $header.classList.remove(
+                    'nav-visible')
+            } else {
+                if (!$header.classList.contains('nav-visible')) $header.classList.add(
+                    'nav-visible')
+            }
+            $header.classList.add('nav-fixed')
+        } else {
+            if (currentTop === 0) {
+                $header.classList.remove('nav-fixed', 'nav-visible')
+            }
+        }
+        percent()
     }, 200))
+    function scrollDirection(currentTop) {
+        const result = currentTop > initTop
+        initTop = currentTop
+        return result
+    }
 }
 
 const sidebarFn = () => {
@@ -287,8 +292,8 @@ window.addEventListener('resize', utils.throttle(function () {
 }), 500);
 
 window.addEventListener('DOMContentLoaded', () => {
-    sidebarFn()
     scrollFn()
+    sidebarFn()
     onlyHome()
     onlyPost()
     onlyPostandPage()
@@ -297,9 +302,8 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 document.addEventListener('pjax:complete', function () {
-    navFixed()
-    sidebarFn()
     scrollFn()
+    sidebarFn()
     onlyHome()
     onlyPost()
     onlyPostandPage()
