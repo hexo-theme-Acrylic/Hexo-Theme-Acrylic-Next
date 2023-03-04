@@ -2,6 +2,8 @@ site:
   name: Rot
   icon: /img/avatar.webp
   icp: 
+
+
 nav:
   left:
     enable: true
@@ -170,6 +172,12 @@ post:
     wechat: 
     alipay: 
     url:
+
+
+errorpage:
+  img: /img/acrylic.png
+  text: =awa= 页面走丢了
+  recommendList: true
 
 
 thirdparty:

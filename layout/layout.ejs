@@ -6,13 +6,19 @@
     <body id="body">
         <%- partial('partial/console', {cache: true}) %>
         <%- partial('partial/sidebar', {cache: true}) %>
-        <div class="<%= is_post() ? 'post' : 'page' %>" id="body-wrap">
-            <%- partial('partial/header') %>
-            <%- body %>
-        </div>
+        <% if(page.type !== '404'){ %>
+            <div class="<%= is_post() ? 'post' : 'page' %>" id="body-wrap">
+                <%- partial('partial/header') %>
+                <%- body %>
+            </div>
+            <footer id="footer">
+                <%- partial('partial/footer', {cache: true}) %>
+            </footer>
+        <% }else{ %>
+            <div class="error" id="body-wrap">
+                <%- body %>
+            </div>
+         <% } %>   
         <%- partial('partial/body', {cache: true}) %>
-        <footer id="footer">
-            <%- partial('partial/footer', {cache: true}) %>
-        </footer>
     </body>
 </html>
