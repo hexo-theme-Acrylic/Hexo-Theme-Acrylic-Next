@@ -1,9 +1,9 @@
 <div class="recent-posts" id="recent-posts">
     <div id="category-bar">
-        <%- partial('partial/compoment/homeCategoryBar', {select:false}) %>
+        <%- partial('partial/compoment/home/homeCategoryBar', {select:false}) %>
     </div>
     <% for (const item of page.posts.sort('-date').data){ %>
-        <%- partial('partial/compoment/postList', {post: item}) %>
+        <%- partial('partial/compoment/home/postList', {post: item}) %>
     <% } %>
-    <%- partial('partial/compoment/pagination') %>
+    <%- partial('partial/compoment/mixins/pagination') %>
 </div>

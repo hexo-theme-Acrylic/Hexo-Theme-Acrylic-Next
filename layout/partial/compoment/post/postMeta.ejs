@@ -29,7 +29,7 @@
         <div class="meta-secondline">
             <span class="post-meta-date">
                 <i class="fa-fw post-meta-icon fas fa-calendar"></i>
-                <span><%- timeFormat(page.date) %></span>
+                <time datetime="<%= moment(page.date).format() %>"></time>
             </span>
             <span class="post-meta-position" title="作者IP归属地为<%= page.locate %>">
                 <i class="fas fa-location-dot post-meta-icon"></i>

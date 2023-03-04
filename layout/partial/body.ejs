@@ -1,15 +1,7 @@
 <script type="text/javascript" src="/js/utils.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
-<script type="text/javascript" src="/lib/pjax.min.js"></script>
-<script type="text/javascript" src="/lib/snackbar.min.js"></script>
-<script type="text/javascript" src="/lib/view-image.min.js"></script>
-<script type="text/javascript" src="/lib/waterfall.min.js"></script>
-<link rel="stylesheet" href="/lib/swiper.min.css">
-<script type="text/javascript" src="/lib/swiper.min.js"></script>
-<% if(theme.comment.enable){ %>
-    <script src="https://cdn.staticfile.org/twikoo/1.6.10/twikoo.all.min.js"></script>
-<% } %>    
-<%- partial('partial/pjax') %>
+<%- partial('partial/compoment/inject/body', {cache: true}) %>
+<%- partial('partial/compoment/third-party/pjax') %>
 <% if(theme.footer.ramdonlink){ %>
     <%- randomLinks() %>
 <% } %>

@@ -1,8 +1,8 @@
-function setFixed(el){
+function setFixed(el) {
     const currentTop = window.scrollY || document.documentElement.scrollTop
     if (currentTop > 0) {
         el.classList.add('nav-fixed')
-    }else{
+    } else {
         el.classList.remove('nav-fixed')
     }
 }
@@ -105,6 +105,33 @@ const setTimeState = () => {
         el.innerText = text + ' !  我是'
     }
 };
+const chageTimeFormate = () => {
+    var timeElements = document.getElementsByTagName("time");
+    for (var i = 0; i < timeElements.length; i++) {
+        var datetime = timeElements[i].getAttribute("datetime");
+        var timeObj = new Date(datetime);
+        var today = new Date();
+        var timeDiff = today.getTime() - timeObj.getTime();
+        var daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
+        var timeString;
+        if (daysDiff === 0) {
+            timeString = "最近";
+        } else if (daysDiff === 1) {
+            timeString = "昨天";
+        } else if (daysDiff === 2) {
+            timeString = "前天";
+        } else if (daysDiff <= 7) {
+            timeString = daysDiff + "天前";
+        } else {
+            if (timeObj.getFullYear() !== new Date().getFullYear()) {
+                timeString = timeObj.getFullYear() + "/" + (timeObj.getMonth() + 1) + "/" + timeObj.getDate();
+            } else {
+                timeString = (timeObj.getMonth() + 1) + "/" + timeObj.getDate();
+            }
+        }
+        timeElements[i].textContent = timeString;
+    }
+}
 
 const percent = () => {
     let a = document.documentElement.scrollTop || window.pageYOffset,
@@ -242,10 +269,10 @@ class acrylic {
     }
     static reflashEssayWaterFall() {
         if (document.getElementById('waterfall')) {
-            setTimeout(function(){
+            setTimeout(function () {
                 waterfall('#waterfall');
-                document.getElementById("waterfall").classList.add('show'); 
-            },500);
+                document.getElementById("waterfall").classList.add('show');
+            }, 500);
         }
     }
 }
@@ -258,12 +285,12 @@ const onlyHome = () => {
         }
         if (document.querySelector('#bber-talk')) {
             var swiper = new Swiper('.swiper-container', {
-              direction: 'vertical',
-              loop: true,
-              autoplay: {
-              delay: 3000,
-              pauseOnMouseEnter: true
-            },
+                direction: 'vertical',
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    pauseOnMouseEnter: true
+                },
             });
         }
     }
@@ -298,6 +325,7 @@ window.addEventListener('DOMContentLoaded', () => {
     onlyPost()
     onlyPostandPage()
     setTimeState()
+    chageTimeFormate()
     acrylic.initTheme()
 })
 
@@ -308,4 +336,5 @@ document.addEventListener('pjax:complete', function () {
     onlyPost()
     onlyPostandPage()
     setTimeState()
+    chageTimeFormate()
 })

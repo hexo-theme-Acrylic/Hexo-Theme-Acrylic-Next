@@ -4,7 +4,7 @@
             <% if(theme.nav.left.enable){ %>
                 <div class="back-home-button" tabindex="-1">
                     <i class="back-home-button-icon fas fa-grip-vertical"></i>
-                    <%- partial('partial/compoment/nav_left_menu') %>
+                    <%- partial('partial/compoment/nav/left') %>
                 </div>
             <% } %>
             <a id="site-name" href="/" title="返回博客主页">
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div id="menus">
-            <%- partial('partial/compoment/nav_menu') %>
+            <%- partial('partial/compoment/nav/menu') %>
         </div>
         <!-- <div id="nav-left">
             <div id="fps-group">
@@ -27,7 +27,7 @@
             </div>
         </div> -->
         <div id="nav-right">
-            <%- partial('partial/compoment/nav_right') %>
+            <%- partial('partial/compoment/nav/right') %>
         </div>
     </div>
 </nav>

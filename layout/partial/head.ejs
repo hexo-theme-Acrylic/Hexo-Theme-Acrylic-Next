@@ -8,22 +8,21 @@
     <% } %>
 </title>
 <noscript>开启Javascript是必要的</noscript>
+<!-- <script data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}" src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.2.4/pace.min.js"></script> -->
 <link rel="stylesheet" href="/css/var.css">
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/custom.css">
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-<link rel="stylesheet" href="/lib/snackbar.min.css">
 <link rel="icon" type="image/x-icon" href="<%= url_for(theme.site.siteIcon) %>">
 <link rel="apple-touch-icon" href="<%= url_for(theme.site.siteIcon) %>">
 <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
 <link rel="bookmark" href="<%= url_for(theme.site.siteIcon) %>">
 <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<%= url_for(theme.site.siteIcon) %>">
 <meta name="description" content="<%= config.description %>">
-<!-- <meta name="theme-color" content="#1C1C1F"> -->
+<meta name="theme-color" content="#1C1C1F">
+<%- partial('partial/compoment/inject/head', {cache: true}) %>
 <% if (theme.extends.head) for (const i of theme.extends.head){ %>
     <%- i %>
 <% } %>
-<script type="text/javascript" src="/lib/qrcode.min.js"></script>
 <div class="site-config">
     <script>
         var GOBALPAGE = "<%= is_home() ? 'home' : (is_post() ? 'post' : (is_page() ? 'page' : 'temp')) %>"

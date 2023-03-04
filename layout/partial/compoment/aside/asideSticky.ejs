@@ -10,10 +10,10 @@
             }) %>
         </div>
     </div>
-    <%- partial('partial/compoment/newestPost', {cache: true}) %>
+    <%- partial('partial/compoment/aside/newestPost', {cache: true}) %>
 <% }else{ %>
     <% if(is_home()){ %>
-       <%- partial('partial/compoment/newestPost', {cache: true}) %> 
+       <%- partial('partial/compoment/aside/newestPost', {cache: true}) %> 
     <% } %>    
-    <%- partial('partial/compoment/siteInfo', {cache: true}) %>
+    <%- partial('partial/compoment/aside/siteInfo', {cache: true}) %>
 <% } %>

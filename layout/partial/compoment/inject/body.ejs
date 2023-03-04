@@ -1,0 +1,9 @@
+<% const cdn = theme.cdn.body %>
+<%- js(cdn.pjaxjs) %>
+<%- js(cdn.snackbarjs) %>
+<%- js(cdn.viewimagejs) %>
+<%- js(cdn.waterfalljs) %>
+<% if(theme.hometop.bbtime){ %>
+    <%- css(cdn.swipercss) %>
+    <%- js(cdn.swiperjs) %>
+<% } %>

@@ -25,7 +25,7 @@
                 <% }) %>
             </span>
             <span class="post-meta-date">
-                <time><%- timeFormat(post.date) %></time>
+                <time datetime="<%= moment(post.date).format() %>"></time>
             </span>
         </div>
     </div>
