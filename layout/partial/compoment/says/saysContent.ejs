@@ -3,7 +3,7 @@
     <% if(item.image){ %>
         <div class="bber-content-img">
             <% item.image.forEach(img => { %>
-                <img src="<%= img %>">
+                <img src="<%= img %>" loading="lazy">
             <% }); %>
         </div>
     <% } %>    

@@ -1,36 +1,39 @@
+let initTop = 0
+function navFixed(){
+    const $header = document.getElementById('page-header')
+    const currentTop = window.scrollY || document.documentElement.scrollTop
+    const isDown = scrollDirection(currentTop)
+    if (currentTop > 0) {
+        if (isDown) {
+            if ($header.classList.contains('nav-visible')) $header.classList.remove(
+                'nav-visible')
+        } else {
+            if (!$header.classList.contains('nav-visible')) $header.classList.add(
+                'nav-visible')
+        }
+        $header.classList.add('nav-fixed')
+    } else {
+        if (currentTop === 0) {
+            $header.classList.remove('nav-fixed', 'nav-visible')
+        }
+    }
+    percent()
+}
+function scrollDirection(currentTop) {
+    const result = currentTop > initTop
+    initTop = currentTop
+    return result
+}
+
 const scrollFn = function () {
     const innerHeight = window.innerHeight + 0
-    // 当页面不可滚动时跳出函数
     if (document.body.scrollHeight <= innerHeight) {
         return
     }
-    let initTop = 0
-    const $header = document.getElementById('page-header')
+    initTop = 0
     window.addEventListener('scroll', utils.throttle(function (e) {
-        const currentTop = window.scrollY || document.documentElement.scrollTop
-        const isDown = scrollDirection(currentTop)
-        if (currentTop > 0) {
-            if (isDown) {
-                if ($header.classList.contains('nav-visible')) $header.classList.remove(
-                    'nav-visible')
-            } else {
-                if (!$header.classList.contains('nav-visible')) $header.classList.add(
-                    'nav-visible')
-            }
-            $header.classList.add('nav-fixed')
-        } else {
-            if (currentTop === 0) {
-                $header.classList.remove('nav-fixed', 'nav-visible')
-            }
-        }
-        percent()
+        navFixed()
     }, 200))
-    // find the scroll direction
-    function scrollDirection(currentTop) {
-        const result = currentTop > initTop
-        initTop = currentTop
-        return result
-    }
 }
 
 const sidebarFn = () => {
@@ -294,6 +297,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 document.addEventListener('pjax:complete', function () {
+    navFixed()
     sidebarFn()
     scrollFn()
     onlyHome()
