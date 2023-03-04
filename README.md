@@ -6,7 +6,7 @@
 
 主题预览:  🤟[Heo](https://blog.zhheo.com/) 👋[acrylic](https://acrylic.zhheo.com/) 
 
-文档: 📖 [https://acrylic.zhheo.com/](https://acrylic.zhheo.com/)
+文档: [📖文档](https://d.iz.ink/)
 
 ## 💻 安裝
 
