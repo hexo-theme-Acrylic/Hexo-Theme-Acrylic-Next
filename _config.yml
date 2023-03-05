@@ -12,6 +12,7 @@ nav:
         博客:
           icon: /img/avatar.webp
           url: / 
+  
   menu:  
     # 文库:
     #   url: false
@@ -86,7 +87,6 @@ hometop:
       Git:
         img: /img/icon/git.png
         color: '#df5b40'
-
 
   categoryGroup:
     G1:
@@ -182,6 +182,7 @@ errorpage:
 
 loading:
   enable: false
+  pace: true
 
 
 thirdparty:
