@@ -179,8 +179,10 @@ errorpage:
   text: =awa= 页面走丢了
   recommendList: true
 
+
 loading:
   enable: false
+
 
 thirdparty:
   wordcount: false
@@ -200,8 +202,8 @@ extends: # 插入额外代码 如：统计，广告等
 
 cdn:
   head:
-    pace: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.2.4/pace.min.js
-    font-awesomecss: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.3.0/css/all.min.css
+    pacejs: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.2.4/pace.min.js
+    fontawesomecss: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.3.0/css/all.min.css
     snackbarcss: /lib/snackbar.min.css 
     qrcodejs: /lib/qrcode.min.js
     twikoojs: https://cdn.staticfile.org/twikoo/1.6.10/twikoo.all.min.js
@@ -211,4 +213,4 @@ cdn:
     snackbarjs: /lib/snackbar.min.js
     viewimagejs: /lib/view-image.min.js
     waterfalljs: /lib/waterfall.min.js
-    swiperjs: /lib/swiper.min.js
+    swiperjs: /lib/swiper.min.js  
