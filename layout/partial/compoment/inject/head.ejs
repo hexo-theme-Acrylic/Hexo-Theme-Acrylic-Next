@@ -1,5 +1,5 @@
 <% const cdn = theme.cdn.head %>
-<% if(theme.loading.enable){ %>
+<% if(theme.loading.enable && theme.loading.pace){ %>
     <script data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}" src="<%= cdn.pacejs %>"></script>
 <% } %>
 <%- css(cdn.fontawesomecss) %>    

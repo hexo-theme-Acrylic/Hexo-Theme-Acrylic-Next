@@ -4,6 +4,9 @@
         <%- partial('partial/head', {cache: true}) %>
     </head>
     <body id="body">
+        <% if(theme.loading.enable){ %>
+            <%- partial('partial/loading', {cache: true}) %>
+        <% } %>
         <%- partial('partial/console', {cache: true}) %>
         <%- partial('partial/sidebar', {cache: true}) %>
         <% if(page.type !== '404'){ %>
