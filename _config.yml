@@ -180,7 +180,7 @@ errorpage:
   recommendList: true
 
 loading:
-  enable: true
+  enable: false
 
 thirdparty:
   wordcount: false

@@ -105,6 +105,7 @@ const setTimeState = () => {
         el.innerText = text + ' !  我是'
     }
 };
+
 const chageTimeFormate = () => {
     var timeElements = document.getElementsByTagName("time");
     for (var i = 0; i < timeElements.length; i++) {
