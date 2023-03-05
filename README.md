@@ -4,7 +4,7 @@
 
 下一代Acrylic何必是butterfly
 
-主题预览:  🤟[Heo](https://blog.zhheo.com/) 👋[acrylic](https://acrylic.zhheo.com/) 
+主题预览:  🤟[Heo](https://blog.zhheo.com/) 👋[acrylic](https://b.iz.ink/) 
 
 文档: [📖文档](https://d.iz.ink/)
 
