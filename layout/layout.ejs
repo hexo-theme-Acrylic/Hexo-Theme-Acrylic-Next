@@ -13,10 +13,10 @@
             <div class="<%= is_post() ? 'post' : 'page' %>" id="body-wrap">
                 <%- partial('partial/header') %>
                 <%- body %>
+                <footer id="footer">
+                    <%- partial('partial/footer', {cache: true}) %>
+                </footer>
             </div>
-            <footer id="footer">
-                <%- partial('partial/footer', {cache: true}) %>
-            </footer>
         <% }else{ %>
             <div class="error" id="body-wrap">
                 <%- body %>

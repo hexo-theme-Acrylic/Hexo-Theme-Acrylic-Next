@@ -167,6 +167,10 @@ footer:
 
 
 post:
+  default:
+    cover: /img/hello.jpg
+    locate: 北京
+    copyright: 原创
   award:
     enable: false
     wechat: 
