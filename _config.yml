@@ -1,7 +1,7 @@
 site:
   name: Rot
   icon: /img/avatar.webp
-  icp: 
+  icp:
 
 
 nav:
@@ -11,9 +11,9 @@ nav:
       我的:
         博客:
           icon: /img/avatar.webp
-          url: / 
-  
-  menu:  
+          url: /
+
+  menu:
     # 文库:
     #   url: false
     #   child:
@@ -38,8 +38,9 @@ nav:
     #     宝藏博主:
     #       url: javascript:travelling()
     #       icon: fas fa-bus
-      
+
   right: # @todo 允许用户自定义
+    travellings: true
     random: true
     search: false
     console: true
@@ -100,7 +101,7 @@ hometop:
     G3:
       name: 实用教程
       icon: fas fa-book
-      url: /tags/教程/ 
+      url: /tags/教程/
 
   recommendList:
     sup: 置顶文章
@@ -122,7 +123,7 @@ aside:
         url: mailto:a@nalex.top
     button:
       text: 个人主页
-      url: / 
+      url: /
 
   analytics:
     runtime: '2021-12-12 00:00:00'
@@ -148,7 +149,7 @@ footer:
   group:
     导航:
       文章归档: /archives/
-      文章分类: /categories/ 
+      文章分类: /categories/
       文章标签: /tags/
       友链: /link/
     服务:
@@ -173,8 +174,8 @@ post:
     copyright: 原创
   award:
     enable: false
-    wechat: 
-    alipay: 
+    wechat:
+    alipay:
     url:
 
 
@@ -209,13 +210,13 @@ cdn:
   head:
     pacejs: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.2.4/pace.min.js
     fontawesomecss: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.3.0/css/all.min.css
-    snackbarcss: /lib/snackbar.min.css 
+    snackbarcss: /lib/snackbar.min.css
     qrcodejs: /lib/qrcode.min.js
     twikoojs: https://cdn.staticfile.org/twikoo/1.6.10/twikoo.all.min.js
-  body: 
+  body:
     swipercss: /lib/swiper.min.css
     pjaxjs: /lib/pjax.min.js
     snackbarjs: /lib/snackbar.min.js
     viewimagejs: /lib/view-image.min.js
     waterfalljs: /lib/waterfall.min.js
-    swiperjs: /lib/swiper.min.js  
+    swiperjs: /lib/swiper.min.js
