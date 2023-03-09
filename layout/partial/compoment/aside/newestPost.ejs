@@ -9,9 +9,9 @@
             return b.date < a.date ? -1 : 1
         })){ %>
             <div class="aside-list-item">
-                <a class="thumbnail" href="<%= url_for(post.path) %>" title="<%= post.title %>">
+                <a class="thumbnail" href="<%= url_for(post.path) %>" title="<%= post.title || '无标题' %>">
                     <img
-                        alt="<%= post.title %>"
+                        alt="<%= post.title || '无标题' %>"
                         src="<%= post.cover || theme.post.default.cover %>">
                 </a>
                 <div class="content">
@@ -20,8 +20,8 @@
                             <%= categories.name %>
                         </a>
                     <% }) %>
-                    <a class="title" href="<%= url_for(post.path) %>" title="<%= post.title %>">
-                        <%= post.title %>
+                    <a class="title" href="<%= url_for(post.path) %>" title="<%= post.title || '无标题' %>">
+                        <%= post.title || '无标题' %>
                     </a>
                 </div>
             </div>
