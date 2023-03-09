@@ -300,7 +300,6 @@ const onlyHome = () => {
                 },
             });
         }
-        acrylic.addRuntime()
     }
 }
 
@@ -335,6 +334,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeState()
     chageTimeFormate()
     acrylic.initTheme()
+    acrylic.addRuntime()
 })
 
 document.addEventListener('pjax:complete', function () {
@@ -345,4 +345,5 @@ document.addEventListener('pjax:complete', function () {
     onlyPostandPage()
     setTimeState()
     chageTimeFormate()
+    acrylic.addRuntime()
 })
