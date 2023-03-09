@@ -1,9 +1,16 @@
 <% const cdn = theme.cdn.body %>
 <%- js(cdn.pjaxjs) %>
+<% if(theme.lazyload.enable){ %>
+    <%- js(cdn.lazyloadjs) %>
+    <%- partial('partial/compoment/third-party/lazyload', {cache: true}) %>
+<% } %>
 <%- js(cdn.snackbarjs) %>
 <%- js(cdn.viewimagejs) %>
 <%- js(cdn.waterfalljs) %>
 <% if(theme.hometop.bbtime){ %>
     <%- css(cdn.swipercss) %>
     <%- js(cdn.swiperjs) %>
+<% } %>
+<% if(theme.footer.ramdonlink){ %>
+    <%- randomLinks() %>
 <% } %>

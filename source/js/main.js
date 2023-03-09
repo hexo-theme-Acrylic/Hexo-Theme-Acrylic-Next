@@ -316,8 +316,8 @@ const onlyPostandPage = () => {
         if (typeof initComment === 'function') {
             initComment();
         }
+        acrylic.reflashEssayWaterFall()
     }
-    acrylic.reflashEssayWaterFall()
 }
 
 window.addEventListener('resize', utils.throttle(function () {

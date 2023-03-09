@@ -30,13 +30,13 @@
         </div>
     </div> 
 <% } %>
-<div class="todayCard" id="todayCard" onclick="javascript:window.open('<%= theme.hometop.recommendList.url %>')"
+<div class="todayCard" id="todayCard" onclick="pjax.loadUrl('<%= theme.hometop.recommendList.url %>')"
     style="z-index: 1;">
     <div class="todayCard-info">
         <div class="todayCard-tips"><%= theme.hometop.recommendList.sup %></div>
         <div class="todayCard-title"><%= theme.hometop.recommendList.title %></div>
     </div>
-    <div class="todayCard-cover"
+    <div class="todayCard-cover nolazyload"
         style="background: url('<%- theme.hometop.recommendList.img %>') no-repeat center /cover">
     </div>
     <div class="banner-button-group"><a class="banner-button"

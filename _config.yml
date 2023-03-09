@@ -184,6 +184,12 @@ errorpage:
   recommendList: true
 
 
+lazyload:
+  enable: false
+  placeholder: /img/acrylic.png
+  errorimg: /img/acrylic.png
+
+
 loading:
   enable: false
   pace: true
@@ -215,6 +221,7 @@ cdn:
   body: 
     swipercss: /lib/swiper.min.css
     pjaxjs: /lib/pjax.min.js
+    lazyloadjs: /lib/lazyload.min.js
     snackbarjs: /lib/snackbar.min.js
     viewimagejs: /lib/view-image.min.js
     waterfalljs: /lib/waterfall.min.js
