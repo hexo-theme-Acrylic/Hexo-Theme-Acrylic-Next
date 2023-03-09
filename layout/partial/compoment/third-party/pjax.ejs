@@ -29,8 +29,10 @@
   document.addEventListener('pjax:complete', () => { 
     <% if(theme.loading.enable){ -%>
       preloader.endLoading()
+      <% if(theme.loading.pace){ -%>
+        preloader.removePaceDone()
+      <% } %> 
     <% } %>  
-    preloader.removePaceDone()
     <% if(theme.lazyload.enable){ -%>
       lazyLoadInstance.update()
     <% } %>   

@@ -3,7 +3,7 @@ site:
   name: Rot               # 左上角首页名称
   icon: /img/avatar.webp  # 页脚的icon
   icp:                    # ICP
-  siteIcon:               # 主页的icon
+  siteIcon: /img/avatar.webp # 主页的icon
 
 # 导航栏
 
