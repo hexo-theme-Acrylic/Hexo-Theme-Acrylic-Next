@@ -107,13 +107,11 @@ const setTimeState = () => {
 };
 
 const chageTimeFormate = () => {
-    var timeElements = document.getElementsByTagName("time");
+    var timeElements = document.getElementsByTagName("time")
     for (var i = 0; i < timeElements.length; i++) {
-        var datetime = timeElements[i].getAttribute("datetime");
-        var timeObj = new Date(datetime);
-        var today = new Date();
-        var timeDiff = today.getTime() - timeObj.getTime();
-        var daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
+        var datetime = timeElements[i].getAttribute("datetime")
+        var timeObj = new Date(datetime)
+        var daysDiff = utils.timeDiff(timeObj, new Date())
         var timeString;
         if (daysDiff === 0) {
             timeString = "最近";
@@ -276,6 +274,14 @@ class acrylic {
             }, 500);
         }
     }
+    static addRuntime() {
+        const $runtimeCount = document.getElementById('runtimeshow')
+        if ($runtimeCount) {
+          const runtime = $runtimeCount.getAttribute('data-runtime')
+          $runtimeCount.innerText = utils.timeDiff(new Date(runtime), new Date()) + ' 天'
+          console.log(new Date(runtime), new Date())
+        }
+      }
 }
 
 const onlyHome = () => {
@@ -294,6 +300,7 @@ const onlyHome = () => {
                 },
             });
         }
+        acrylic.addRuntime()
     }
 }
 

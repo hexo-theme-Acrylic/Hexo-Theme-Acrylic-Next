@@ -6133,47 +6133,6 @@ div#footer_deal {
   align-items: center;
 }
 
-/* 古诗词卡片 */
-#card-poem {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem !important;
-  min-height: 130px;
-}
-
-div#poem_sentence {
-  text-align: center;
-  font-family: serif, cursive;
-  line-height: 1.4;
-  margin-bottom: 0.5rem;
-  padding: 1rem;
-  border-radius: 12px;
-  background: var(--heo-secondbg);
-  min-height: 62px;
-}
-
-div#poem_info {
-  display: flex;
-  color: var(--heo-secondtext);
-  font-size: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-div#poem_author {
-  order: 1;
-  padding: 2px;
-  margin-left: 8px;
-}
-
-div#poem_dynasty {
-  order: 0;
-  padding: 2px 4px 2px 6px;
-  background: var(--heo-card-btn-bg);
-  color: var(--heo-fontcolor);
-  border-radius: 8px;
-}
-
 @media screen and (max-width: 768px) {
   img.footer_mini_logo {
     display: none;
@@ -6464,11 +6423,6 @@ a.console_switchbutton {
   display: none;
 }
 
-/* 下拉图标 */
-#nav .menus_items .menus_item i.expand {
-  display: none;
-}
-
 /* 右下角设置按钮间距 */
 #rightside {
   display: none;
@@ -6506,7 +6460,7 @@ a.console_switchbutton {
   #footer {
     background: linear-gradient(180deg, var(--heo-background) 0%, var(--heo-card-bg) 25%);
     margin-top: 0;
-    z-index: 999;
+    z-index: 50;
   }
 }
 

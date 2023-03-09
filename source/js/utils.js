@@ -96,5 +96,10 @@ const utils = {
 
   randomNum: (length) => {
     return Math.floor(Math.random() * length)
+  },
+
+  timeDiff: (timeObj, today) => {
+    var timeDiff = today.getTime() - timeObj.getTime();
+    return Math.floor(timeDiff / (1000 * 3600 * 24));
   }
 }
