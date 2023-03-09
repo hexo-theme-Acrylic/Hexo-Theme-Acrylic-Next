@@ -1,9 +1,13 @@
+# 站点设置
 site:
-  name: Rot
-  icon: /img/avatar.webp
-  icp:
+  name: Rot               # 左上角首页名称
+  icon: /img/avatar.webp  # 页脚的icon
+  icp:                    # ICP
+  siteIcon:               # 主页的icon
 
+# 导航栏
 
+#导航栏左侧
 nav:
   left:
     enable: true
@@ -12,7 +16,7 @@ nav:
         博客:
           icon: /img/avatar.webp
           url: /
-
+# 导航栏内容
   menu:
     # 文库:
     #   url: false
@@ -39,13 +43,14 @@ nav:
     #       url: javascript:travelling()
     #       icon: fas fa-bus
 
+# 导航栏右侧快捷菜单
   right: # @todo 允许用户自定义
-    travellings: true
-    random: true
-    search: false
-    console: true
+    travellings: true   #开往
+    random: true        #
+    search: false       #刷新按钮
+    console: true       #控制台
 
-
+# heo式顶部一大坨
 hometop:
   bbtime: false
   banner:
@@ -110,7 +115,7 @@ hometop:
     img: /img/acrylic.png
     color: '#006a73'
 
-
+# 个人卡片
 aside:
   card:
     content: 这有关于<b>开发</b>、<b>技术</b>相关的问题和看法，还有对于动漫的一些<b>杂评</b>。<br>相信你可以在这里找到对你有用的知识和教程。
@@ -124,11 +129,11 @@ aside:
     button:
       text: 个人主页
       url: /
-
+# 建站时间
   analytics:
     runtime: '2021-12-12 00:00:00'
 
-
+# 页脚
 footer:
   information:
     left:
@@ -166,7 +171,7 @@ footer:
 
   ramdonlink: false
 
-
+# 文章页默认设置
 post:
   default:
     cover: /img/hello.jpg
@@ -178,40 +183,41 @@ post:
     alipay:
     url:
 
-
+# 404
 errorpage:
   img: /img/acrylic.png
   text: =awa= 页面走丢了
   recommendList: true
 
-
+# 懒加载
 lazyload:
   enable: false
   placeholder: /img/acrylic.png
   errorimg: /img/acrylic.png
 
-
+# 加载动画
 loading:
   enable: false
   pace: true
 
-
+# 侧边栏其他设置
 thirdparty:
   wordcount: false
 
-
+# 评论
 comment:
   enable: false
   twikoo:
     envId:
 
-
-extends: # 插入额外代码 如：统计，广告等
+# 插入代码到头部 </head> 之前 和 底部 </body> 之前
+# 插入额外代码 如：统计，广告等
+extends: 
   head: # 在head中插入
     # - <script></script>
   body: # 在body中插入
 
-
+# 非必要勿动
 cdn:
   head:
     pacejs: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.2.4/pace.min.js
