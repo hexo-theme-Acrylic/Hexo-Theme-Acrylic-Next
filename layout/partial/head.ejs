@@ -2,10 +2,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-    <%= page.title || config.title %>
-    <% if (config.subtitle){ %>
-        - <% config.subtitle %>
-    <% } %>
+    <%
+        var title = '', subtitle = ''
+        if(is_home())title = config.title
+        else if(is_archive())title = '归档 ' + (page.year || '')
+        else if(is_category())title = '分类 ' + page.category
+        else if(is_tag())title = '标签 ' + page.tag
+        else if(page.type === '404')title = '404 ' + theme.errorpage.text
+        else if(is_page() || is_post())title = page.title
+        if(is_home())subtitle = config.subtitle ? ' - ' + config.subtitle : ''
+        else subtitle = title ? ' | ' + config.title : config.title
+    -%>
+    <%= title + subtitle %>
 </title>
 <noscript>开启Javascript是必要的</noscript>
 <link rel="icon" type="image/x-icon" href="<%= url_for(theme.site.siteIcon) %>">
