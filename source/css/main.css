@@ -10716,10 +10716,6 @@ blockquote p {
   object-fit: cover;
 }
 
-#article-container img.error {
-  content: url("/img/hello.jpg");
-}
-
 /* 文章视频 */
 .doge-inner-player {
   border-radius: 12px !important;
@@ -13643,12 +13639,11 @@ figure.gallery-group:hover .gallery-group-name::after {
 
 #bber .bber-content-img img {
   object-fit: cover;
-  max-height: 100%;
+  max-height: 100px;
   border-radius: 8px;
 }
 
 #bber .bber-content-img {
-  height: 100px;
   margin-top: 0.2rem;
   margin-bottom: 0.3rem;
   margin-left: 0;

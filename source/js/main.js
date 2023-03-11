@@ -1,4 +1,5 @@
 function setFixed(el) {
+    if(!el)return
     const currentTop = window.scrollY || document.documentElement.scrollTop
     if (currentTop > 0) {
         el.classList.add('nav-fixed')
@@ -46,6 +47,8 @@ const sidebarFn = () => {
     const $mobileSidebarMenus = document.getElementById('sidebar-menus')
     const $menuMask = document.getElementById('menu-mask')
     const $body = document.body
+
+    if(!$toggleMenu)return
 
     function openMobileSidebar() {
         utils.sidebarPaddingR()
@@ -284,12 +287,20 @@ class acrylic {
       }
 }
 
+const allPage = () => {
+    scrollFn()
+    sidebarFn()
+    if (typeof randomLinksList === 'function') {
+        randomLinksList();
+    }
+    setTimeState()
+    chageTimeFormate()
+    acrylic.addRuntime()
+}
+
 const onlyHome = () => {
     if (GOBALPAGE === 'home') {
         showTodayCard()
-        if (typeof randomLinksList === 'function') {
-            randomLinksList();
-        }
         if (document.querySelector('#bber-talk')) {
             var swiper = new Swiper('.swiper-container', {
                 direction: 'vertical',
@@ -326,24 +337,15 @@ window.addEventListener('resize', utils.throttle(function () {
 }), 500);
 
 window.addEventListener('DOMContentLoaded', () => {
-    scrollFn()
-    sidebarFn()
+    allPage()
     onlyHome()
     onlyPost()
     onlyPostandPage()
-    setTimeState()
-    chageTimeFormate()
-    acrylic.initTheme()
-    acrylic.addRuntime()
 })
 
-document.addEventListener('pjax:complete', function () {
-    scrollFn()
-    sidebarFn()
+document.addEventListener('pjax:complete',() => {
+    allPage()
     onlyHome()
     onlyPost()
     onlyPostandPage()
-    setTimeState()
-    chageTimeFormate()
-    acrylic.addRuntime()
 })

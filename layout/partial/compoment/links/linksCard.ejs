@@ -5,12 +5,12 @@
                 <span class="site-card-tag"><%= item.tag %></span>
             <% } %>
             <a class="img" itle="<%= item.name %>" href="<%= url_for(item.link) %>">
-                <img class="flink-avatar" src="<%= item.topimg %>" alt="<%= item.name %>" loading="lazy">
+                <img class="flink-avatar" src="<%= item.topimg %>" alt="<%= item.name %>">
                 <div class="img-alt is-center"><%= item.name %></div>
             </a>
             <a class="info cf-friends-link" title="<%= item.name %>" href="<%= url_for(item.link) %>">
                 <div class="site-card-avatar">
-                    <img class="flink-avatar cf-friends-avatar" src="<%= item.avatar %>" alt="<%= item.name %>" loading="lazy">
+                    <img class="flink-avatar cf-friends-avatar" src="<%= item.avatar %>" alt="<%= item.name %>">
                     <div class="img-alt is-center"><%= item.name %></div>
                 </div>
                 <div class="site-card-text">
