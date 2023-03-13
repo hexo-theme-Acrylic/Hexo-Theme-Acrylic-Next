@@ -1,7 +1,7 @@
 <div class="recent-post-item" onclick="pjax.loadUrl('/<%= post.path %>')">
     <div class="post_cover left_radius">
-        <a href="<%= url_for(post.path) %>" title="<%= post.title || '无标题' %>">
-            <img class="post_bg" alt="<%= post.title || '无标题' %>" src="<%= post.cover || theme.post.default.cover %>">
+        <a href="<%= url_for(post.path) %>" title="<%= post.title %>">
+            <img class="post_bg" alt="<%= post.title %>" src="<%= post.cover %>">
         </a>
     </div>
     <div class="recent-post-info">
@@ -11,8 +11,8 @@
                     <span class="original"><%= categories.name %></span>
                 <% }) %>
             </div>
-            <a class="article-title" href="<%= url_for(post.path) %>" title="<%= post.title || '无标题' %>">
-                <%= post.title || '无标题' %>
+            <a class="article-title" href="<%= url_for(post.path) %>" title="<%= post.title %>">
+                <%= post.title %>
             </a>
         </div>
         <div class="article-meta-wrap">

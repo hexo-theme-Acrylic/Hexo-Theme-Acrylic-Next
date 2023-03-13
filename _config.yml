@@ -177,6 +177,7 @@ post:
     cover: /img/hello.jpg
     locate: 北京
     copyright: 原创
+    excerpt: 100
   award:
     enable: false
     wechat:

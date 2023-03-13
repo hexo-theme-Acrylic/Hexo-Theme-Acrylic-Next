@@ -9,10 +9,10 @@
             return b.date < a.date ? -1 : 1
         })){ %>
             <div class="aside-list-item">
-                <a class="thumbnail" href="<%= url_for(post.path) %>" title="<%= post.title || '无标题' %>">
+                <a class="thumbnail" href="<%= url_for(post.path) %>" title="<%= post.title %>">
                     <img
-                        alt="<%= post.title || '无标题' %>"
-                        src="<%= post.cover || theme.post.default.cover %>">
+                        alt="<%= post.title %>"
+                        src="<%= post.cover %>">
                 </a>
                 <div class="content">
                     <% post.categories.data.forEach(categories => { %>
@@ -20,8 +20,8 @@
                             <%= categories.name %>
                         </a>
                     <% }) %>
-                    <a class="title" href="<%= url_for(post.path) %>" title="<%= post.title || '无标题' %>">
-                        <%= post.title || '无标题' %>
+                    <a class="title" href="<%= url_for(post.path) %>" title="<%= post.title %>">
+                        <%= post.title %>
                     </a>
                 </div>
             </div>
