@@ -6,9 +6,8 @@ site:
   siteIcon: /img/avatar.webp # 主页的icon
 
 # 导航栏
-
-#导航栏左侧
 nav:
+#导航栏左侧
   left:
     enable: true
     menu:
@@ -199,9 +198,9 @@ lazyload:
 # 加载动画
 loading:
   enable: false
-  pace: true
+  pace: false
 
-# 侧边栏其他设置
+# 第三方设置
 thirdparty:
   wordcount: false
 
