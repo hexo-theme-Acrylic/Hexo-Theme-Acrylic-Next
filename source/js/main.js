@@ -157,33 +157,32 @@ const percent = () => {
 class toc {
     static init() {
         const el = document.querySelectorAll('.toc a')
-        if (!el) {
-            return
-        }
+        if (!el)return
         el.forEach((e) => {
             e.addEventListener('click', (event) => {
                 event.preventDefault()
-                this.getAnchor(event.target.innerText.replaceAll(' ', '-'))
+                utils.scrollToDest(utils.getEleTop(document.getElementById(decodeURI((event.target.className === 'toc-text' ? event.target.parentNode.hash: event.target.hash).replace('#', '')))), 300)
             })
         })
         this.active(el)
     }
-    static scrollToAnchor(x, y) {
-        scrollTo({
-            top: y,
-            left: x,
-            behavior: 'smooth'
-        })
-    }
-    static getAnchor(id) {
-        const el = document.getElementById(id)
-        this.scrollToAnchor(el.getBoundingClientRect().left, el.getBoundingClientRect().top + (window.scrollY ? window.scrollY : 0) - 60)
-    }
+
     static active(toc) {
         const $article = document.getElementById('article-container')
+        const $tocContent = document.getElementById('toc-content')
         const list = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
         let detectItem = ''
-        const findHeadPosition = function (top) {
+        function autoScroll(el){
+            const activePosition = el.getBoundingClientRect().top
+            const sidebarScrollTop = $tocContent.scrollTop
+            if (activePosition > (document.documentElement.clientHeight - 100)) {
+              $tocContent.scrollTop = sidebarScrollTop + 150
+            }
+            if (activePosition < 100) {
+              $tocContent.scrollTop = sidebarScrollTop - 150
+            }
+        }
+        function findHeadPosition(top) {
             if (top === 0) {
                 return false
             }
@@ -201,9 +200,11 @@ class toc {
             document.querySelectorAll('.active').forEach((i) => {
                 i.classList.remove('active')
             })
-            if (toc[detectItem]) {
+            const activeitem = toc[detectItem]
+            if (activeitem) {
                 let parent = toc[detectItem].parentNode
-                toc[detectItem].classList.add('active')
+                activeitem.classList.add('active')
+                autoScroll(activeitem)
                 for (; !parent.matches('.toc'); parent = parent.parentNode) {
                     if (parent.matches('li')) parent.classList.add('active')
                 }
@@ -236,10 +237,7 @@ class acrylic {
         document.getElementById('todayCard').classList.add('hide')
     }
     static toTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
+        utils.scrollToDest(0)
     }
     static showConsole() {
         const el = document.getElementById('console')
@@ -266,8 +264,9 @@ class acrylic {
     }
     static initTheme() {
         const nowMode = localStorage.getItem('theme')
-        if (nowMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark')
-        if (nowMode === 'light') document.documentElement.setAttribute('data-theme', 'light')
+        if(nowMode){
+            document.documentElement.setAttribute('data-theme', nowMode)
+        }
     }
     static reflashEssayWaterFall() {
         if (document.getElementById('waterfall')) {
@@ -295,6 +294,7 @@ const allPage = () => {
     }
     setTimeState()
     chageTimeFormate()
+    acrylic.initTheme()
     acrylic.addRuntime()
 }
 
