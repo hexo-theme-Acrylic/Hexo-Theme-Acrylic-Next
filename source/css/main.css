@@ -198,53 +198,8 @@ template {
   -webkit-font-smoothing: antialiased;
 }
 
-.card-announcement-animation {
-  color: red;
-  animation: 0.8s linear 0s infinite normal none running announ_animation;
-}
-
-.scroll-down-effects {
-  animation: 1.5s ease 0s infinite normal none running scroll-down-effect;
-}
-
 .reward-main {
   animation: 0.3s ease 0.1s 1 normal both running donate_effcet;
-}
-
-@-webkit-keyframes scroll-down-effect {
-  0% {
-    top: 0px;
-    opacity: 0.4;
-  }
-
-  50% {
-    top: -16px;
-    opacity: 1;
-    filter: none;
-  }
-
-  100% {
-    top: 0px;
-    opacity: 0.4;
-  }
-}
-
-@keyframes scroll-down-effect {
-  0% {
-    top: 0px;
-    opacity: 0.4;
-  }
-
-  50% {
-    top: -16px;
-    opacity: 1;
-    filter: none;
-  }
-
-  100% {
-    top: 0px;
-    opacity: 0.4;
-  }
 }
 
 @-webkit-keyframes header-effect {
@@ -2262,11 +2217,6 @@ blockquote footer cite::before {
   width: 100%;
 }
 
-#page-header #scroll-down .scroll-down-effects, #page-header #site-subtitle, #page-header #site-title {
-  text-align: center;
-  line-height: 1.5;
-}
-
 #page-header #site-title {
   margin: 0px;
   color: var(--heo-white);
@@ -2317,13 +2267,6 @@ blockquote footer cite::before {
   width: 100%;
   cursor: pointer;
   display: none;
-}
-
-#page-header #scroll-down .scroll-down-effects {
-  position: relative;
-  width: 100%;
-  color: var(--light-grey);
-  font-size: 30px;
 }
 
 #page-header.not-home-page {
@@ -8711,7 +8654,6 @@ span.recent-post-top-text {
   box-shadow: var(--heo-shadow-border);
   background: var(--heo-card-bg);
   border: var(--style-border);
-  transition: 0.3s;
   border-radius: 12px;
   transition: 0.3s;
   position: relative;
@@ -9014,11 +8956,6 @@ a.article-meta__categories:hover {
 
 #aside-content #card-toc .toc-content .toc-link:not(.active) span:hover {
   color: var(--heo-lighttext);
-}
-
-/* 目录卡片边距 */
-#card-toc {
-  padding: 0.5rem 0.5rem !important;
 }
 
 /* 不显示分割线 */
@@ -10714,10 +10651,6 @@ blockquote p {
   border-radius: 12px;
   margin-bottom: 0.5rem;
   object-fit: cover;
-}
-
-#article-container img.error {
-  content: url("/img/hello.jpg");
 }
 
 /* 文章视频 */
@@ -13643,12 +13576,11 @@ figure.gallery-group:hover .gallery-group-name::after {
 
 #bber .bber-content-img img {
   object-fit: cover;
-  max-height: 100%;
+  max-height: 100px;
   border-radius: 8px;
 }
 
 #bber .bber-content-img {
-  height: 100px;
   margin-top: 0.2rem;
   margin-bottom: 0.3rem;
   margin-left: 0;

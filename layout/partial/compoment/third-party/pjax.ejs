@@ -3,6 +3,7 @@
     'title',
     '#body-wrap',
     '.site-config',
+    'meta[name="description"]'
   ]
   
   const pjax = new Pjax({
@@ -11,6 +12,31 @@
     cacheBust: false,
     analytics: false,
     scrollRestoration: false
+  })
+  
+  window.addEventListener('DOMContentLoaded', () => {
+    <% if(theme.lazyload.enable){ -%>
+      lazyLoadInstance.update()
+    <% } %>  
+    <% if(theme.loading.enable){ -%>
+      preloader.endLoading() 
+    <% } %>   
+  })
+  document.addEventListener('pjax:send', () => {
+    <% if(theme.loading.enable){ -%> 
+      preloader.initLoading() 
+    <% } %>
+  })
+  document.addEventListener('pjax:complete', () => { 
+    <% if(theme.loading.enable){ -%>
+      preloader.endLoading()
+      <% if(theme.loading.pace){ -%>
+        preloader.removePaceDone()
+      <% } %> 
+    <% } %>  
+    <% if(theme.lazyload.enable){ -%>
+      lazyLoadInstance.update()
+    <% } %>   
   })
 
   document.addEventListener('pjax:error', (e) => {

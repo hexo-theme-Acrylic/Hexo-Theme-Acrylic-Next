@@ -1,10 +1,7 @@
 <script type="text/javascript" src="/js/utils.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 <%- partial('partial/compoment/inject/body', {cache: true}) %>
-<%- partial('partial/compoment/third-party/pjax') %>
-<% if(theme.footer.ramdonlink){ %>
-    <%- randomLinks() %>
-<% } %>
+<%- partial('partial/compoment/third-party/pjax', {cache: true}) %>
 <% if (theme.extends.body) for (const i of theme.extends.body){ %>
     <%- i %>
 <% } %>

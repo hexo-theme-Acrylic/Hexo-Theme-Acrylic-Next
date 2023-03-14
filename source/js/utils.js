@@ -101,5 +101,34 @@ const utils = {
   timeDiff: (timeObj, today) => {
     var timeDiff = today.getTime() - timeObj.getTime();
     return Math.floor(timeDiff / (1000 * 3600 * 24));
-  }
+  },
+
+  scrollToDest: (pos, time = 500) => {
+    const currentPos = window.pageYOffset
+    const isNavFixed = document.getElementById('page-header').classList.contains('nav-fixed')
+    if (currentPos > pos || isNavFixed) pos = pos - 70
+    if ('scrollBehavior' in document.documentElement.style) {
+      window.scrollTo({
+        top: pos,
+        behavior: 'smooth'
+      })
+      return
+    }
+    let start = null
+    pos =+ pos
+    window.requestAnimationFrame(function step (currentTime) {
+      start = !start ? currentTime : start
+      const progress = currentTime - start
+      if (currentPos < pos) {
+        window.scrollTo(0, ((pos - currentPos) * progress / time) + currentPos)
+      } else {
+        window.scrollTo(0, currentPos - ((currentPos - pos) * progress / time))
+      }
+      if (progress < time) {
+        window.requestAnimationFrame(step)
+      } else {
+        window.scrollTo(0, pos)
+      }
+    })
+  },
 }

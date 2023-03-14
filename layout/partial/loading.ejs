@@ -1,4 +1,4 @@
-<div id="loading-box" onclick="preloader.endLoading();" class="" style="zoom: 1;">
+<div id="loading-box" onclick="preloader.endLoading();" class style="zoom: 1;">
     <div class="loading-bg">
         <img class="loading-img nolazyload" alt="loading image"
             src="<%= theme.site.icon %>">
@@ -16,7 +16,4 @@
             document.getElementById('body').classList = 'pace-done'
         }
     }
-    window.addEventListener('load',()=> { preloader.endLoading() })
-    document.addEventListener('pjax:send', () => { preloader.initLoading() })
-    document.addEventListener('pjax:complete', () => { preloader.endLoading();preloader.removePaceDone() })
 </script>
