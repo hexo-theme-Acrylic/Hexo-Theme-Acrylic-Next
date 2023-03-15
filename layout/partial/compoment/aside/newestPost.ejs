@@ -12,7 +12,7 @@
                 <a class="thumbnail" href="<%= url_for(post.path) %>" title="<%= post.title %>">
                     <img
                         alt="<%= post.title %>"
-                        src="<%= post.cover %>" loading="lazy">
+                        src="<%= post.cover %>">
                 </a>
                 <div class="content">
                     <% post.categories.data.forEach(categories => { %>
