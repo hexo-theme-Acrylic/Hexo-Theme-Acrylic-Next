@@ -46,52 +46,53 @@ nav:
   right: # @todo 允许用户自定义
     travellings: true   #开往
     random: true        #
-    search: false       #刷新按钮
+    search: false       #搜索按钮
     console: true       #控制台
 
 # heo式顶部一大坨
 hometop:
   bbtime: false
   banner:
+    enable: true
     title: 分享设计<br>与科技生活
     url: blog.zhheo.com
     icon:
-      AE:
-        img: /img/icon/ae.png
-        color: '#989bf8'
-      Sketch:
-        img: /img/icon/Sketch.png
-        color: '#ffffff'
-      Docker:
-        img: /img/icon/docker.png
-        color: '#57b6e6'
-      ps:
-        img: /img/icon/ps.png
-        color: '#4082c3'
-      FinalCutPro:
-        img: /img/icon/FinalCutPro.png
-        color: '#ffffff'
-      Python:
-        img: /img/icon/Python.png
-        color: '#ffffff'
-      Swift:
-        img: /img/icon/Swift.png
-        color: '#eb6840'
-      Principle:
-        img: /img/icon/Principle.png
-        color: '#8f55ba'
-      illustrator:
-        img: /img/icon/illustrator.png
-        color: '#f29e39'
-      CSS3:
-        img: /img/icon/CSS3.png
-        color: '#2c51db'
-      JS:
-        img: /img/icon/JS.png
-        color: '#f7cb4f'
-      Git:
-        img: /img/icon/git.png
-        color: '#df5b40'
+      # AE:
+      #   img: /img/icon/ae.png
+      #   color: '#989bf8'
+      # Sketch:
+      #   img: /img/icon/Sketch.png
+      #   color: '#ffffff'
+      # Docker:
+      #   img: /img/icon/docker.png
+      #   color: '#57b6e6'
+      # ps:
+      #   img: /img/icon/ps.png
+      #   color: '#4082c3'
+      # FinalCutPro:
+      #   img: /img/icon/FinalCutPro.png
+      #   color: '#ffffff'
+      # Python:
+      #   img: /img/icon/Python.png
+      #   color: '#ffffff'
+      # Swift:
+      #   img: /img/icon/Swift.png
+      #   color: '#eb6840'
+      # Principle:
+      #   img: /img/icon/Principle.png
+      #   color: '#8f55ba'
+      # illustrator:
+      #   img: /img/icon/illustrator.png
+      #   color: '#f29e39'
+      # CSS3:
+      #   img: /img/icon/CSS3.png
+      #   color: '#2c51db'
+      # JS:
+      #   img: /img/icon/JS.png
+      #   color: '#f7cb4f'
+      # Git:
+      #   img: /img/icon/git.png
+      #   color: '#df5b40'
 
   categoryGroup:
     G1:
@@ -136,6 +137,7 @@ aside:
 footer:
   information:
     left:
+<<<<<<< HEAD
       Github:
         icon: fa-brands fa-github
         url: /
@@ -159,6 +161,39 @@ footer:
       主题文档: https://next-docs.acrylic.org.cn/
       Github: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next
       Heo: https://blog.zhheo.com/
+=======
+      # Github:
+      #   icon: fa-brands fa-github
+      #   url: /
+      # Mail:
+      #   icon: fa-solid fa-envelope
+      #   url: /
+    right:
+      # 网易云:
+      #   icon: fa-solid fa-music
+      #   url: /
+      # bilibili:
+      #   icon: fa-brands fa-bilibili
+      #   url: /
+
+  group:
+    # 导航:
+    #   文章归档: /archives/
+    #   文章分类: /categories/
+    #   文章标签: /tags/
+    #   友链: /link/
+    # 服务:
+    #   51la统计: https://51.la/
+    #   百度统计: https://tongji.baidu.com/
+    #   TianliCDN: https://ql.tianli0.top/
+    # Acrylic:
+    #   主题官网: https://acrylic.zhheo.com/
+    #   Github: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic
+    #   Heo: https://blog.zhheo.com/
+    # 推荐友链:
+    #   Heo: https://blog.zhheo.com/
+    #   Akilar: https://akilar.top
+>>>>>>> cabefe861a2850c43eb915abbceb2d741a16720d
 
   randomlink: false
 
