@@ -15,6 +15,13 @@
 <div class="tags-group-all nowrapMove">
     <div class="tags-group-wrapper">
         <% const data = site.data.links.banner %>
+        <% if (data.length % 2 !== 0) { %>
+            <% data.push({
+                name: "Acrylic",
+                link: "https://next.acrylic.org.cn",
+                avatar: "/img/avatar.webp"
+            }) %>
+        <% } %>
         <% for(let i = 1;i <= 2; i++){ %>
            <% data.forEach((item,index) => { %>
                 <% if(index % 2 == 0){ %>
