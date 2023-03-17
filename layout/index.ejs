@@ -2,7 +2,9 @@
     <% if(theme.hometop.bbtime){ %>
         <%- partial('partial/compoment/hometop/bbTimeList') %>
     <% } %>
-    <%- partial('partial/hometop') %>
+    <% if(theme.hometop.banner.enable){ %>
+        <%- partial('partial/hometop') %>
+    <% } %>
 </div>
 <main class="layout" id="content-inner">
     <%- partial('page/index') %>
