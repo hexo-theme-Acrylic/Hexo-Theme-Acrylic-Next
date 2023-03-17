@@ -13921,7 +13921,7 @@ a.bb-link-info:hover {
   width: 100%;
   max-width: 1200px;
   margin: 1rem auto;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin-bottom: 3rem;
   padding: 0 1rem;
