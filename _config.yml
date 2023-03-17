@@ -121,7 +121,7 @@ aside:
     information:
       Github:
         icon: fa-brands fa-github
-        url: https://github.com/rootlexblog
+        url: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next
       Mail:
         icon: fa-solid fa-envelope
         url: mailto:a@nalex.top
@@ -139,21 +139,15 @@ footer:
       Github:
         icon: fa-brands fa-github
         url: /
+    right:
       Mail:
         icon: fa-solid fa-envelope
-        url: /
-    right:
-      网易云:
-        icon: fa-solid fa-music
-        url: /
-      bilibili:
-        icon: fa-brands fa-bilibili
         url: /
 
   group:
     导航:
       文章归档: /archives/
-      文章分类: /categories/
+      文章分类: /categories/ 
       文章标签: /tags/
       友链: /link/
     服务:
@@ -161,12 +155,10 @@ footer:
       百度统计: https://tongji.baidu.com/
       TianliCDN: https://ql.tianli0.top/
     Acrylic:
-      主题官网: https://acrylic.zhheo.com/
-      Github: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic
+      主题官网: /
+      主题文档: https://next-docs.acrylic.org.cn/
+      Github: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next
       Heo: https://blog.zhheo.com/
-    推荐友链:
-      Heo: https://blog.zhheo.com/
-      Akilar: https://akilar.top
 
   randomlink: false
 
@@ -195,6 +187,9 @@ lazyload:
   placeholder: /img/acrylic.png
   errorimg: /img/acrylic.png
 
+# 图片灯箱
+lightbox: true
+
 # 加载动画
 loading:
   enable: false
@@ -209,6 +204,8 @@ comment:
   enable: false
   twikoo:
     envId:
+    region: ap-shanghai
+    path: window.location.pathname
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # 插入额外代码 如：统计，广告等

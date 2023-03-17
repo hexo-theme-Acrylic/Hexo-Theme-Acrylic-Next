@@ -1,0 +1,14 @@
+<script>
+    function initComment(){
+        var options = Object.assign(
+            <%- JSON.stringify(theme.comment.twikoo || {}) %>,
+            {
+                el: '#comment',
+                onCommentLoaded: function() {
+                    GOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #twikoo .tk-content img:not(.tk-owo-emotion)') 
+                }
+            }
+        )
+        twikoo.init(options) 
+    }
+</script>

@@ -1,16 +1,5 @@
-<% if(is_post()){ %>
-    <div class="card-widget" id="card-toc">
-        <div class="item-headline">
-            <i class="fas fa-bars"></i>
-            <span>文章目录</span>
-        </div>
-        <div class="toc-content" id="toc-content">
-            <%- toc(page.content, {
-                list_number: false,
-            }) %>
-        </div>
-    </div>
-    <%- partial('partial/compoment/aside/newestPost', {cache: true}) %>
+<% if((is_post() || is_page()) && (page.toc || true)){ %>
+    <%- partial('partial/compoment/aside/asideToc') %>
 <% }else{ %>
     <% if(is_home()){ %>
        <%- partial('partial/compoment/aside/newestPost', {cache: true}) %> 

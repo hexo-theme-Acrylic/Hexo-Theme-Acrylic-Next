@@ -16,4 +16,7 @@
             document.getElementById('body').classList = 'pace-done'
         }
     }
+    window.addEventListener('load',()=> { preloader.endLoading() })
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
 </script>

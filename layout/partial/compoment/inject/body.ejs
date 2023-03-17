@@ -2,11 +2,11 @@
 <%- js(cdn.pjaxjs) %>
 <% if(theme.lazyload.enable){ %>
     <%- js(cdn.lazyloadjs) %>
-    <%- partial('partial/compoment/third-party/lazyload') %>
 <% } %>
 <%- js(cdn.snackbarjs) %>
-<%- js(cdn.viewimagejs) %>
-<%- js(cdn.waterfalljs) %>
+<% if(theme.lightbox){ %>
+    <%- js(cdn.viewimagejs) %>
+<% } %>
 <% if(theme.hometop.bbtime){ %>
     <%- css(cdn.swipercss) %>
     <%- js(cdn.swiperjs) %>
@@ -14,3 +14,15 @@
 <% if(theme.footer.randomlink){ %>
     <%- randomLinks() %>
 <% } %>
+<div id="js-pjax">
+    <% if(page.type === 'says'){ %>
+        <%- js(cdn.waterfalljs) %>
+        <script>
+            window.addEventListener('resize', utils.throttle(function () {
+                if (document.getElementById('waterfall')) {
+                    acrylic.reflashEssayWaterFall();
+                }
+            }), 500);
+        </script>
+    <% } %> 
+</div>
