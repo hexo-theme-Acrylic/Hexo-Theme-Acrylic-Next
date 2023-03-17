@@ -46,7 +46,7 @@ nav:
   right: # @todo 允许用户自定义
     travellings: true   #开往
     random: true        #
-    search: false       #刷新按钮
+    search: false       #搜索按钮
     console: true       #控制台
 
 # heo式顶部一大坨
@@ -136,37 +136,37 @@ aside:
 footer:
   information:
     left:
-      Github:
-        icon: fa-brands fa-github
-        url: /
-      Mail:
-        icon: fa-solid fa-envelope
-        url: /
+      # Github:
+      #   icon: fa-brands fa-github
+      #   url: /
+      # Mail:
+      #   icon: fa-solid fa-envelope
+      #   url: /
     right:
-      网易云:
-        icon: fa-solid fa-music
-        url: /
-      bilibili:
-        icon: fa-brands fa-bilibili
-        url: /
+      # 网易云:
+      #   icon: fa-solid fa-music
+      #   url: /
+      # bilibili:
+      #   icon: fa-brands fa-bilibili
+      #   url: /
 
   group:
-    导航:
-      文章归档: /archives/
-      文章分类: /categories/
-      文章标签: /tags/
-      友链: /link/
-    服务:
-      51la统计: https://51.la/
-      百度统计: https://tongji.baidu.com/
-      TianliCDN: https://ql.tianli0.top/
-    Acrylic:
-      主题官网: https://acrylic.zhheo.com/
-      Github: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic
-      Heo: https://blog.zhheo.com/
-    推荐友链:
-      Heo: https://blog.zhheo.com/
-      Akilar: https://akilar.top
+    # 导航:
+    #   文章归档: /archives/
+    #   文章分类: /categories/
+    #   文章标签: /tags/
+    #   友链: /link/
+    # 服务:
+    #   51la统计: https://51.la/
+    #   百度统计: https://tongji.baidu.com/
+    #   TianliCDN: https://ql.tianli0.top/
+    # Acrylic:
+    #   主题官网: https://acrylic.zhheo.com/
+    #   Github: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic
+    #   Heo: https://blog.zhheo.com/
+    # 推荐友链:
+    #   Heo: https://blog.zhheo.com/
+    #   Akilar: https://akilar.top
 
   randomlink: false
 
