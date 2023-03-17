@@ -137,31 +137,6 @@ aside:
 footer:
   information:
     left:
-<<<<<<< HEAD
-      Github:
-        icon: fa-brands fa-github
-        url: /
-    right:
-      Mail:
-        icon: fa-solid fa-envelope
-        url: /
-
-  group:
-    导航:
-      文章归档: /archives/
-      文章分类: /categories/ 
-      文章标签: /tags/
-      友链: /link/
-    服务:
-      51la统计: https://51.la/
-      百度统计: https://tongji.baidu.com/
-      TianliCDN: https://ql.tianli0.top/
-    Acrylic:
-      主题官网: /
-      主题文档: https://next-docs.acrylic.org.cn/
-      Github: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next
-      Heo: https://blog.zhheo.com/
-=======
       # Github:
       #   icon: fa-brands fa-github
       #   url: /
@@ -193,7 +168,6 @@ footer:
     # 推荐友链:
     #   Heo: https://blog.zhheo.com/
     #   Akilar: https://akilar.top
->>>>>>> cabefe861a2850c43eb915abbceb2d741a16720d
 
   randomlink: false
 
