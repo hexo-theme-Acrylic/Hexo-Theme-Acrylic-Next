@@ -15,25 +15,23 @@
 <div class="tags-group-all nowrapMove">
     <div class="tags-group-wrapper">
         <% const data = site.data.links.banner %>
-        <% if (data.length % 2 !== 0) { %>
-            <% data.push({
-                name: "Acrylic",
-                link: "https://next.acrylic.org.cn",
-                avatar: "/img/avatar.webp"
-            }) %>
+        <% let count = 0 %>
+        <% for(let i = 1; i <= 2; i++) { %>
+            <div class="tags-group-icon-pair">
+                <% for(let j = 0; j < 2; j++) { %>
+                    <% if(count < data.length) { %>
+                        <% const item = data[count] %>
+                        <a class="tags-group-icon" href="<%= url_for(item.link) %>" title="<%= item.name %>">
+                            <img src="<%= item.avatar %>">
+                        </a>
+                        <% count++ %>
+                    <% } %>
+                <% } %>
+                <% if(count % 2 === 1 && count < data.length) { %>
+                    <div class="tags-group-icon"></div>
+                <% } %>
+            </div>
         <% } %>
-        <% for(let i = 1;i <= 2; i++){ %>
-           <% data.forEach((item,index) => { %>
-                <% if(index % 2 == 0){ %>
-                    <div class="tags-group-icon-pair">
-                <% } %>    
-                    <a class="tags-group-icon" href="<%= url_for(item.link) %>" title="<%= item.name %>">
-                        <img src="<%= item.avatar %>">
-                    </a>
-                <% if(index % 2 == 1){ %>
-                    </div>
-                <% } %>    
-            <% }); %> 
-        <% } %>    
     </div>
 </div>
+
