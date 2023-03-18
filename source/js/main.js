@@ -310,7 +310,6 @@ window.refreshFn = () => {
     sidebarFn()
     setTimeState()
     chageTimeFormate()
-    acrylic.initTheme()
     acrylic.addRuntime()
     GOBALCONFIG.lazyload.enable && acrylic.lazyloadImg()
     GOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #bber .bber-content-img img')
@@ -324,6 +323,7 @@ window.refreshFn = () => {
     GOBALCONFIG.randomlinks && randomLinksList()
 }
 
+acrylic.initTheme()
 document.addEventListener('DOMContentLoaded', function () {
     refreshFn()
 })
