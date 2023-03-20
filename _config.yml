@@ -57,42 +57,42 @@ hometop:
     title: 分享设计<br>与科技生活
     url: blog.zhheo.com
     icon:
-      # AE:
-      #   img: /img/icon/ae.png
-      #   color: '#989bf8'
-      # Sketch:
-      #   img: /img/icon/Sketch.png
-      #   color: '#ffffff'
-      # Docker:
-      #   img: /img/icon/docker.png
-      #   color: '#57b6e6'
-      # ps:
-      #   img: /img/icon/ps.png
-      #   color: '#4082c3'
-      # FinalCutPro:
-      #   img: /img/icon/FinalCutPro.png
-      #   color: '#ffffff'
-      # Python:
-      #   img: /img/icon/Python.png
-      #   color: '#ffffff'
-      # Swift:
-      #   img: /img/icon/Swift.png
-      #   color: '#eb6840'
-      # Principle:
-      #   img: /img/icon/Principle.png
-      #   color: '#8f55ba'
-      # illustrator:
-      #   img: /img/icon/illustrator.png
-      #   color: '#f29e39'
-      # CSS3:
-      #   img: /img/icon/CSS3.png
-      #   color: '#2c51db'
-      # JS:
-      #   img: /img/icon/JS.png
-      #   color: '#f7cb4f'
-      # Git:
-      #   img: /img/icon/git.png
-      #   color: '#df5b40'
+      AE:
+        img: /img/icon/ae.png
+        color: '#989bf8'
+      Sketch:
+        img: /img/icon/Sketch.png
+        color: '#ffffff'
+      Docker:
+        img: /img/icon/docker.png
+        color: '#57b6e6'
+      ps:
+        img: /img/icon/ps.png
+        color: '#4082c3'
+      FinalCutPro:
+        img: /img/icon/FinalCutPro.png
+        color: '#ffffff'
+      Python:
+        img: /img/icon/Python.png
+        color: '#ffffff'
+      Swift:
+        img: /img/icon/Swift.png
+        color: '#eb6840'
+      Principle:
+        img: /img/icon/Principle.png
+        color: '#8f55ba'
+      illustrator:
+        img: /img/icon/illustrator.png
+        color: '#f29e39'
+      CSS3:
+        img: /img/icon/CSS3.png
+        color: '#2c51db'
+      JS:
+        img: /img/icon/JS.png
+        color: '#f7cb4f'
+      Git:
+        img: /img/icon/git.png
+        color: '#df5b40'
 
   categoryGroup:
     G1:
@@ -213,7 +213,7 @@ comment:
   enable: false
   twikoo:
     envId:
-    region: ap-shanghai
+    # region: ap-shanghai
     path: window.location.pathname
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
