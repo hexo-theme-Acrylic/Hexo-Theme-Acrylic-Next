@@ -1,6 +1,5 @@
 hexo.extend.helper.register('export_config', function() {
     const { config, theme } = this, lang = hexo.theme.i18n.get(config.language || 'zh-CN');
-    // console.log(lang)
     const exportGobalConfig = {
         root: config.root,
         runtime: theme.aside.analytics.runtime,
@@ -8,7 +7,6 @@ hexo.extend.helper.register('export_config', function() {
             enable: theme.lazyload.enable,
             error: theme.lazyload.errorimg
         },
-        // loading: theme.loading.enable,
         lightbox: theme.lightbox,
         randomlinks: theme.footer.randomlink,
         lang: {

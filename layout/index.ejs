@@ -7,6 +7,14 @@
     <% } %>
 </div>
 <main class="layout" id="content-inner">
-    <%- partial('page/index') %>
+    <div class="recent-posts" id="recent-posts">
+        <div id="category-bar">
+            <%- partial('partial/compoment/home/homeCategoryBar', {select:false}) %>
+        </div>
+        <% for (const item of page.posts.sort('-date').data){ %>
+            <%- partial('partial/compoment/home/postList', {post: item}) %>
+        <% } %>
+        <%- partial('partial/compoment/mixins/pagination') %>
+    </div>
     <%- partial('partial/compoment/aside/aside') %> 
 </main>     
