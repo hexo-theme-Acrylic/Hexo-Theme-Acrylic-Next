@@ -43,7 +43,7 @@ hexo.extend.helper.register('export_config', function() {
         is_page: this.is_page(),
         comment: (pagetype && theme.comment.enable && this.page.comment !== false) ? true : false,
         page: this.is_page() && (this.page.type || 'default'),
-        toc: (pagetype && this.page.toc !== false && this.page.aside) ? true : false
+        toc: (pagetype && this.page.toc !== false && this.page.aside !==false ) ? true : false
     }
     return `<script>var GOBALCONFIG = ${JSON.stringify(exportGobalConfig)};</script><script id="site-config">var PAGECONFIG = ${JSON.stringify(exportPageConfig)};</script>`;
 })
