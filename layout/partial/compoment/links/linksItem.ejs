@@ -2,8 +2,7 @@
     <% data.forEach(item =>{ %>
         <div class="flink-list-item">
             <a class="cf-friends-link" href="<%= url_for(item.link) %>" title="<%= item.name %>">
-                <img class="flink-avatar cf-friends-avatar" alt="<%= item.name %>" 
-                src="<%= item.avatar %>">
+                <img class="flink-avatar cf-friends-avatar" alt="<%= item.name %>" src="<%= item.avatar %>">
                 <div class="img-alt is-center"><%= item.name %></div>
                 <div class="flink-item-info">
                     <span class="flink-item-name cf-friends-name"><%= item.name %></span>

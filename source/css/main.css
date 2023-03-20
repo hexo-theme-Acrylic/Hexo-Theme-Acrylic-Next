@@ -1367,10 +1367,6 @@ blockquote footer cite::before {
   color: rgb(255, 87, 34);
 }
 
-#recent-posts>.recent-post-item:not(:first-child) {
-  margin-top: 1rem;
-}
-
 #recent-posts>.recent-post-item {
   display: flex;
   -webkit-box-orient: horizontal;
@@ -8646,8 +8642,6 @@ span.recent-post-top-text {
 }
 
 #recent-posts>.recent-post-item:not(:first-child) {
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
   position: relative;
   overflow: hidden;
 }
