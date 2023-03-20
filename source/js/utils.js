@@ -131,4 +131,27 @@ const utils = {
       }
     })
   },
+  
+  initThemeColor: () => {
+    const currentTop = window.scrollY || document.documentElement.scrollTop;
+    const themeColor = currentTop > 0 ?
+      getComputedStyle(document.documentElement).getPropertyValue('--heo-card-bg') :
+      (utils.is_Post() ?
+        getComputedStyle(document.documentElement).getPropertyValue('--heo-main') :
+        getComputedStyle(document.documentElement).getPropertyValue('--heo-background'));
+    utils.changeThemeColor(themeColor);
+  },
+
+  is_Post: () => {
+      const url = window.location.href;
+      return url.indexOf('/p/') >= 0;
+    },
+
+  changeThemeColor: (color) => {
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) {
+          meta.setAttribute('content', color);
+        }
+      },
+
 }

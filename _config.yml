@@ -216,6 +216,9 @@ comment:
     # region: ap-shanghai
     path: window.location.pathname
 
+#文章cover取色
+covercolor: true
+
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # 插入额外代码 如：统计，广告等
 extends: 
