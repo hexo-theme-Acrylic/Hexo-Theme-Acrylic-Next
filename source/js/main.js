@@ -109,7 +109,7 @@ const setTimeState = () => {
 };
 
 const chageTimeFormate = () => {
-    const timeElements = document.getElementsByTagName("time"), lang = GOBALCONFIG.lang.sayhello
+    const timeElements = document.getElementsByTagName("time"), lang = GOBALCONFIG.lang.time
     for (var i = 0; i < timeElements.length; i++) {
         const datetime = timeElements[i].getAttribute("datetime"), timeObj = new Date(datetime), daysDiff = utils.timeDiff(timeObj, new Date())
         var timeString;

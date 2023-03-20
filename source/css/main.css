@@ -13855,7 +13855,7 @@ a.bb-link-info:hover {
   margin: 0.38rem 0;
   color: var(--heo-fontcolor);
   margin-right: auto;
-  overflow: hidden;
+  overflow: visible;
   white-space: nowrap;
   text-overflow: ellipsis;
   max-width: 120px;

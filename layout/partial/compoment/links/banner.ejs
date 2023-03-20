@@ -14,24 +14,19 @@
 </div>
 <div class="tags-group-all nowrapMove">
     <div class="tags-group-wrapper">
-        <% const data = site.data.links.banner %>
-        <% let count = 0 %>
-        <% for(let i = 1; i <= 2; i++) { %>
-            <div class="tags-group-icon-pair">
-                <% for(let j = 0; j < 2; j++) { %>
-                    <% if(count < data.length) { %>
-                        <% const item = data[count] %>
-                        <a class="tags-group-icon" href="<%= url_for(item.link) %>" title="<%= item.name %>">
-                            <img src="<%= item.avatar %>">
-                        </a>
-                        <% count++ %>
-                    <% } %>
-                <% } %>
-                <% if(count % 2 === 1 && count < data.length) { %>
-                    <div class="tags-group-icon"></div>
-                <% } %>
-            </div>
-        <% } %>
+      <% const data = site.data.links.banner %>
+      <% for (let i = 0; i < Math.ceil(data.length / 2); i++) { %>
+        <div class="tags-group-icon-pair">
+          <% for (let j = i * 2; j < Math.min(data.length, i * 2 + 2); j++) { %>
+            <a class="tags-group-icon" href="<%= url_for(data[j].link) %>" title="<%= data[j].name %>">
+              <img src="<%= data[j].avatar %>" title="<%= data[j].name %>">
+            </a>
+          <% } %>
+        </div>
+      <% } %>
     </div>
-</div>
+  </div>
+  
+  
+  
 
