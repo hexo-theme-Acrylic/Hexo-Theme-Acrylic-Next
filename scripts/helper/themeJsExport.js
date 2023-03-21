@@ -34,7 +34,7 @@ hexo.extend.helper.register('export_config', function() {
                 goodnight: lang['sayhello.goodnight'],
                 iam: lang['sayhello.iam'],
             },
-            covercolor: theme.covercolor,
+            covercolor: theme.post.covercolor,
         }
     }
     const pagetype = this.is_post() || this.is_page()

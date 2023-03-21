@@ -183,6 +183,7 @@ post:
     wechat:
     alipay:
     url:
+  covercolor: true  #文章cover取色
 
 # 404
 errorpage:
@@ -216,8 +217,6 @@ comment:
     # region: ap-shanghai
     path: window.location.pathname
 
-#文章cover取色
-covercolor: true
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # 插入额外代码 如：统计，广告等
@@ -242,3 +241,4 @@ cdn:
     viewimagejs: /lib/view-image.min.js
     waterfalljs: /lib/waterfall.min.js
     swiperjs: /lib/swiper.min.js
+    covercolorjs: /js/extend/covercolor.js
