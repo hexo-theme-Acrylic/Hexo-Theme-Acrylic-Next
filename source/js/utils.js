@@ -131,22 +131,4 @@ const utils = {
       }
     })
   },
-  
-  initThemeColor: () => {
-    const currentTop = window.scrollY || document.documentElement.scrollTop;
-    const themeColor = currentTop > 0 ?
-      getComputedStyle(document.documentElement).getPropertyValue('--heo-card-bg') :
-      (PAGECONFIG.is_post ?
-        getComputedStyle(document.documentElement).getPropertyValue('--heo-main') :
-        getComputedStyle(document.documentElement).getPropertyValue('--heo-background'));
-    utils.changeThemeColor(themeColor);
-  },
-
-  changeThemeColor: (color) => {
-        const meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) {
-          meta.setAttribute('content', color);
-        }
-      },
-
 }
