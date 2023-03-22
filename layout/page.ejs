@@ -20,7 +20,7 @@
                 <%- partial('page/page') %>
             <% break; 
         } %> 
-        <% if(page.comment !== false && theme.comment.enable){ %>
+        <% if(page.comment){ %>
             <%- partial('partial/compoment/third-party/comments/comment') %>
         <% } %>    
     </div>

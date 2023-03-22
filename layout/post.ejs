@@ -27,7 +27,7 @@
         </div>
         <%- partial('partial/compoment/post/copyright') %>
         <%- partial('partial/compoment/post/postNav') %>
-        <% if(page.comments !== false && theme.comment.enable){ %>
+        <% if(page.comment){ %>
             <%- partial('partial/compoment/third-party/comments/comment') %>
         <% } %>    
     </div>

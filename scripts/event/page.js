@@ -1,4 +1,5 @@
 hexo.extend.generator.register('404', function (locals) {
+  if(!this.theme.config.page.error)return
   return {
     path: '404.html',
     layout: ['404'],
@@ -12,26 +13,28 @@ hexo.extend.generator.register('404', function (locals) {
 
 // generate tags Page
 hexo.extend.generator.register('tags', function(locals) {
-    return {
-      path: 'tags/index.html',
-      layout: ['page'],
-      data: {
-        title: '标签',
-        type: 'tags',
-        comment: false
-      }
-    };
+  if(!this.theme.config.page.tags)return
+  return {
+    path: 'tags/index.html',
+    layout: ['page'],
+    data: {
+      title: '标签',
+      type: 'tags',
+      comment: false
+    }
+  };
 });
 
 // generate categories Page
 hexo.extend.generator.register('categories', function(locals) {
-    return {
-      path: 'categories/index.html',
-      layout: ['page'],
-      data: {
-        title: '分类',
-        type: 'categories',
-        comment: false
-      }
-    };
+  if(!this.theme.config.page.categories)return
+  return {
+    path: 'categories/index.html',
+    layout: ['page'],
+    data: {
+      title: '分类',
+      type: 'categories',
+      comment: false
+    }
+  };
 });
