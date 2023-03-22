@@ -274,8 +274,9 @@ class acrylic {
         }
     }
     static addRuntime() {
-        if (GOBALCONFIG.runtime) {
-            document.getElementById('runtimeshow').innerText = utils.timeDiff(new Date(GOBALCONFIG.runtime), new Date()) + GOBALCONFIG.lang.time.runtime
+        const el = document.getElementById('runtimeshow')
+        if (el && GOBALCONFIG.runtime) {
+            el.innerText = utils.timeDiff(new Date(GOBALCONFIG.runtime), new Date()) + GOBALCONFIG.lang.time.runtime
         }
     }
     static lazyloadImg(){
