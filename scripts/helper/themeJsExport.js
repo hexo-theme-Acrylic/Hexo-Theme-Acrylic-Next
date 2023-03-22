@@ -2,7 +2,7 @@ hexo.extend.helper.register('export_config', function() {
     const { config, theme } = this, lang = hexo.theme.i18n.get(config.language || 'zh-CN');
     const exportGobalConfig = {
         root: config.root,
-        runtime: theme.aside.analytics.runtime,
+        runtime: theme.aside.siteinfo.runtimeenable ? theme.aside.siteinfo.runtime : false,
         lazyload: {
             enable: theme.lazyload.enable,
             error: theme.lazyload.errorimg

@@ -155,7 +155,11 @@ aside:
     page: false
 
   # 建站时间
-  analytics:
+  siteinfo:
+    postcount: true
+    wordcount: false
+    updatetime: false
+    runtimeenable: true
     runtime: '2021-12-12 00:00:00'
 
 # 页脚
