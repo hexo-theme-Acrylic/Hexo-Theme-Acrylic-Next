@@ -1,22 +1,22 @@
 <div class="webinfo">
     <% if(theme.aside.siteinfo.postcount){ %>
-    <div class="webinfo-item">
-        <div class="webinfo-item-title">
-            <i class="item-icon fas fa-file-alt"></i>
-            <div class="item-name">文章总数 :</div>
+        <div class="webinfo-item">
+            <div class="webinfo-item-title">
+                <i class="item-icon fas fa-file-alt"></i>
+                <div class="item-name">文章总数 :</div>
+            </div>
+            <div class="item-count"><%= site.posts.length %></div>
         </div>
-        <div class="item-count"><%= site.posts.length %></div>
-    </div>
     <% } %>
     <% if(theme.aside.siteinfo.runtimeenable){ %>
-    <div class="webinfo-item">
-        <div class="webinfo-item-title">
-            <i class="item-icon fas fa-stopwatch"></i>
-            <div class="item-name">建站天数 :</div>
+        <div class="webinfo-item">
+            <div class="webinfo-item-title">
+                <i class="item-icon fas fa-stopwatch"></i>
+                <div class="item-name">建站天数 :</div>
+            </div>
+            <div class="item-count" id="runtimeshow">
+            </div>
         </div>
-        <div class="item-count" id="runtimeshow">
-        </div>
-    </div>
     <% } %>
     <% if(theme.aside.siteinfo.updatetime){ %>
         <div class="webinfo-item">

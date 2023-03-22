@@ -119,13 +119,13 @@ hometop:
 aside:
   home:
     noSticky: ['about', 'flip']
-    Sticky: ['newestPost', 'AllInfo']
+    Sticky: ['newestPost', 'allInfo']
   post:
     noSticky: ['about']
     Sticky: ['newestPost']   
   page:
     noSticky: ['about', 'flip']
-    Sticky: ['newestPost', 'AllInfo']
+    Sticky: ['newestPost', 'allInfo']
 
   card:
     content: 这有关于<b>开发</b>、<b>技术</b>相关的问题和看法，还有对于动漫的一些<b>杂评</b>。<br>相信你可以在这里找到对你有用的知识和教程。
