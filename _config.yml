@@ -215,7 +215,7 @@ post:
     wechat:
     alipay:
     url:
-  covercolor: true  #文章cover取色
+  covercolor: false  #文章cover取色
 
 # 404
 errorpage:

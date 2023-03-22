@@ -321,7 +321,7 @@ window.refreshFn = () => {
         acrylic.initbbtalk()
     }
     if(PAGECONFIG.is_page && PAGECONFIG.page === 'says')acrylic.reflashEssayWaterFall()
-    GOBALCONFIG.covercolor && PAGECONFIG.is_post && coverColor()
+    GOBALCONFIG.covercolor && coverColor()
 }
 
 acrylic.initTheme()
