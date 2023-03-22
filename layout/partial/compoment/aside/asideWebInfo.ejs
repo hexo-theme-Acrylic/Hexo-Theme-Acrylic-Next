@@ -1,4 +1,5 @@
 <div class="webinfo">
+    <% if(theme.aside.siteinfo.postcount){ %>
     <div class="webinfo-item">
         <div class="webinfo-item-title">
             <i class="item-icon fas fa-file-alt"></i>
@@ -6,15 +7,28 @@
         </div>
         <div class="item-count"><%= site.posts.length %></div>
     </div>
+    <% } %>
+    <% if(theme.aside.siteinfo.runtimeenable){ %>
     <div class="webinfo-item">
         <div class="webinfo-item-title">
             <i class="item-icon fas fa-stopwatch"></i>
             <div class="item-name">建站天数 :</div>
         </div>
-        <div class="item-count"><%= Math.floor(moment(new Date()).diff(moment(theme.aside.analytics.runtime)) / (1000 * 3600 * 24)) %> 天
+        <div class="item-count" id="runtimeshow">
         </div>
     </div>
-    <% if(theme.thirdparty.wordcount){ %>
+    <% } %>
+    <% if(theme.aside.siteinfo.updatetime){ %>
+        <div class="webinfo-item">
+            <div class="webinfo-item-title">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <div class="item-name">最后更新 :</div>
+            </div>
+            <time class="item-count" datetime="<%= moment(page.date).format() %>">
+            </time>
+        </div>
+        <% } %>
+    <% if(theme.thirdparty.wordcount && theme.aside.siteinfo.wordcount){ %>
         <div class="webinfo-item">
             <div class="webinfo-item-title">
                 <i class="item-icon fas fa-font"></i>
