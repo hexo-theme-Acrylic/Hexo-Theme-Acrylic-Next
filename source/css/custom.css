@@ -29,3 +29,23 @@
 #category #category-bar{
     border-radius: 0;
 }
+
+/* 侧公众号卡片 */
+#flip-wrapper .left{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.3; 
+    color: white; 
+}
+
+#flip-wrapper .left .title{
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+#flip-wrapper .left .desc{
+    font-size: small;
+    font-weight: 600;
+}

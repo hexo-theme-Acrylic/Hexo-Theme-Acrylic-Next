@@ -117,6 +117,16 @@ hometop:
 
 # 个人卡片
 aside:
+  home:
+    noSticky: ['about', 'flip']
+    Sticky: ['newestPost', 'AllInfo']
+  post:
+    noSticky: ['about']
+    Sticky: ['newestPost']   
+  page:
+    noSticky: ['about', 'flip']
+    Sticky: ['newestPost', 'AllInfo']
+
   card:
     content: 这有关于<b>开发</b>、<b>技术</b>相关的问题和看法，还有对于动漫的一些<b>杂评</b>。<br>相信你可以在这里找到对你有用的知识和教程。
     information:
@@ -129,7 +139,22 @@ aside:
     button:
       text: 个人主页
       url: /
-# 建站时间
+
+  flip:
+    color: '#0099FF'
+    face:
+      title: QQ群
+      desc: 加入官方QQ群与我们交流
+    backface:
+      title: 扫一扫
+      desc: 获取最新信息和帮助
+      img: /img/qqgroup.png
+
+  toc: 
+    post: true
+    page: false
+
+  # 建站时间
   analytics:
     runtime: '2021-12-12 00:00:00'
 
@@ -170,6 +195,13 @@ footer:
     #   Akilar: https://akilar.top
 
   randomlink: false
+
+page:
+  error: true
+  tags: true
+  categories: true
+  default:
+    cover: /img/hello.jpg   
 
 # 文章页默认设置
 post:

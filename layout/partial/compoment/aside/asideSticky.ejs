@@ -1,8 +1,0 @@
-<% if((is_post() || is_page()) && (page.toc || true)){ %>
-    <%- partial('partial/compoment/aside/asideToc') %>
-<% }else{ %>
-    <% if(is_home()){ %>
-       <%- partial('partial/compoment/aside/newestPost', {cache: true}) %> 
-    <% } %>    
-    <%- partial('partial/compoment/aside/siteInfo', {cache: true}) %>
-<% } %>

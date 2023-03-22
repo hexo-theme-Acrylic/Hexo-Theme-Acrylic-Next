@@ -1843,7 +1843,6 @@ blockquote footer cite::before {
 }
 
 #aside-content .card-archives ul.card-archive-list {
-  margin: 10px 0;
   padding: 0px;
   list-style: none;
 }
@@ -6768,7 +6767,9 @@ a.card-archive-list-link-more {
   margin: 1rem 0;
   border: 1px dashed var(--heo-theme-op);
 }
-
+.card-allinfo .card-archive-list{
+  margin: 10px 0;
+}
 .card-allinfo .item-headline {
   display: none;
 }
@@ -7050,7 +7051,6 @@ span.fund_name {
 
 /* 微信公众号 */
 #aside-content .card-widget#card-wechat {
-  background: var(--heo-green);
   display: flex;
   justify-content: center;
   align-content: center;
@@ -7060,19 +7060,10 @@ span.fund_name {
   height: 110px;
 }
 
-#aside-content .card-widget#card-wechat::before {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: url(https://p.zhheo.com/20233d20063834f9527370c6d71a6585356d085002.png!cover) center center no-repeat;
-  content: '';
-}
-
 #aside-content .card-widget#card-wechat img {
-  max-height: 110px;
+  max-width: 80px;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .friend-link {
@@ -7084,16 +7075,12 @@ span.fund_name {
 /* 微信公众号翻转 */
 
 #flip-wrapper {
+  -webkit-perspective: 1000;
+  perspective: 1000;
   position: relative;
   width: 235px;
   height: 110px;
   z-index: 1;
-}
-
-/* this need to be here - i dont know why?*/
-#flip-wrapper {
-  -webkit-perspective: 1000;
-  perspective: 1000;
 }
 
 #flip-content {
@@ -7115,198 +7102,15 @@ span.fund_name {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  /* background-color: #e71840; */
-  background: url(https://p.zhheo.com/202363e5ca73123f202bbeda6f024866a181080502.png!cover) center center no-repeat;
-  background-size: 100%;
 }
 
 .back.face {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 20px;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   box-sizing: border-box;
-  /* background-color: #212121; */
-  background: url(https://p.zhheo.com/202309da537f19ad4992f1340e53a11098df081402.png!cover) center center no-repeat;
-  background-size: 100%;
-}
-
-/* 商务广告-设计周刊 */
-#card-vip-designweekly.card-widget {
-  display: flex !important;
-  padding: 0;
-  cursor: pointer;
-}
-
-#card-vip-designweekly.card-widget .card-vip-designweekly-img {
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-vip-tips {
-  display: flex;
-  position: absolute;
-  font-size: 12px;
-  bottom: 8px;
-  left: 8px;
-  padding: 1px 6px;
-  background: var(--heo-black-op);
-  border-radius: 8px;
-  color: var(--heo-white);
-}
-
-/* 开关 */
-#widget-tree-button {
-  background-color: var(--heo-secondbg) !important;
-  box-shadow: var(--heo-shadow-light2black) !important;
-  color: var(--heo-fontcolor);
-}
-
-#widget-tree:hover #widget-tree-button {
-  /* display: none!important; */
-  opacity: 0;
-  left: -1.5rem;
-}
-
-#widget-tree {
-  background-color: var(--heo-maskbg) !important;
-}
-
-#widget-tree:hover {
-  left: 0 !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  transform: translateZ(0);
-}
-
-#widget-tree a {
-  -webkit-line-clamp: 2;
-  color: var(--heo-fontcolor) !important;
-}
-
-#widget-tree a:hover {
-  color: var(--heo-hovertext) !important;
-}
-
-.toggle-post-icon, .toggle-toc-icon {
-  color: var(--heo-fontcolor) !important;
-}
-
-@media screen and (max-width: 768px) {
-  #widget-tree {
-    display: none !important;
-  }
-}
-
-
-/* guli置顶 */
-
-.guli_top {
-  position: fixed;
-  z-index: 99;
-  right: 30px;
-  display: flex;
-  transition: 0.3s;
-  opacity: 0;
-  bottom: -25px;
-  width: 88px;
-  height: 123px;
-  user-select: none;
-}
-
-.guli_top.guli-fixed {
-  opacity: 1;
-  bottom: 25px;
-}
-
-#guli_top .guli_body {
-  position: relative;
-  height: 123px;
-  z-index: 1003;
-}
-
-#guli_top .guli_body:hover {
-  cursor: pointer;
-}
-
-#guli_top .guli_wing {
-  position: relative;
-  height: 64px;
-  z-index: 1002;
-  bottom: -120px;
-  transform: scale(0.01);
-  box-shadow: var(--heo-shadow-yellow);
-}
-
-#guli_top.open_wing .guli_wing {
-  transform: scale(1.03);
-}
-
-#guli_top.open_wing .guli_body {
-  transform: scale(1);
-}
-
-@media screen and (max-width: 1300px) {
-  #guli_top {
-    display: none;
-  }
-}
-
-/* cookies */
-#cookies-window {
-  min-width: 300px;
-  background: var(--heo-maskbgdeep);
-  color: var(--heo-fontcolor);
-  padding: 8px 16px;
-  display: flex;
-  flex-direction: column;
-  bottom: 20px;
-  right: 20px;
-  position: fixed;
-  border-radius: 12px;
-  transition: 0.3s;
-  z-index: 1002;
-  user-select: none;
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  transform: translateZ(0);
-  border: var(--style-border);
-  animation: barrageIn 0.6s cubic-bezier(0.42, 0, 0.3, 1.11);
-}
-
-#cookies-window.cw-hide {
-  opacity: 0;
-  animation: barrageOut 0.6s cubic-bezier(0.42, 0, 0.3, 1.11);
-  z-index: -1;
-}
-
-#cookies-window .cookies-window-title {
-  padding-bottom: 4px;
-  border-bottom: var(--style-border);
-  font-size: 12px;
-  font-weight: bold;
-}
-
-#cookies-window .cookies-window-content {
-  font-size: 14px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.cookie-to {
-  margin-right: 4px;
-  font-weight: bold;
-}
-
-.cookies-link {
-  margin-left: auto;
-  font-size: 16px;
-}
-
-@media screen and (max-width: 1300px) {
-  #cookies-window {
-    display: none;
-  }
 }
 
 .heo-tag {
@@ -7327,47 +7131,6 @@ span.fund_name {
   background: var(--heo-red);
 }
 
-/* 加载页
----------------------------------------------------------------- */
-
-/* 已经写在loading.pug中了 */
-
-/* #loading-box .loading-bg{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: var(--heo-card-bg);
-  z-index: 99999;
-  opacity: 1;
-  transition: 0.3s;
-  pointer-events: all;
-}
-
-#loading-box.loaded .loading-bg{
-  opacity: 0;
-  pointer-events: none;
-}
-
-#loading-box .loading-img{
-  width: 100px;
-  margin: auto;
-  animation-duration: 0.3s;
-  animation-name: loadingAction;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes loadingAction {
-  from {
-    opacity: 1;
-  }
-
-  to {
-   opacity: 0.4;
- }
-} */
-
 /* 主页
 ---------------------------------------------------------------- */
 
@@ -7381,14 +7144,6 @@ span.fund_name {
 #page-header.full_page #site-info {
   display: none;
 }
-
-/* 主页导航栏让位偏移 */
-/* .layout_page .recent-posts{
-  margin-top: 2em;
-}
-.layout_page .aside_content{
-  margin-top: 2em;
-} */
 
 .layout>div:first-child {
   width: calc(100% - 300px);
@@ -8746,11 +8501,6 @@ span.recent-post-top-text {
     right: 0;
   }
 
-  /* 背景 */
-  #web_bg {
-    background: none !important;
-  }
-
   #recent-posts>.recent-post-item .post_cover img.post_bg {
     border-radius: 12px 12px 0 0 !important;
   }
@@ -9173,35 +8923,6 @@ div#author-info__sayhi:hover {
   font-size: 1rem;
 }
 
-
-/* 头像背景 */
-/* 隐藏文章数等信息 */
-#aside-content .card-info .card-info-data {
-  display: none;
-}
-
-/* 作者头像 */
-#aside-content .card-info a img {
-  border-radius: 0px;
-  height: 200px;
-  display: inherit;
-  filter: drop-shadow(-5px 14px 8px #00000008);
-  position: absolute;
-  right: -24px;
-  bottom: -82px;
-  width: auto;
-  z-index: 0;
-  transition: cubic-bezier(0.48, -0.21, 0, 1.5) 0.3s;
-}
-
-#aside-content .card-info a img:hover {
-  bottom: -42px;
-}
-
-[data-theme=light] #aside-content .card-info a img {
-  filter: drop-shadow(-5px 14px 8px #ffffff08);
-}
-
 .card-widget.card-info {
   padding: 0 !important;
 }
@@ -9212,28 +8933,10 @@ div#author-info__sayhi:hover {
   position: relative;
 }
 
-#aside-content>div.card-widget.card-info>div.card-info-avatarimg {
-  overflow: hidden;
-  background: var(--heo-yellow);
-  transition: 1.5s;
-  min-height: 160px;
-  position: relative;
-  box-shadow: var(--heo-shadow-yellow);
-}
-
-#aside-content>div.card-widget.card-info>div.card-info-avatarimg:hover img {
-  transform: scale(1.03);
-}
-
 /* 作者文章列表链接 */
 #aside-content>div.card-widget.card-info>div>div.card-info-data>div:nth-child()>a>div.headline {
   font-weight: bold;
 }
-
-/* 作者名称和头像间距 */
-/* #aside-content .card-info .author-info__name{
-  padding-top: 30px;
-} */
 
 /* pad端隐藏部分侧边栏 */
 @media screen and (max-width: 900px) {
@@ -9310,12 +9013,6 @@ div#author-info__sayhi:hover {
 
 #aside-content>div.card-widget.card-info>div.card-content>div.card-info-data>.card-info-data-item:hover>a>div.headline, #aside-content>div.card-widget.card-info>div.card-content>div.card-info-data>.card-info-data-item:hover>a>div.length-num {
   color: var(--heo-blue);
-}
-
-/* 公告 */
-.announcement_content p {
-  margin: 0.5rem 0 0 0;
-  line-height: 1.38;
 }
 
 /* 卡片标题 */
