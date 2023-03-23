@@ -111,7 +111,6 @@ class search{
               }
 
               let matchContent = dataContent.substring(start, end)
-
               // highlight all keywords
               keywords.forEach(keyword => {
                 matchContent = matchContent.replaceAll(keyword, '<span class="search-keyword">' + keyword + '</span>')
@@ -120,9 +119,8 @@ class search{
 
               str += '<div class="search__hit-item"><a href="' + dataUrl + '"><span class="search-result-title">' + dataTitle + '</span>'
               count += 1
-
               if (dataContent !== '') {
-                str += '<p class="search-result">' + pre + matchContent + post + '</p>'
+                str += '<div class="search-result">' + pre + matchContent + post + '</div>'
               }
             }
             str += '</a></div>'
@@ -131,6 +129,8 @@ class search{
         if (count === 0) {
           str += '<div id="search__hits-empty">' + '搜索为空' +
             '</div>'
+        }else{
+          str += `<div class="search__hits-count">已为您找到 ${count} 条结果</div>`
         }
         str += '</div>'
         $resultContent.innerHTML = str

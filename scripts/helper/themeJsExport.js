@@ -34,6 +34,9 @@ hexo.extend.helper.register('export_config', function() {
                 goodnight: lang['sayhello.goodnight'],
                 iam: lang['sayhello.iam'],
             },
+            // search: {
+            //     empty
+            // }
         },
         localsearch: {
             preload: theme.thirdparty.search.local_search.preload,

@@ -5773,6 +5773,12 @@ i.fab {
   font-weight: 600;
 }
 
+.search__hits-count{
+  color: var(--heo-gray);
+  font-size: .8rem;
+  font-weight: bold;
+}
+
 .search-box input::placeholder {
   color: var(--heo-gray);
 }

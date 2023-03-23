@@ -34,3 +34,5 @@ nav:
   randompost: 随机一篇文章
   console: 中控台
 
+search:
+  empty: 搜索结果为空
