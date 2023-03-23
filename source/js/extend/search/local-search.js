@@ -114,8 +114,9 @@ class search{
 
               // highlight all keywords
               keywords.forEach(keyword => {
-                matchContent = matchContent.replaceAll(keyword, '<span class="search-keyword">' + keyword + '</span>')
-                dataTitle = dataTitle.replaceAll(keyword, '<span class="search-keyword">' + keyword + '</span>')
+                const regex = new RegExp(`(?!<[^>]*?)(${keyword})(?![^<]*?>)`, 'gi')
+                matchContent = matchContent.replaceAll(regex, '<span class="search-keyword">$1</span>')
+                dataTitle = dataTitle.replaceAll(regex, '<span class="search-keyword">$1</span>')
               })
 
               str += '<div class="search__hit-item"><a href="' + dataUrl + '"><span class="search-result-title">' + dataTitle + '</span>'
