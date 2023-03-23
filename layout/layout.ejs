@@ -21,7 +21,8 @@
             <div class="error" id="body-wrap">
                 <%- body %>
             </div>
-         <% } %>   
+         <% } %> 
+        <%- partial('partial/compoment/third-party/search/index', {cache: true}) %>  
         <%- partial('partial/body', {cache: true}) %>
     </body>
 </html>

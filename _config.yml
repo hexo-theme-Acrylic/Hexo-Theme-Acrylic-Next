@@ -244,6 +244,15 @@ loading:
 # 第三方设置
 thirdparty:
   wordcount: false
+  search:
+    algolia_search:
+      enable: false
+      hits:
+        per_page: 6
+    local_search:
+      enable: false
+      preload: false
+      CDN:
 
 # 评论
 comment:

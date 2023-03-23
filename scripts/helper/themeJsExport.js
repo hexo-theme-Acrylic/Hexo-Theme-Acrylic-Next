@@ -34,12 +34,13 @@ hexo.extend.helper.register('export_config', function() {
                 goodnight: lang['sayhello.goodnight'],
                 iam: lang['sayhello.iam'],
             },
-            
+        },
+        localsearch: {
+            preload: theme.thirdparty.search.local_search.preload,
+            path: theme.thirdparty.search.local_search.path || '/search.xml'
         },
         covercolor: theme.post.covercolor
-
     }
-    const pagetype = this.is_post() || this.is_page()
     const exportPageConfig = {
         is_home: this.is_home(),
         is_post: this.is_post(),
