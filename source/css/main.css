@@ -5672,6 +5672,9 @@ i.fab {
     width: 100%;
     height: 100%;
   }
+  #search-results{
+    max-height: 80vh!important;
+  }
 }
 
 .search-dialog .search-close-button {
@@ -5744,6 +5747,11 @@ i.fab {
 
 .search-dialog .search-box input:focus {
   border: var(--style-border-hover);
+}
+
+#search-results{
+  max-height: calc(80vh - 130px)
+  overflow-y: auto
 }
 
 #search-results .search__hit-item{
