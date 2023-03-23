@@ -5673,7 +5673,7 @@ i.fab {
     height: 100%;
   }
   #search-results{
-    max-height: 80vh!important;
+    max-height: 80vh !important;
   }
 }
 
@@ -5750,8 +5750,8 @@ i.fab {
 }
 
 #search-results{
-  max-height: calc(80vh - 130px)
-  overflow-y: auto
+  max-height: calc(80vh - 130px);
+  overflow-y: auto;
 }
 
 #search-results .search__hit-item{
