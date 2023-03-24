@@ -253,7 +253,9 @@ loading:
 # 第三方设置
 thirdparty:
   wordcount: false
-  busuanzi: false
+  busuanzi: 
+    enable: false
+    usecomment: false #当评论系统开启时文章页面使用评论系统的统计数据
   search:
     algolia_search:
       enable: false

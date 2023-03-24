@@ -57,10 +57,14 @@
                     </span>
                 <% } %>
             <% } %>
-            <% if(theme.thirdparty.busuanzi && theme.post.meta.pv){ %>
+            <% if(theme.thirdparty.busuanzi.enable && theme.post.meta.pv){ %>
                 <span class="post-meta-pv" title="文章热度">
                     <i class="fab fa-hotjar fa-fw post-meta-icon"></i>
-                    <span id="busuanzi_value_page_pv"></span>
+                    <% if(theme.thirdparty.busuanzi.usecomment){ %>
+                        <span id="twikoo_visitors"><i class="fas fa-spinner fa-pulse"></i></span>
+                    <% }else{ %>
+                        <span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-pulse"></i></span>
+                    <% } %>        
                 </span>
             <% } %>
             <span class="post-meta-commentcount" title="评论数">

@@ -22,7 +22,7 @@
             }), 500);
         </script>
     <% } %>
-    <% if(theme.thirdparty.busuanzi){ %>
+    <% if(theme.thirdparty.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)){ %>
         <script async src="<%= cdn.busuanzijs %>"></script>
     <% } %> 
 </div>
