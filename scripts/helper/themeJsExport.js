@@ -1,6 +1,6 @@
 hexo.extend.helper.register('export_config', function() {
     const { config, theme } = this, lang = hexo.theme.i18n.get(config.language || 'zh-CN')
-    const exportGlobalConfig = {
+    let exportGlobalConfig = {
         root: config.root,
         runtime: theme.aside.siteinfo.runtimeenable ? theme.aside.siteinfo.runtime : false,
         lazyload: {
@@ -40,17 +40,22 @@ hexo.extend.helper.register('export_config', function() {
                 placeholder: lang['search.placeholder'],
             }
         },
-        localsearch: {
-            preload: theme.thirdparty.search.local_search.preload,
-            path: theme.thirdparty.search.local_search.path || '/search.xml'
-        },    
+        covercolor: theme.post.covercolor
+    }
+
+    // 搜索数据
+    if(theme.thirdparty.search.local_search.enable)exportGlobalConfig = Object.assign(exportGlobalConfig, {localsearch: {
+        preload: theme.thirdparty.search.local_search.preload,
+        path: theme.thirdparty.search.local_search.path || '/search.xml'
+    }})
+    if(theme.thirdparty.search.algolia_search.enable)exportGlobalConfig = Object.assign(exportGlobalConfig, {
         algolia: {
             appId: config.algolia.appId,
             apiKey: config.algolia.apiKey,
             indexName: config.algolia.indexName
-        },
-        covercolor: theme.post.covercolor
-    }
+        }
+    })
+
     const exportPageConfig = {
         is_home: this.is_home(),
         is_post: this.is_post(),

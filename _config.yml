@@ -46,7 +46,6 @@ nav:
   right: # @todo 允许用户自定义
     travellings: true   #开往
     random: true        #
-    search: false       #搜索按钮
     console: true       #控制台
 
 # heo式顶部一大坨

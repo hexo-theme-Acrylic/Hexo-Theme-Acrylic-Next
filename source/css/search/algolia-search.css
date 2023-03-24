@@ -98,6 +98,8 @@
 
 #algolia-search #search-results{
     padding: 8px;
+    max-height: calc(80vh - 130px);
+    overflow-y: auto;
 }
 
 #algolia-search .ais-Hits-list{
