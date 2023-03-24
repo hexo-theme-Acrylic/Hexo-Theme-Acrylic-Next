@@ -157,6 +157,8 @@ aside:
   siteinfo:
     postcount: true
     wordcount: false
+    pv: false
+    uv: false
     updatetime: false
     runtimeenable: true
     runtime: '2021-12-12 00:00:00'
@@ -213,6 +215,14 @@ post:
     locate: 北京
     copyright: 原创
     excerpt: 100
+  meta:
+    date: true
+    updated: false
+    locate: true
+    wordcount: false
+    readtime: false
+    pv: false
+    comment: false      
   award:
     enable: false
     wechat:
@@ -243,6 +253,7 @@ loading:
 # 第三方设置
 thirdparty:
   wordcount: false
+  busuanzi: false
   search:
     algolia_search:
       enable: false
@@ -287,4 +298,4 @@ cdn:
     viewimagejs: /lib/view-image.min.js
     waterfalljs: /lib/waterfall.min.js
     swiperjs: /lib/swiper.min.js
-    covercolorjs: /js/extend/covercolor.js
+    busuanzijs: https://npm.elemecdn.com/penndu@1.0.0/bsz.js

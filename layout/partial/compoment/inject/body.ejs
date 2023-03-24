@@ -11,9 +11,6 @@
     <%- css(cdn.swipercss) %>
     <%- js(cdn.swiperjs) %>
 <% } %>
-<% if(theme.footer.randomlink){ %>
-    <%- randomLinks() %>
-<% } %>
 <div id="js-pjax">
     <% if(page.type === 'says'){ %>
         <%- js(cdn.waterfalljs) %>
@@ -24,6 +21,11 @@
                 }
             }), 500);
         </script>
+    <% } %>
+    <% if(theme.thirdparty.busuanzi){ %>
+        <script async src="<%= cdn.busuanzijs %>"></script>
     <% } %> 
 </div>
-<%- js(cdn.covercolorjs) %>
+<% if(theme.footer.randomlink){ %>
+    <%- randomLinks() %>
+<% } %>

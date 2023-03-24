@@ -575,7 +575,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 hr {
   position: relative;
   margin: 2rem auto;
-  border: 2px dashed var(--hr-border);
+  border: 1px dashed var(--heo-theme-op);
 }
 
 .table-wrap {
@@ -1612,6 +1612,7 @@ blockquote footer cite::before {
 #error-wrap .error-content .error-info .error_title {
   font-size: 9em;
   line-height: 1;
+  margin: 0;
 }
 
 @media screen and (max-width: 768px) {

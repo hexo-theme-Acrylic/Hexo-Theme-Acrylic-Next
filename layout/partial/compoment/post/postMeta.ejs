@@ -27,31 +27,48 @@
     <h1 class="post-title"><%= page.title %></h1>
     <div id="post-meta">
         <div class="meta-secondline">
-            <span class="post-meta-date">
-                <i class="fa-fw post-meta-icon fas fa-calendar"></i>
+            <span class="post-meta-date" title="发布于">
+                <i class="post-meta-icon fa-fw fas fa-calendar"></i>
                 <time datetime="<%= moment(page.date).format() %>"></time>
             </span>
-            <span class="post-meta-position" title="作者IP归属地为<%= page.locate %>">
-                <i class="fas fa-location-dot post-meta-icon"></i>
-                <span><%= page.locate %></span>
-            </span>
-            <% if(theme.thirdparty.wordcount){ %>
-                <span class="post-meta-wordcount">
-                    <i class="fas fa-file-word fa-fw post-meta-icon" title="字数"></i>
-                    <span class="word-count"><%= wordcount(page.content) %></span>
-                </span>
-                <span class="post-meta-time">
-                    <i class="fas fa-clock post-meta-icon" title="阅读耗时"></i>
-                    <span><%= min2read(page.content) %> min</span>
+            <% if(theme.post.meta.locate){ %>
+                <span class="post-meta-date" title="更新于">
+                    <i class="post-meta-icon fa-solid fa-clock-rotate-left"></i>
+                    <time datetime="<%= moment(page.updated).format() %>"></time>
                 </span>
             <% } %>
-            <span class="post-meta-pv" data-flag-title="热度">
-                <i class="fab fa-hotjar fa-fw post-meta-icon"></i>
-                <span id="busuanzi_value_page_pv">2686369</span>
+            <% if(theme.post.meta.locate){ %>
+                <span class="post-meta-position" title="作者IP归属地为<%= page.locate %>">
+                    <i class="fas fa-location-dot post-meta-icon"></i>
+                    <span><%= page.locate %></span>
+                </span>
+            <% } %>
+            <% if(theme.thirdparty.wordcount){ %>
+                <% if(theme.post.meta.wordcount){ %>
+                    <span class="post-meta-wordcount">
+                        <i class="fas fa-file-word fa-fw post-meta-icon" title="文章字数"></i>
+                        <span class="word-count"><%= wordcount(page.content) %></span>
+                    </span>
+                <% } %>
+                <% if(theme.post.meta.readtime){ %>
+                    <span class="post-meta-time">
+                        <i class="fas fa-clock post-meta-icon" title="阅读耗时"></i>
+                        <span><%= min2read(page.content) %> min</span>
+                    </span>
+                <% } %>
+            <% } %>
+            <% if(theme.thirdparty.busuanzi && theme.post.meta.pv){ %>
+                <span class="post-meta-pv" title="文章热度">
+                    <i class="fab fa-hotjar fa-fw post-meta-icon"></i>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+            <% } %>
+            <span class="post-meta-commentcount" title="评论数">
+                <i class="fa-solid fa-message"></i>
+                <a href="#post-comment">
+                    <span id="twikoo-count"><i class="fas fa-spinner fa-pulse"></i></span>
+                </a>
             </span>
-            <!-- <span class="post-meta-commentcount" title="评论数" onclick="heo.scrollTo('post-comment');"><i
-                    class="fa-solid fa-message"></i><span class="post-meta-label">评论:</span><a
-                    href="/p/bdabd8a.html#post-comment" data-pjax-state=""><span id="twikoo-count">15</span></a></span> -->
         </div>
     </div>
 </div>
