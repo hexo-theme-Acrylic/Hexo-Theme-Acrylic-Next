@@ -3,7 +3,7 @@ site:
   name: Rot               # 左上角首页名称
   icon: /img/avatar.webp  # 页脚的icon
   icp:                    # ICP
-  siteIcon: /img/avatar.webp # 主页的icon
+  siteIcon: /img/avatar.webp # 网页icon
 
 # 导航栏
 nav:
@@ -11,10 +11,10 @@ nav:
   left:
     enable: true
     menu:
-      我的:
-        博客:
-          icon: /img/avatar.webp
-          url: /
+      # 我的:
+      #   博客:
+      #     icon: /img/avatar.webp
+      #     url: /
 # 导航栏内容
   menu:
     # 文库:
@@ -57,42 +57,42 @@ hometop:
     title: 分享设计<br>与科技生活
     url: blog.zhheo.com
     icon:
-      AE:
-        img: /img/icon/ae.png
-        color: '#989bf8'
-      Sketch:
-        img: /img/icon/Sketch.png
-        color: '#ffffff'
-      Docker:
-        img: /img/icon/docker.png
-        color: '#57b6e6'
-      ps:
-        img: /img/icon/ps.png
-        color: '#4082c3'
-      FinalCutPro:
-        img: /img/icon/FinalCutPro.png
-        color: '#ffffff'
-      Python:
-        img: /img/icon/Python.png
-        color: '#ffffff'
-      Swift:
-        img: /img/icon/Swift.png
-        color: '#eb6840'
-      Principle:
-        img: /img/icon/Principle.png
-        color: '#8f55ba'
-      illustrator:
-        img: /img/icon/illustrator.png
-        color: '#f29e39'
-      CSS3:
-        img: /img/icon/CSS3.png
-        color: '#2c51db'
-      JS:
-        img: /img/icon/JS.png
-        color: '#f7cb4f'
-      Git:
-        img: /img/icon/git.png
-        color: '#df5b40'
+      # AE:
+      #   img: /img/icon/ae.png
+      #   color: '#989bf8'
+      # Sketch:
+      #   img: /img/icon/Sketch.png
+      #   color: '#ffffff'
+      # Docker:
+      #   img: /img/icon/docker.png
+      #   color: '#57b6e6'
+      # ps:
+      #   img: /img/icon/ps.png
+      #   color: '#4082c3'
+      # FinalCutPro:
+      #   img: /img/icon/FinalCutPro.png
+      #   color: '#ffffff'
+      # Python:
+      #   img: /img/icon/Python.png
+      #   color: '#ffffff'
+      # Swift:
+      #   img: /img/icon/Swift.png
+      #   color: '#eb6840'
+      # Principle:
+      #   img: /img/icon/Principle.png
+      #   color: '#8f55ba'
+      # illustrator:
+      #   img: /img/icon/illustrator.png
+      #   color: '#f29e39'
+      # CSS3:
+      #   img: /img/icon/CSS3.png
+      #   color: '#2c51db'
+      # JS:
+      #   img: /img/icon/JS.png
+      #   color: '#f7cb4f'
+      # Git:
+      #   img: /img/icon/git.png
+      #   color: '#df5b40'
 
   categoryGroup:
     G1:
@@ -130,12 +130,12 @@ aside:
   card:
     content: 这有关于<b>开发</b>、<b>技术</b>相关的问题和看法，还有对于动漫的一些<b>杂评</b>。<br>相信你可以在这里找到对你有用的知识和教程。
     information:
-      Github:
-        icon: fa-brands fa-github
-        url: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next
-      Mail:
-        icon: fa-solid fa-envelope
-        url: mailto:a@nalex.top
+      # Github:
+      #   icon: fa-brands fa-github
+      #   url: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next
+      # Mail:
+      #   icon: fa-solid fa-envelope
+      #   url: mailto:a@nalex.top
     button:
       text: 个人主页
       url: /
@@ -247,8 +247,8 @@ thirdparty:
   search:
     algolia_search:
       enable: false
-      hits:
-        per_page: 6
+      # hits:
+      #   per_page: 6
     local_search:
       enable: false
       preload: false
@@ -278,6 +278,8 @@ cdn:
     snackbarcss: /lib/snackbar.min.css
     qrcodejs: /lib/qrcode.min.js
     twikoojs: https://cdn.staticfile.org/twikoo/1.6.10/twikoo.all.min.js
+    instantsearch: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantsearch.js/4.39.0/instantsearch.production.min.js
+    algolia: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/algoliasearch/4.12.1/algoliasearch-lite.umd.min.js
   body:
     swipercss: /lib/swiper.min.css
     pjaxjs: /lib/pjax.min.js

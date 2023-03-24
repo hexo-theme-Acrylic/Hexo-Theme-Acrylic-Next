@@ -44,7 +44,7 @@ class search{
   }
 
   static search(){
-    if (!GOBALCONFIG.localsearch.preload && dataObj === null) dataObj = this.fetchData(GOBALCONFIG.localsearch.path)
+    if (!GLOBALCONFIG.localsearch.preload && dataObj === null) dataObj = this.fetchData(GLOBALCONFIG.localsearch.path)
     $input.addEventListener('input', function type() {
       const keywords = this.value.trim().toLowerCase().split(/[\s]+/)
       if (keywords[0] !== '') $loadingStatus.innerHTML = '<i class="fas fa-spinner fa-pulse"></i><span>加载中</span>'
@@ -61,7 +61,7 @@ class search{
           let isMatch = true
           let dataTitle = data.title ? data.title.trim().toLowerCase() : ''
           const dataContent = data.content ? data.content.trim().replace(/<[^>]+>/g, '').toLowerCase() : ''
-          const dataUrl = data.url.startsWith('/') ? data.url : GOBALCONFIG.root + data.url
+          const dataUrl = data.url.startsWith('/') ? data.url : GLOBALCONFIG.root + data.url
           let indexTitle = -1
           let indexContent = -1
           let firstOccur = -1
@@ -128,10 +128,9 @@ class search{
           }
         })
         if (count === 0) {
-          str += '<div id="search__hits-empty">' + '搜索为空' +
-            '</div>'
+          str += `<div id="search__hits-empty">${GLOBALCONFIG.lang.search.empty}</div>`
         }else{
-          str += `<div class="search__hits-count">已为您找到 ${count} 条结果</div>`
+          str += `<div class="search__hits-count">${GLOBALCONFIG.lang.search.hit.replace('${query}', '<span class="search-keyword">' + count + '</span>')}</div>`
         }
         str += '</div>'
         $resultContent.innerHTML = str
@@ -148,7 +147,7 @@ const searchClickFn = () => {
 const searchClickFnOnce = () => {
   document.querySelector('#local-search .search-close-button').addEventListener('click', search.closeSearch)
   $searchMask.addEventListener('click', search.closeSearch)
-  if (GOBALCONFIG.localsearch.preload) dataObj = search.fetchData(GOBALCONFIG.localsearch.path)
+  if (GLOBALCONFIG.localsearch.preload) dataObj = search.fetchData(GLOBALCONFIG.localsearch.path)
 }
 
 window.addEventListener('load', () => {
@@ -158,4 +157,5 @@ window.addEventListener('load', () => {
 
 window.addEventListener('pjax:complete', () => {
   searchClickFn()
+  search.closeSearch()
 })

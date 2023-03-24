@@ -1,6 +1,6 @@
 hexo.extend.helper.register('export_config', function() {
-    const { config, theme } = this, lang = hexo.theme.i18n.get(config.language || 'zh-CN');
-    const exportGobalConfig = {
+    const { config, theme } = this, lang = hexo.theme.i18n.get(config.language || 'zh-CN')
+    const exportGlobalConfig = {
         root: config.root,
         runtime: theme.aside.siteinfo.runtimeenable ? theme.aside.siteinfo.runtime : false,
         lazyload: {
@@ -34,13 +34,20 @@ hexo.extend.helper.register('export_config', function() {
                 goodnight: lang['sayhello.goodnight'],
                 iam: lang['sayhello.iam'],
             },
-            // search: {
-            //     empty
-            // }
+            search: {
+                empty: lang['search.empty'],
+                hit: lang['search.hit'],
+                placeholder: lang['search.placeholder'],
+            }
         },
         localsearch: {
             preload: theme.thirdparty.search.local_search.preload,
             path: theme.thirdparty.search.local_search.path || '/search.xml'
+        },    
+        algolia: {
+            appId: config.algolia.appId,
+            apiKey: config.algolia.apiKey,
+            indexName: config.algolia.indexName
         },
         covercolor: theme.post.covercolor
     }
@@ -52,5 +59,5 @@ hexo.extend.helper.register('export_config', function() {
         toc: this.page.toc,
         comment: this.page.comment,
     }
-    return `<script>var GOBALCONFIG = ${JSON.stringify(exportGobalConfig)};</script><script id="site-config">var PAGECONFIG = ${JSON.stringify(exportPageConfig)};</script>`;
+    return `<script>var GLOBALCONFIG = ${JSON.stringify(exportGlobalConfig)};</script><script id="site-config">var PAGECONFIG = ${JSON.stringify(exportPageConfig)};</script>`;
 })

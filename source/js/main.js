@@ -91,7 +91,7 @@ const showTodayCard = () => {
 const setTimeState = () => {
     const el = document.getElementById('author-info__sayhi')
     if (el) {
-        const timeNow = new Date(), hours = timeNow.getHours(), lang = GOBALCONFIG.lang.sayhello;
+        const timeNow = new Date(), hours = timeNow.getHours(), lang = GLOBALCONFIG.lang.sayhello;
         let text = '';
         if (hours >= 0 && hours <= 5) {
             text = lang.goodnight;
@@ -109,7 +109,7 @@ const setTimeState = () => {
 };
 
 const chageTimeFormate = () => {
-    const timeElements = document.getElementsByTagName("time"), lang = GOBALCONFIG.lang.time
+    const timeElements = document.getElementsByTagName("time"), lang = GLOBALCONFIG.lang.time
     for (var i = 0; i < timeElements.length; i++) {
         const datetime = timeElements[i].getAttribute("datetime"), timeObj = new Date(datetime), daysDiff = utils.timeDiff(timeObj, new Date())
         var timeString;
@@ -142,7 +142,7 @@ const percent = () => {
     const centerY = eventlistner.offsetTop + (eventlistner.offsetHeight / 2);
     if ((centerY < visibleBottom) || (result > 90)) {
         document.querySelector("#nav-totop").classList.add("long");
-        btn.innerHTML = GOBALCONFIG.lang.backtop;
+        btn.innerHTML = GLOBALCONFIG.lang.backtop;
     } else {
         document.querySelector("#nav-totop").classList.remove("long");
         if (result >= 0) {
@@ -223,11 +223,11 @@ class acrylic {
         if (nowMode === 'light') {
             document.documentElement.setAttribute('data-theme', 'dark')
             localStorage.setItem('theme', 'dark')
-            utils.snackbarShow(GOBALCONFIG.lang.theme.dark, false, 2000)
+            utils.snackbarShow(GLOBALCONFIG.lang.theme.dark, false, 2000)
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
             localStorage.setItem('theme', 'light')
-            utils.snackbarShow(GOBALCONFIG.lang.theme.light, false, 2000)
+            utils.snackbarShow(GLOBALCONFIG.lang.theme.light, false, 2000)
         }
     }
     static hideTodayCard() {
@@ -251,9 +251,9 @@ class acrylic {
     static async copyPageUrl() {
         try {
             await navigator.clipboard.writeText(window.location.href)
-            utils.snackbarShow(GOBALCONFIG.lang.copy.success, false, 2000)
+            utils.snackbarShow(GLOBALCONFIG.lang.copy.success, false, 2000)
         } catch (err) {
-            utils.snackbarShow(GOBALCONFIG.lang.copy.error, false, 2000)
+            utils.snackbarShow(GLOBALCONFIG.lang.copy.error, false, 2000)
         }
     }
     static lightbox(el) {
@@ -275,8 +275,8 @@ class acrylic {
     }
     static addRuntime() {
         const el = document.getElementById('runtimeshow')
-        if (el && GOBALCONFIG.runtime) {
-            el.innerText = utils.timeDiff(new Date(GOBALCONFIG.runtime), new Date()) + GOBALCONFIG.lang.time.runtime
+        if (el && GLOBALCONFIG.runtime) {
+            el.innerText = utils.timeDiff(new Date(GLOBALCONFIG.runtime), new Date()) + GLOBALCONFIG.lang.time.runtime
         }
     }
     static lazyloadImg(){
@@ -285,7 +285,7 @@ class acrylic {
           threshold: 0,
           data_src: 'lazy-src',
           callback_error: (img) => {
-            img.setAttribute("src", GOBALCONFIG.lazyload.error);
+            img.setAttribute("src", GLOBALCONFIG.lazyload.error);
           }
         })
       }
@@ -309,9 +309,9 @@ window.refreshFn = () => {
     setTimeState()
     chageTimeFormate()
     acrylic.addRuntime()
-    GOBALCONFIG.lazyload.enable && acrylic.lazyloadImg()
-    GOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #bber .bber-content-img img')
-    GOBALCONFIG.randomlinks && randomLinksList()
+    GLOBALCONFIG.lazyload.enable && acrylic.lazyloadImg()
+    GLOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #bber .bber-content-img img')
+    GLOBALCONFIG.randomlinks && randomLinksList()
     PAGECONFIG.toc && toc.init()
     PAGECONFIG.comment && initComment()
     if(PAGECONFIG.is_home){
@@ -319,7 +319,7 @@ window.refreshFn = () => {
         acrylic.initbbtalk()
     }
     if(PAGECONFIG.is_page && PAGECONFIG.page === 'says')acrylic.reflashEssayWaterFall()
-    GOBALCONFIG.covercolor && coverColor()
+    GLOBALCONFIG.covercolor && coverColor()
 }
 
 acrylic.initTheme()
