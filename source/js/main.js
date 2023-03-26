@@ -194,7 +194,7 @@ class toc {
 
             if (detectItem === currentIndex) return
             detectItem = currentIndex
-            document.querySelectorAll('.active').forEach((i) => {
+            document.querySelectorAll('.toc .active').forEach((i) => {
                 i.classList.remove('active')
             })
             const activeitem = toc[detectItem]
@@ -215,7 +215,6 @@ class toc {
         window.addEventListener('scroll', tocScrollFn)
     }
 }
-
 class acrylic {
     static switchDarkMode() {
         const nowMode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' :
@@ -307,7 +306,7 @@ class hightlight {
         hlTools.className = `highlight-tools`
         hlTools.innerHTML = langEl + highlightCopyEle
         hlTools.children[1].addEventListener('click', (e) => {
-            utils.copy($table.querySelector('.code').innerText) 
+            utils.copy($table.querySelector('.code').innerText)
         })
         fragment.appendChild(hlTools)
         const itemHeight = item.clientHeight, $table = item.querySelector('table')
@@ -335,6 +334,40 @@ class hightlight {
     }
 }
 
+class tabs {
+    static init(){
+        this.clickFnOfTabs()
+        this.backToTop()
+    }
+    static clickFnOfTabs() {
+        document.querySelectorAll('#article-container .tab > button').forEach(function (item) {
+            item.addEventListener('click', function (e) {
+                const $this = this
+                const $tabItem = $this.parentNode
+                if (!$tabItem.classList.contains('active')) {
+                    const $tabContent = $tabItem.parentNode.nextElementSibling
+                    const $siblings = utils.siblings($tabItem, '.active')[0]
+                    $siblings && $siblings.classList.remove('active')
+                    $tabItem.classList.add('active')
+                    const tabId = $this.getAttribute('data-href').replace('#', '')
+                    const childList = [...$tabContent.children]
+                    childList.forEach(item => {
+                        if (item.id === tabId) item.classList.add('active')
+                        else item.classList.remove('active')
+                    })
+                }
+            })
+        })
+    }
+    static backToTop() {
+        document.querySelectorAll('#article-container .tabs .tab-to-top').forEach(function (item) {
+            item.addEventListener('click', function () {
+                utils.scrollToDest(utils.getEleTop(item.parentElement.parentElement.parentNode), 300)
+            })
+        })
+    }
+}
+
 window.refreshFn = () => {
     scrollFn()
     sidebarFn()
@@ -345,7 +378,10 @@ window.refreshFn = () => {
     GLOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #bber .bber-content-img img')
     GLOBALCONFIG.randomlinks && randomLinksList()
     PAGECONFIG.toc && toc.init()
-    if (PAGECONFIG.is_post && GLOBALCONFIG.hightlight.enable) hightlight.init()
+    if (PAGECONFIG.is_post) {
+        GLOBALCONFIG.hightlight.enable && hightlight.init()
+        tabs.init()
+    }
     PAGECONFIG.comment && initComment()
     if (PAGECONFIG.is_home) {
         showTodayCard()

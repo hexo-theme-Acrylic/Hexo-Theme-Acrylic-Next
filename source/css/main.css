@@ -4294,14 +4294,6 @@ blockquote.pullquote.right {
   color: rgb(217, 83, 79);
 }
 
-#article-container .tabs {
-  position: relative;
-  margin: 0px 0px 1rem;
-  border-right: 1px solid var(--tab-border-color);
-  border-bottom: 1px solid var(--tab-border-color);
-  border-left: 1px solid var(--tab-border-color);
-}
-
 #article-container .tabs>.nav-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -9279,6 +9271,7 @@ a.post-meta-original:hover {
 }
 
 #article-container .tabs {
+  position: relative;
   margin: 1rem 0 !important;
   border-radius: 12px;
   overflow: hidden;
@@ -9335,12 +9328,6 @@ a.post-meta-original:hover {
 .tab-item-content {
   background: var(--heo-card-bg);
 }
-
-/* tab边框 */
-#article-container .tabs {
-  border: 3px solid var(--heo-secondbg) !important;
-}
-
 
 /* 切换tab标签 */
 #article-container .tabs>.tab-contents .tab-item-content.active {
