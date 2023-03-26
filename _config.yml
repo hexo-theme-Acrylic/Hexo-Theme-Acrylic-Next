@@ -247,7 +247,7 @@ lightbox: true
 
 #代码高亮增强
 hightlight:
-  enable: true
+  enable: false
   hightlimit: 200
 
 # 加载动画

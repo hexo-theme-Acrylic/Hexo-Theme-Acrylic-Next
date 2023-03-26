@@ -301,11 +301,14 @@ class acrylic {
 class hightlight {
     static createEle(langEl, item) {
         const fragment = document.createDocumentFragment()
-        const highlightCopyEle = '<i class="fas fa-paste copy-button" id="code-copy"></i>'
+        const highlightCopyEle = '<i class="fas fa-paste copy-button"></i>'
 
         const hlTools = document.createElement('div')
         hlTools.className = `highlight-tools`
         hlTools.innerHTML = langEl + highlightCopyEle
+        hlTools.children[1].addEventListener('click', (e) => {
+            utils.copy($table.querySelector('.code').innerText) 
+        })
         fragment.appendChild(hlTools)
         const itemHeight = item.clientHeight, $table = item.querySelector('table')
         if (GLOBALCONFIG.hightlight.limit && itemHeight > GLOBALCONFIG.hightlight.limit + 30) {
@@ -319,11 +322,7 @@ class hightlight {
             })
             fragment.appendChild(ele)
         }
-
         item.insertBefore(fragment, item.firstChild)
-        document.getElementById('code-copy').addEventListener('click', (e) => {
-            utils.copy($table.innerText) 
-        })
     }
     static init() {
         const $figureHighlight = document.querySelectorAll('figure.highlight'), that = this
