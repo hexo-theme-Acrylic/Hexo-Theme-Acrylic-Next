@@ -245,6 +245,11 @@ lazyload:
 # 图片灯箱
 lightbox: true
 
+#代码高亮增强
+hightlight:
+  enable: true
+  hightlimit: 200
+
 # 加载动画
 loading:
   enable: false

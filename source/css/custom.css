@@ -49,3 +49,37 @@
     font-size: small;
     font-weight: 600;
 }
+
+#article-container .highlight-tools{
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: 1.2rem;
+    height: 2.15em;
+    background: var(--heo-secondbg);
+    border-bottom: var(--style-border-always);
+    color: var(--heo-fontcolor);
+    font-size: var(--global-font-size);
+}
+
+#article-container .highlight-tools .copy-button{
+    position: absolute;
+    right: 0.7rem;
+    cursor: pointer;
+    transition: color .2s;
+    font-size: 18px;
+}
+
+#article-container .highlight-tools .code-lang{
+    position: absolute;
+    font-weight: 700;
+    font-size: 1.15em;
+    user-select: none;
+    left: 0.6rem;
+}
+
+#article-container .code-expand-btn.expand-done {
+    display: none !important;
+}

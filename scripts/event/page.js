@@ -18,7 +18,7 @@ hexo.extend.generator.register('tags', function(locals) {
     path: 'tags/index.html',
     layout: ['page'],
     data: {
-      title: '标签',
+      title: 'tags',
       type: 'tags',
       comment: false
     }
@@ -32,7 +32,7 @@ hexo.extend.generator.register('categories', function(locals) {
     path: 'categories/index.html',
     layout: ['page'],
     data: {
-      title: '分类',
+      title: 'categories',
       type: 'categories',
       comment: false
     }

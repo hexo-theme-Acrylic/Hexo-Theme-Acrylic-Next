@@ -1,5 +1,5 @@
 function setFixed(el) {
-    if(!el)return
+    if (!el) return
     const currentTop = window.scrollY || document.documentElement.scrollTop
     if (currentTop > 0) {
         el.classList.add('nav-fixed')
@@ -48,7 +48,7 @@ const sidebarFn = () => {
     const $menuMask = document.getElementById('menu-mask')
     const $body = document.body
 
-    if(!$toggleMenu)return
+    if (!$toggleMenu) return
 
     function openMobileSidebar() {
         utils.sidebarPaddingR()
@@ -154,11 +154,11 @@ const percent = () => {
 class toc {
     static init() {
         const el = document.querySelectorAll('.toc a')
-        if (!el)return
+        if (!el) return
         el.forEach((e) => {
             e.addEventListener('click', (event) => {
                 event.preventDefault()
-                utils.scrollToDest(utils.getEleTop(document.getElementById(decodeURI((event.target.className === 'toc-text' ? event.target.parentNode.hash: event.target.hash).replace('#', '')))), 300)
+                utils.scrollToDest(utils.getEleTop(document.getElementById(decodeURI((event.target.className === 'toc-text' ? event.target.parentNode.hash : event.target.hash).replace('#', '')))), 300)
             })
         })
         this.active(el)
@@ -169,14 +169,14 @@ class toc {
         const $tocContent = document.getElementById('toc-content')
         const list = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
         let detectItem = ''
-        function autoScroll(el){
+        function autoScroll(el) {
             const activePosition = el.getBoundingClientRect().top
             const sidebarScrollTop = $tocContent.scrollTop
             if (activePosition > (document.documentElement.clientHeight - 100)) {
-              $tocContent.scrollTop = sidebarScrollTop + 150
+                $tocContent.scrollTop = sidebarScrollTop + 150
             }
             if (activePosition < 100) {
-              $tocContent.scrollTop = sidebarScrollTop - 150
+                $tocContent.scrollTop = sidebarScrollTop - 150
             }
         }
         function findHeadPosition(top) {
@@ -248,20 +248,15 @@ class acrylic {
             el.classList.remove('show')
         }
     }
-    static async copyPageUrl() {
-        try {
-            await navigator.clipboard.writeText(window.location.href)
-            utils.snackbarShow(GLOBALCONFIG.lang.copy.success, false, 2000)
-        } catch (err) {
-            utils.snackbarShow(GLOBALCONFIG.lang.copy.error, false, 2000)
-        }
+    static copyPageUrl() {
+        utils.copy(window.location.href)
     }
     static lightbox(el) {
         window.ViewImage && ViewImage.init(el);
     }
     static initTheme() {
         const nowMode = localStorage.getItem('theme')
-        if(nowMode){
+        if (nowMode) {
             document.documentElement.setAttribute('data-theme', nowMode)
         }
     }
@@ -279,17 +274,17 @@ class acrylic {
             el.innerText = utils.timeDiff(new Date(GLOBALCONFIG.runtime), new Date()) + GLOBALCONFIG.lang.time.runtime
         }
     }
-    static lazyloadImg(){
+    static lazyloadImg() {
         window.lazyLoadInstance = new LazyLoad({
-          elements_selector: 'img',
-          threshold: 0,
-          data_src: 'lazy-src',
-          callback_error: (img) => {
-            img.setAttribute("src", GLOBALCONFIG.lazyload.error);
-          }
+            elements_selector: 'img',
+            threshold: 0,
+            data_src: 'lazy-src',
+            callback_error: (img) => {
+                img.setAttribute("src", GLOBALCONFIG.lazyload.error);
+            }
         })
-      }
-    static initbbtalk(){
+    }
+    static initbbtalk() {
         if (document.querySelector('#bber-talk')) {
             var swiper = new Swiper('.swiper-container', {
                 direction: 'vertical',
@@ -303,6 +298,44 @@ class acrylic {
     }
 }
 
+class hightlight {
+    static createEle(langEl, item) {
+        const fragment = document.createDocumentFragment()
+        const highlightCopyEle = '<i class="fas fa-paste copy-button" id="code-copy"></i>'
+
+        const hlTools = document.createElement('div')
+        hlTools.className = `highlight-tools`
+        hlTools.innerHTML = langEl + highlightCopyEle
+        fragment.appendChild(hlTools)
+        const itemHeight = item.clientHeight, $table = item.querySelector('table')
+        if (GLOBALCONFIG.hightlight.limit && itemHeight > GLOBALCONFIG.hightlight.limit + 30) {
+            $table.setAttribute('style', `height: ${GLOBALCONFIG.hightlight.limit}px`)
+            const ele = document.createElement('div')
+            ele.className = 'code-expand-btn'
+            ele.innerHTML = '<i class="fas fa-angle-double-down"></i>'
+            ele.addEventListener('click', (e) => {
+                e.target.classList.toggle('expand-done')
+                $table.setAttribute('style', `height: ${itemHeight}px`)
+            })
+            fragment.appendChild(ele)
+        }
+
+        item.insertBefore(fragment, item.firstChild)
+        document.getElementById('code-copy').addEventListener('click', (e) => {
+            utils.copy($table.innerText) 
+        })
+    }
+    static init() {
+        const $figureHighlight = document.querySelectorAll('figure.highlight'), that = this
+        $figureHighlight.forEach(function (item) {
+            let langName = item.getAttribute('class').split(' ')[1]
+            if (langName === 'plaintext' || langName === undefined) langName = 'Code'
+            const highlightLangEle = `<div class="code-lang">${langName.toUpperCase()}</div>`
+            that.createEle(highlightLangEle, item)
+        })
+    }
+}
+
 window.refreshFn = () => {
     scrollFn()
     sidebarFn()
@@ -313,12 +346,13 @@ window.refreshFn = () => {
     GLOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #bber .bber-content-img img')
     GLOBALCONFIG.randomlinks && randomLinksList()
     PAGECONFIG.toc && toc.init()
+    if (PAGECONFIG.is_post && GLOBALCONFIG.hightlight.enable) hightlight.init()
     PAGECONFIG.comment && initComment()
-    if(PAGECONFIG.is_home){
+    if (PAGECONFIG.is_home) {
         showTodayCard()
         acrylic.initbbtalk()
     }
-    if(PAGECONFIG.is_page && PAGECONFIG.page === 'says')acrylic.reflashEssayWaterFall()
+    if (PAGECONFIG.is_page && PAGECONFIG.page === 'says') acrylic.reflashEssayWaterFall()
     GLOBALCONFIG.covercolor && coverColor()
 }
 
@@ -327,6 +361,6 @@ document.addEventListener('DOMContentLoaded', function () {
     refreshFn()
 })
 
-document.addEventListener('pjax:complete', () => { 
+document.addEventListener('pjax:complete', () => {
     window.refreshFn()
 })

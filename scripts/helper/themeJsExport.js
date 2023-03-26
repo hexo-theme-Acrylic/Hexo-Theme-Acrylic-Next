@@ -7,6 +7,10 @@ hexo.extend.helper.register('export_config', function() {
             enable: theme.lazyload.enable,
             error: theme.lazyload.errorimg
         },
+        hightlight: {
+            enable: theme.hightlight.enable,
+            limit: theme.hightlight.hightlimit
+        },
         lightbox: theme.lightbox,
         randomlinks: theme.footer.randomlink,
         lang: {

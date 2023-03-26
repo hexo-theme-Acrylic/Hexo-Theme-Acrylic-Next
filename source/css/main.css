@@ -745,8 +745,10 @@ figure.highlight pre .javascript .function, figure.highlight pre .tag .attr {
 
 #article-container figure.highlight table {
   display: block;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   border: none;
+  transition: .3s;
 }
 
 #article-container figure.highlight table td {
@@ -848,15 +850,6 @@ blockquote footer cite::before {
 
 #article-container .gist table td {
   border: none;
-}
-
-#article-container .code-expand-btn.expand-done {
-  display: none !important;
-}
-
-#article-container .code-expand-btn:not(.expand-done)~pre, #article-container .code-expand-btn:not(.expand-done)~table {
-  overflow: hidden;
-  height: 400px;
 }
 
 @-webkit-keyframes code-expand-key {
