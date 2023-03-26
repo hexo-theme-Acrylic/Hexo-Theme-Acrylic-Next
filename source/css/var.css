@@ -154,7 +154,7 @@
 }
 
 [data-theme="dark"] .note {
-  filter: brightness(0.8);
+  filter: brightness(0.9);
 }
 
 [data-theme="dark"] img {

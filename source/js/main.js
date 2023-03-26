@@ -316,8 +316,8 @@ class hightlight {
             ele.className = 'code-expand-btn'
             ele.innerHTML = '<i class="fas fa-angle-double-down"></i>'
             ele.addEventListener('click', (e) => {
-                e.target.classList.toggle('expand-done')
                 $table.setAttribute('style', `height: ${itemHeight}px`)
+                e.target.className !== 'code-expand-btn' ? e.target.parentNode.classList.add('expand-done') : e.target.classList.add('expand-done')
             })
             fragment.appendChild(ele)
         }
@@ -342,14 +342,14 @@ class tabs {
     static clickFnOfTabs() {
         document.querySelectorAll('#article-container .tab > button').forEach(function (item) {
             item.addEventListener('click', function (e) {
-                const $this = this
-                const $tabItem = $this.parentNode
+                const that = this
+                const $tabItem = that.parentNode
                 if (!$tabItem.classList.contains('active')) {
                     const $tabContent = $tabItem.parentNode.nextElementSibling
                     const $siblings = utils.siblings($tabItem, '.active')[0]
                     $siblings && $siblings.classList.remove('active')
                     $tabItem.classList.add('active')
-                    const tabId = $this.getAttribute('data-href').replace('#', '')
+                    const tabId = that.getAttribute('data-href').replace('#', '')
                     const childList = [...$tabContent.children]
                     childList.forEach(item => {
                         if (item.id === tabId) item.classList.add('active')
