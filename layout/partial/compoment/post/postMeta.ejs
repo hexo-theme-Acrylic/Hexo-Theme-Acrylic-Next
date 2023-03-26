@@ -67,12 +67,14 @@
                     <% } %>        
                 </span>
             <% } %>
-            <span class="post-meta-commentcount" title="评论数">
-                <i class="fa-solid fa-message"></i>
-                <a href="#post-comment">
-                    <span id="twikoo-count"><i class="fas fa-spinner fa-pulse"></i></span>
-                </a>
-            </span>
+            <% if(theme.post.meta.comment && page.comment){ %>
+                <span class="post-meta-commentcount" title="评论数">
+                    <i class="fa-solid fa-message"></i>
+                    <a href="#post-comment">
+                        <span id="twikoo-count"><i class="fas fa-spinner fa-pulse"></i></span>
+                    </a>
+                </span>
+            <% } %>    
         </div>
     </div>
 </div>
