@@ -13456,6 +13456,12 @@ a.bb-link-info:hover {
   overflow: hidden;
   margin-top: 0;
 }
+/* 移动端即刻短文 */
+@media screen and (max-width: 768px) {
+  .author-content.author-content-item.essayPage {
+    height: 9rem;
+  }
+}
 
 /* 中控台 */
 #console {
