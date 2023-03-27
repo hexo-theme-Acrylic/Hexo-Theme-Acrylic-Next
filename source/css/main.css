@@ -2745,6 +2745,8 @@ li, ul {
 
 #article-container iframe {
   margin: 0px 0px 1rem;
+  width: 100%;
+  height: fit-content;
 }
 
 #article-container kbd {
