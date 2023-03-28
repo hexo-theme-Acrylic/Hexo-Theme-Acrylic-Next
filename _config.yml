@@ -8,10 +8,10 @@
 
 # 站点设置
 site:
-  name: Rot               # 左上角首页名称
-  icon: /img/avatar.webp  # 页脚的icon、加载动画默认的icon
-  icp:                    # ICP
+  name: Rot                  # 左上角首页名称
   siteIcon: /img/avatar.webp # 网页icon
+  icon: /img/avatar.webp     # 页脚的icon、加载动画默认的icon
+  icp:                       # ICP
 
 # 导航栏
 nav:
@@ -236,9 +236,11 @@ post:
     wechat:
     alipay:
     url:
-  covercolor: false  #文章cover取色
+  covercolor: #文章cover取色  
+    enable: false
+    local: false  
 
-# 404
+# 404页面
 errorpage:
   img: /img/acrylic.png
   text: =awa= 页面走丢了
@@ -260,7 +262,7 @@ hightlight:
 
 # 加载动画
 loading:
-  enable: false
+  fullpage: false
   pace: false
 
 # 第三方设置

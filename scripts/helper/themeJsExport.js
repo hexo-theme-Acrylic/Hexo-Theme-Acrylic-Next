@@ -44,7 +44,7 @@ hexo.extend.helper.register('export_config', function() {
                 placeholder: lang['search.placeholder'],
             }
         },
-        covercolor: theme.post.covercolor
+        covercolor: theme.post.covercolor.enable
     }
 
     // 搜索数据

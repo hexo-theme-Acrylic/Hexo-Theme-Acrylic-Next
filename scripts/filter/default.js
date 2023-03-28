@@ -9,7 +9,7 @@ hexo.extend.filter.register('after_post_render', function(data){
     data.locate = data.locate || config.post.default.locate
     data.cc = data.cc || config.post.default.copyright
     data.cover = data.cover || config.post.default.cover
-    data.excerpt =  data.description || data.excerpt || clearHtml(data.content).substr(0, config.post.default.excerpt).replaceAll(/[\r\n]/g, "")
+    data.excerpt =  data.description || data.excerpt || clearHtml(data.content).replaceAll(/[\r\n]/g, "").substr(0, config.post.default.excerpt)
     if(config.aside.toc.post && data.toc !== false)data.toc = true
     else data.toc = false
   }

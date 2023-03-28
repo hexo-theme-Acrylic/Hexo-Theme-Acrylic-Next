@@ -2745,6 +2745,8 @@ li, ul {
 
 #article-container iframe {
   margin: 0px 0px 1rem;
+  width: 100%;
+  height: fit-content;
 }
 
 #article-container kbd {
@@ -3630,17 +3632,6 @@ blockquote.pullquote.right {
 
 #article-container .tabs>.nav-tabs>.tab button i {
   width: 1.5em;
-}
-
-#article-container .tabs>.nav-tabs>.tab.active button {
-  border-top: 2px solid rgb(48, 122, 246);
-  background: var(--tab-button-active-bg);
-  cursor: default;
-}
-
-#article-container .tabs>.nav-tabs>.tab:not(.active) button:hover {
-  border-top: 2px solid var(--tab-button-hover-bg);
-  background: var(--tab-button-hover-bg);
 }
 
 #article-container .tabs>.tab-contents .tab-item-content {
@@ -8638,14 +8629,8 @@ a.post-meta-original:hover {
   border: var(--style-border-hover-always);
 }
 
-.tab-item-content {
-  background: var(--heo-card-bg);
-}
-
 /* 切换tab标签 */
 #article-container .tabs>.tab-contents .tab-item-content.active {
-  animation: tabshow 0s;
-  -webkit-animation: tabshow 0s;
   padding: 1.2rem 1.2rem;
   border-radius: 8px;
 }
@@ -12198,23 +12183,6 @@ a.bb-link-info:hover {
 .moments-article-img {
   height: 100%;
   margin: 0 !important;
-}
-
-.tab-item-content #moments_container .moments-item a {
-  border-bottom: none;
-  padding: 0;
-  margin-right: auto;
-  width: auto;
-}
-
-.tab-item-content #moments_container .moments-item a:hover {
-  background: none;
-  color: var(--heo-lighttext);
-  box-shadow: none;
-}
-
-.tab-item-content #moments_container h2 {
-  display: none;
 }
 
 /* 朋友圈页面 */
