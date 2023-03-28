@@ -280,6 +280,11 @@ thirdparty:
       enable: false
       preload: false
       CDN:
+    
+  aplayer:
+    enable: false
+    server: tencent
+    id: 1708664797      
 
 # 评论
 comment:
