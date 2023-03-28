@@ -26,6 +26,11 @@
         <script async src="<%= cdn.busuanzijs %>"></script>
     <% } %> 
 </div>
+<% if(theme.post.covercolor && !theme.post.covercolor.local){ %>
+    <%- js('/js/extend/covercolor/web') %>
+<% }else{ %>
+    <%- js('/js/extend/covercolor/local') %>
+<% } %>        
 <% if(theme.footer.randomlink){ %>
     <%- randomLinks() %>
 <% } %>
