@@ -27,17 +27,7 @@
         <div class="author-content-item-tips"><%= like.tips %></div>
         <span class="author-content-item-title"><%= like.title %></span>
         <div class="content-bottom">
-          <% if (like.subtips) { %>
             <div class="tips"><%= like.subtips %></div>
-          <% } %>
-          <% if (like.buttonText) { %>
-            <div class="banner-button-group">
-              <a class="banner-button" onclick="pjax.loadUrl('<%= like.buttonUrl %>')" data-pjax-state="">
-                <i class="fas fa-circle-chevron-right"></i>
-                <span class="banner-button-text"><%= like.buttonText %></span>
-              </a>
-            </div>
-          <% } %>
         </div>
       </div>
     </div>
