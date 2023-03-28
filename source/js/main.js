@@ -143,10 +143,16 @@ const percent = () => {
     if ((centerY < visibleBottom) || (result > 90)) {
         document.querySelector("#nav-totop").classList.add("long");
         btn.innerHTML = GLOBALCONFIG.lang.backtop;
+        document.querySelectorAll(".needEndHide").forEach(item => {
+            item.classList.add("hide")
+        })
     } else {
         document.querySelector("#nav-totop").classList.remove("long");
         if (result >= 0) {
             btn.innerHTML = result;
+            document.querySelectorAll(".needEndHide").forEach(item => {
+                item.classList.remove("hide")
+            })
         }
     }
 }
@@ -295,6 +301,22 @@ class acrylic {
             });
         }
     }
+    static musicToggle(){
+        const $music = document.querySelector('#nav-music'),
+        $meting = document.querySelector('meting-js'),
+        $console = document.getElementById('consoleMusic')
+        if (acrylic_musicPlaying) {
+            $music.classList.remove("playing")
+            $console.classList.remove("on")
+            acrylic_musicPlaying = false;
+            $meting.aplayer.pause();
+        }else {
+            $music.classList.add("playing")
+            $console.classList.add("on")
+            acrylic_musicPlaying = true;
+            $meting.aplayer.play();
+        }
+    }
 }
 
 class hightlight {
@@ -392,6 +414,7 @@ window.refreshFn = () => {
 }
 
 acrylic.initTheme()
+let acrylic_musicPlaying = false
 document.addEventListener('DOMContentLoaded', function () {
     refreshFn()
 })

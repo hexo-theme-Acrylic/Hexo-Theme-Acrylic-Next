@@ -26,6 +26,11 @@
         <script async src="<%= cdn.busuanzijs %>"></script>
     <% } %> 
 </div>
+<% if(theme.thirdparty.aplayer.enable){ %>
+    <%- css(cdn.aplayercss) %>
+    <%- js(cdn.aplayerjs) %>
+    <%- js(cdn.metingjs) %>
+<% } %>
 <% if(theme.post.covercolor && !theme.post.covercolor.local){ %>
     <%- js('/js/extend/covercolor/web') %>
 <% }else{ %>
