@@ -1,40 +1,27 @@
 <div class="author-content">
-    <div class="author-content-item single reward">
-      <div class="author-content-item-tips">致谢</div>
-      <span class="author-content-item-title">赞赏名单</span>
-      <div class="author-content-item-description">感谢赞赏的人，因为你们，让我感受到写博客这件事情能够给你们创造了价值。这会让我在这条路上走得更远。</div>
-      <div class="reward-list-all">
-        <% const rewards = site.data.about.rewards; %>
-        <% for(let i = 0; i < rewards.length; i++) { %>
-          <div class="reward-list-item">
-            <div class="reward-list-item-name"><%= rewards[i].name %></div>
-            <div class="reward-list-bottom-group">
-              <div class="reward-list-item-money" <% if (rewards[i].moneyColor) { %>style="background: <%= rewards[i].moneyColor %> ; color: white;"<% } %>>¥ <%= rewards[i].money %> 元</div>
-              <time class="datatime reward-list-item-time" datetime="<%= rewards[i].time %>"><%= rewards[i].timeDisplay %></time>
-            </div>
+  <div class="author-content-item single reward">
+    <div class="author-content-item-tips">致谢</div>
+    <span class="author-content-item-title">赞赏名单</span>
+    <div class="author-content-item-description">感谢赞赏的人，因为你们，让我感受到写博客这件事情能够给你们创造了价值。这会让我在这条路上走得更远。</div>
+    <div class="reward-list-all">
+      <% site.data.about.rewardList.forEach(function(reward) { %>
+        <div class="reward-list-item">
+          <div class="reward-list-item-name"><%= reward.name %></div>
+          <div class="reward-list-bottom-group">
+            <div class="reward-list-item-money" <% if (reward.vip) { %>style="background: var(--heo-vip);" <% } %> >¥ <%= reward.money %></div>
+            <time class="datatime reward-list-item-time" datetime="<%= moment(reward.time).format() %>"></time>
           </div>
-        <% } %>
-      </div>
-      <div class="reward-list-updateDate">最新更新时间： <time class="datatime reward-list-updateDate-time"><%= lastUpdate %></time></div>
+        </div>
+      <% }); %>
       <div class="post-reward">
         <div class="post-reward" onclick="AddRewardMask()"></div>
-        <div class="reward-button" title="赞赏作者"><i class="fas fa-hamburger"></i> 打赏作者</div>
+        <div class="reward-button" title="赞赏作者"><i class="heofont icon-hand-heart-fill"></i> 打赏作者</div>
         <div class="reward-main">
           <ul class="reward-all">
             <span class="reward-title">感谢你赐予我前进的力量</span>
             <ul class="reward-group">
-              <li class="reward-item">
-                <a href="/img/wechat.png" target="_blank">
-                  <img class="post-qr-code-img" data-lazy-src="/img/wechat.png" alt="微信">
-                </a>
-                <div class="post-qr-code-desc">微信</div>
-              </li>
-              <li class="reward-item">
-                <a href="/img/alipay.png" target="_blank">
-                  <img class="post-qr-code-img" data-lazy-src="/img/alipay.png" alt="支付宝">
-                </a>
-                <div class="post-qr-code-desc">支付宝</div>
-              </li>
+              <li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.png" alt="微信"></a><div class="post-qr-code-desc">微信</div></li>
+              <li class="reward-item"><a href="/img/alipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.png" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li>
             </ul>
             <a class="reward-main-btn" href="/about/#reward-all" target="_blank">
               <div class="reward-text">赞赏者名单</div>
@@ -45,3 +32,4 @@
       </div>
     </div>
   </div>
+</div>
