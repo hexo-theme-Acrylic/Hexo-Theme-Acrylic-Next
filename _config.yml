@@ -321,3 +321,6 @@ cdn:
     waterfalljs: /lib/waterfall.min.js
     swiperjs: /lib/swiper.min.js
     busuanzijs: https://npm.elemecdn.com/penndu@1.0.0/bsz.js
+    aplayercss: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
+    aplayerjs: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
+    metingjs: https://cdn1.tianli0.top/npm/meting@2.0.1/dist/Meting.min.js
