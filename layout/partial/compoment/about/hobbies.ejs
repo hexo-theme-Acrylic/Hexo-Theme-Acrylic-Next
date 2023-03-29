@@ -1,0 +1,35 @@
+<div class="author-content">
+  <div class="author-content-item game-lol">
+    <div class="card-content">
+      <div class="author-content-item-tips">爱好游戏</div>
+      <span class="author-content-item-title"><%= site.data.about.game1.title %></span>
+      <div class="content-bottom">
+        <div class="icon-group"><i class="<%= site.data.about.game1.icon %>"> </i></div>
+        <div class="tips"><%= site.data.about.game1.tips %></div>
+      </div>
+    </div>
+  </div>
+  <div class="author-content-item game-wolf">
+    <div class="card-content">
+      <div class="author-content-item-tips">爱好游戏</div>
+      <span class="author-content-item-title"><%= site.data.about.game2.title %></span>
+      <div class="content-bottom">
+        <div class="tips"><%= site.data.about.game2.tips %></div>
+      </div>
+    </div>
+  </div>
+</div>
+<% const likes = site.data.about.likes; %>
+<div class="author-content">
+  <% likes.forEach(function(like) { %>
+    <div class="author-content-item <%= like.type %>">
+      <div class="card-content">
+        <div class="author-content-item-tips"><%= like.tips %></div>
+        <span class="author-content-item-title"><%= like.title %></span>
+        <div class="content-bottom">
+            <div class="tips"><%= like.subtips %></div>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+</div>
