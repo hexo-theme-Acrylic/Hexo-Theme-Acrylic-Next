@@ -8,7 +8,9 @@
 
 # 站点设置
 site:
-  name: Rot                  # 左上角首页名称
+  name:                   # 左上角显示内容
+    class:  text          #i_class/text/img 
+    custom: Acrylic       #自定义内容
   siteIcon: /img/avatar.webp # 网页icon
   icon: /img/avatar.webp     # 页脚的icon、加载动画默认的icon
   icp:                       # ICP
