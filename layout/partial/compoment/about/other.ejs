@@ -1,5 +1,5 @@
 <div class="author-content">
-<div class="about-statistic author-content-item">
+<div class="about-statistic author-content-item" style="background: url(<%= site.data.about.tj.img %>);">
   <div class="card-content">
     <div class="author-content-item-tips">数据</div>
     <span class="author-content-item-title">访问统计</span>
@@ -8,7 +8,7 @@
   </div>
 </div>
   <script>
-    fetch("<%= site.data.about.tj %>")
+    fetch("<%= site.data.about.tj.url %>")
       .then(res => res.text())
       .then(data => {
         let title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];

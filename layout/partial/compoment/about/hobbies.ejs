@@ -23,7 +23,7 @@
 <% const likes = site.data.about.likes; %>
 <div class="author-content">
   <% likes.forEach(function(like) { %>
-    <div class="author-content-item <%= like.type %>">
+    <div class="author-content-item <%= like.type %>" style= "background: url(<%= like.img %>)";>
       <div class="card-content">
         <div class="author-content-item-tips"><%= like.tips %></div>
         <span class="author-content-item-title"><%= like.title %></span>
