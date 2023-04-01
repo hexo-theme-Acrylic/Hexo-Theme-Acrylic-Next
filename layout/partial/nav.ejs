@@ -13,7 +13,7 @@
                       <% } else if (theme.site.name.class === 'img') { %>
                         <i style="background-image: url('<%= url_for(theme.site.name.custom) %>')"></i>
                       <% } else if (theme.site.name.class === 'text') { %>
-                        <%= theme.site.name.custom %>
+                        <span class="heoicon"><%= theme.site.name.custom %></span>
                     <% } %>
             </a>
         </div>
