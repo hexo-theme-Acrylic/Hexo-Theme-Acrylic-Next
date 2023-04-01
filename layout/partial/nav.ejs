@@ -9,11 +9,11 @@
             <% } %>
             <a id="site-name" href="/" title="返回博客主页">
                     <% if (theme.site.name.class === 'i_class') { %>
-                        <span class="<%= theme.site.name.custom %>" style="font-size: 25px;"></span>
+                        <i class="<%= theme.site.name.custom %>" style="font-size: 25px;"></i>
                       <% } else if (theme.site.name.class === 'img') { %>
                         <i style="background-image: url('<%= url_for(theme.site.name.custom) %>')"></i>
                       <% } else if (theme.site.name.class === 'text') { %>
-                        <%= theme.site.name.custom %>
+                        <span class="heoicon"><%= theme.site.name.custom %></span>
                     <% } %>
             </a>
         </div>
