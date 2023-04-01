@@ -7343,13 +7343,6 @@ span.recent-post-top-text {
   }
 }
 
-/* 置顶卡片数量优化 */
-@media screen and (min-width: 1300px) {
-  .topGroup .recent-post-item:nth-child(7) {
-    display: none;
-  }
-}
-
 
 /* 手机端精简优化 */
 @media screen and (max-width: 768px) {

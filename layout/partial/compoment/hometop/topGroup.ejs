@@ -13,7 +13,7 @@
         background: <%- theme.hometop.recommendList.color %>;
     }
 </style>
-<% for (const post of site.posts.data.filter(item => item.recommend === true)){ %>
+<% for (const post of site.posts.data.filter(item => item.recommend === true).slice(0,6)){ %>
     <div class="recent-post-item">
         <div class="post_cover left_radius">
             <a href="<%= url_for(post.path) %>"
