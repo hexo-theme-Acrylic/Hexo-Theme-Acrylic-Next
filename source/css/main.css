@@ -13351,7 +13351,8 @@ a.bb-link-info:hover {
 
 /* 喜欢的游戏 lol */
 .author-content-item.game-lol {
-  background: url(https://p.zhheo.com/2023788ba3b8739936f844e64f483faacaf1085602.png!cover) no-repeat top;
+  background-repeat: no-repeat;
+  background-position: top;
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
@@ -13416,7 +13417,8 @@ a.bb-link-info:hover {
 /* 喜欢的游戏 狼人杀 */
 .author-content-item.game-wolf {
   width: 39%;
-  background: url(https://p.zhheo.com/2023ff56a55649cf81989b9e1f4efc836907085102.png!cover) no-repeat top;
+  background-repeat: no-repeat;
+  background-position: top;
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
