@@ -83,3 +83,172 @@
 #article-container .code-expand-btn.expand-done {
     display: none !important;
 }
+
+
+#article-container .bilibili_box {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background: var(--heo-card-bg);
+    border: var(--style-border-always);
+    border-radius: 10px;
+    overflow: hidden;
+    color: var(--heo-fontcolor) !important;
+    text-decoration: none!important;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    transition: .3s
+}
+
+#article-container .bilibili_box:hover {
+    border-color: var(--heo-theme)
+}
+
+@media screen and (max-width: 768px) {
+    #article-container .bilibili_box {
+        -webkit-box-orient:vertical;
+        -moz-box-orient: vertical;
+        -o-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column
+    }
+}
+
+#article-container .bilibili_box .bilibili_cover {
+    width: 200px;
+    position: relative
+}
+
+@media screen and (max-width: 768px) {
+    #article-container .bilibili_box .bilibili_cover {
+        width:100%
+    }
+}
+
+#article-container .bilibili_box .bilibili_cover img {
+    width: 100%;
+    filter: none;
+    margin: 0!important;
+    border-radius: 0!important
+}
+
+#article-container .bilibili_box .bilibili_cover .play_icon {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    opacity: .8;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%)
+}
+
+#article-container .bilibili_box .bilibili_cover span {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    color: #fff;
+}
+
+#article-container .bilibili_box .bilibili_info {
+    padding: 10px 10px 10px 18px;
+    width: calc(100% - 200px);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: distribute;
+    -moz-box-pack: distribute;
+    -o-box-pack: distribute;
+    -ms-flex-pack: distribute;
+    -webkit-justify-content: space-around;
+    justify-content: space-around
+}
+
+@media screen and (max-width: 768px) {
+    #article-container .bilibili_box .bilibili_info {
+        width:100%;
+        padding-bottom: 25px
+    }
+}
+
+#article-container .bilibili_box .bilibili_info .title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    line-height: 1.7
+}
+
+#article-container .bilibili_box .bilibili_info .stat {
+    font-size: 15px
+}
+
+#article-container .bilibili_box .bilibili_info .stat svg {
+    margin-right: 3px;
+    font-size: 18px;
+    vertical-align: -0.15em;
+}
+
+#article-container .bilibili_box .bilibili_info .stat svg path {
+    fill: #99a9bf
+}
+
+#article-container .bilibili_box .bilibili_info .stat span {
+    margin-right: 10px
+}
+
+#article-container .bilibili_box .bilibili_info .owner {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    line-height: 1;
+    font-size: 15px;
+    margin-top: 3px
+}
+
+#article-container .bilibili_box .bilibili_info .owner .tip {
+    color: #f69;
+    border: 1px solid;
+    padding: 4px 7px;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-right: 10px
+}
+
+#article-container .bilibili_box .bilibili_info .owner img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%!important;
+    object-fit: cover;
+    margin: 0 5px 0 0!important
+}
+
+[data-theme=dark] #article-container .bilibili_box  .bilibili_cover,[data-theme=light] #article-container .bilibili_box .bilibili_info .stat svg {
+    opacity: .8
+}
