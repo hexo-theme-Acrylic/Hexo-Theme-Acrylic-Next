@@ -20,9 +20,21 @@
           <ul class="reward-all">
             <span class="reward-title">感谢你赐予我前进的力量</span>
             <ul class="reward-group">
-              <li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" alt="微信"></a><div class="post-qr-code-desc">微信</div></li>
-              <li class="reward-item"><a href="/img/alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li>
-            </ul>
+              <% var rewards = [
+                { image: theme?.post?.award?.wechat, description: '微信' },
+                { image: theme?.post?.award?.alipay, description: '支付宝' }
+              ]; %>
+              <% for (var i = 0; i < rewards.length; i++) { %>
+                <li class="reward-item">
+                  <a href="<%= rewards[i].image %>" target="_blank" >
+                    <img class="post-qr-code-img" alt="<%= rewards[i].description %>" src="<%= rewards[i].image %>">
+                  </a>
+                  <div class="post-qr-code-desc">
+                    <%= rewards[i].description %>
+                  </div>
+                </li>
+              <% } %>
+            </ul>                                
           </ul>
         </div>
       </div>
