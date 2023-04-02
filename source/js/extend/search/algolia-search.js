@@ -127,7 +127,6 @@ const searchClickFn = () => {
 const searchClickFnOnce = () => {
   document.querySelector('#algolia-search .search-close-button').addEventListener('click', search.closeSearch)
   $searchMask.addEventListener('click', search.closeSearch)
-  if (GLOBALCONFIG.localsearch.preload) dataObj = search.fetchData(GLOBALCONFIG.localsearch.path)
 }
 
 window.addEventListener('load', () => {
