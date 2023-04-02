@@ -1,5 +1,5 @@
 <div class="author-content">
-<div class="about-statistic author-content-item">
+<div class="about-statistic author-content-item" style="background: url(<%= site.data.about.tj.img %>);">
   <div class="card-content">
     <div class="author-content-item-tips">数据</div>
     <span class="author-content-item-title">访问统计</span>
@@ -8,7 +8,7 @@
   </div>
 </div>
   <script>
-    fetch("<%= site.data.about.tj %>")
+    fetch("<%= site.data.about.tj.url %>")
       .then(res => res.text())
       .then(data => {
         let title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
@@ -26,16 +26,21 @@
         }
       });
     </script>
-<% const oneself = site.data.about.oneself; %>
-<div class="author-content-item-group column mapAndInfo">
-    <div class="author-content-item map single"><span class="map-title">我现在住在 <b><%= oneself.location %></b></span></div>
-    <div class="author-content-item selfInfo single">
-      <div><span class="selfInfo-title">生于</span><span class="selfInfo-content" style="color: #43a6c6;"><%= oneself.birthYear %></span></div>
-      <div><span class="selfInfo-title"><%= oneself.university %></span><span class="selfInfo-content" style="color: #c69043;"><%= oneself.major %></span></div>
-      <div><span class="selfInfo-title">现在职业</span><span class="selfInfo-content" style="color: #b04fe6;"><%= oneself.occupation %></span></div>
-    </div>
+  <div class="author-content-item map single" style="background: url(<%= oneself.map %>) no-repeat center; background-size: 100%;">
+    <span class="map-title">我现在住在 <b><%= oneself.location %></b></span>
   </div>
-</div>
+  <div class="author-content-item selfInfo single">
+    <div>
+      <span class="selfInfo-title">生于</span>
+      <span class="selfInfo-content" style="color: #43a6c6;"><%= oneself.birthYear %></span>
+    </div>
+    <div>
+      <span class="selfInfo-title"><%= oneself.university %></span>
+      <span class="selfInfo-content" style="color: #c69043;"><%= oneself.major %></span>
+    </div>
+    <div>
+      <span class="selfInfo-title">现在职业</span>
+      <span class="selfInfo-content" style="color: #b04fe6;"><%= oneself.occupation %></span>
 <div class="author-content">
     <div class="create-site-post author-content-item single">
       <div class="author-content-item-tips">心路历程</div><span class="author-content-item-title">为什么建站？</span>

@@ -7211,13 +7211,6 @@ span.recent-post-top-text {
   }
 }
 
-/* 置顶卡片数量优化 */
-@media screen and (min-width: 1300px) {
-  .topGroup .recent-post-item:nth-child(7) {
-    display: none;
-  }
-}
-
 
 /* 手机端精简优化 */
 @media screen and (max-width: 768px) {
@@ -13001,7 +12994,8 @@ a.bb-link-info:hover {
 #about-page .about-statistic {
   min-height: 380px;
   width: 39%;
-  background: url(https://p.zhheo.com/202301469892c749fa4cf63fa351f8171566082902.png!cover) no-repeat top;
+  background-repeat: no-repeat;
+  background-position: top;
   background-size: cover;
   color: var(--heo-white);
   overflow: hidden;
@@ -13198,7 +13192,8 @@ a.bb-link-info:hover {
 
 /* 喜欢的游戏 lol */
 .author-content-item.game-lol {
-  background: url(https://p.zhheo.com/2023788ba3b8739936f844e64f483faacaf1085602.png!cover) no-repeat top;
+  background-repeat: no-repeat;
+  background-position: top;
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
@@ -13263,7 +13258,8 @@ a.bb-link-info:hover {
 /* 喜欢的游戏 狼人杀 */
 .author-content-item.game-wolf {
   width: 39%;
-  background: url(https://p.zhheo.com/2023ff56a55649cf81989b9e1f4efc836907085102.png!cover) no-repeat top;
+  background-repeat: no-repeat;
+  background-position: top;
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
@@ -13282,7 +13278,7 @@ a.bb-link-info:hover {
 
 /* 关注领域 */
 .author-content-item.like-technology {
-  background: url(https://p.zhheo.com/2023e6940f5f56f0004af2705c3586d1fdf5190802.png!cover) no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   min-height: 230px;
   color: var(--heo-white);
@@ -13290,6 +13286,25 @@ a.bb-link-info:hover {
 
 .author-content-item.like-technology::after {
   box-shadow: 0 -69px 203px 11px #050b20 inset;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/* 喜欢音乐 */
+.author-content-item.like-music {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  min-height: 400px;
+  color: var(--heo-white);
+  overflow: hidden;
+}
+
+.author-content-item.like-music::after {
+  box-shadow: 0 -69px 203px 11px #0e0e0e inset;
   position: absolute;
   content: '';
   width: 100%;
