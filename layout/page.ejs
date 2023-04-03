@@ -1,3 +1,36 @@
-<div id="article-container">
-    <%- page.content %>
-</div>
+<main class="layout <%= page.aside ? '' : 'hide-aside' %>" id="content-inner">
+    <div id="page">
+        <% switch (page.type) {
+            case 'categories': %>
+                <%- partial('page/categories') %>
+            <% break;
+            case 'tags': %>
+            <%- partial('page/tags') %>
+            <% break;
+            case 'links': %>
+                <%- partial('page/links') %>
+			<% break;
+			case 'about': %>
+			    <%- partial('page/about') %>
+            <% break;
+            case 'says': %>
+                <%- partial('page/says') %>
+            <% break;
+            case 'album': %>
+                <%- partial('page/album') %>
+            <% break;
+            case 'album_detail': %>
+                <%- partial('page/album_detail') %>
+            <% break;
+            default: %>
+                <%- partial('page/page') %>
+            <% break; 
+        } %> 
+        <% if(page.comment){ %>
+            <%- partial('partial/compoment/third-party/comments/comment') %>
+        <% } %>    
+    </div>
+    <% if(page.aside){ %>
+        <%- partial('partial/compoment/aside/aside') %> 
+    <% } %>   
+</main>     
