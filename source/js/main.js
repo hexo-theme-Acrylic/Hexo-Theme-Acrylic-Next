@@ -390,11 +390,17 @@ class tabs {
     }
 }
 
+const setTheme = () => {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+};
+
 window.refreshFn = () => {
     scrollFn()
     sidebarFn()
     setTimeState()
     chageTimeFormate()
+    setTheme()
     acrylic.addRuntime()
     GLOBALCONFIG.lazyload.enable && acrylic.lazyloadImg()
     GLOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #bber .bber-content-img img')
