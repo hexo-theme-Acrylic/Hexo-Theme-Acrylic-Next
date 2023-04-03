@@ -1,6 +1,6 @@
 # Hexo-Theme-Acrylic-Next
 
-![封面图](https://raw.githubusercontent.com/hexo-theme-Acrylic/JS-Acrylic/main/hhis5p.webp)
+![封面图](https://tucdn.wpon.cn/2023/04/03/0c5c23ecf8a5e.jpg)
 
 下一代Acrylic何必是butterfly
 
