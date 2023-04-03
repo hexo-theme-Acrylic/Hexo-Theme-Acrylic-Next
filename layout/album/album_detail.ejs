@@ -1,0 +1,75 @@
+<div id="album_detail" class="thumbnail_canvas">
+    <% for(i in site.data.album){ %>
+        <!--% site.data.album.forEach(function(item) { %-->
+        <% const item = site.data.album[i] %>
+        <!--% let path_name = (is_current(item.path_name)) ? true : false %-->
+        <% let path_name = (is_current(item.path_name)) ? true : false %>
+        <% if (path_name && item.album_list) { %>
+            <div class="author-content author-content-item album single nolazyload" style="background: url(<%= page.cover %>) no-repeat center;background-size: cover;">
+                <div class="card-content">
+                    <div class="author-content-item-tips">相册集</div>
+                        <span class="author-content-item-title"><%= item.class_name %></span>
+                    <div class="content-bottom">
+                        <div class="tips"><%= item.description %></div>
+                    </div>
+                </div>
+            </div>
+            <section class="timeline page-1" style="margin-top: 1rem;">
+                <ul id="waterfall" class="list">
+                <!--ul id="waterfall" class="list show" style="position: relative; height: 448px;"-->
+                    <% item.album_list.forEach(function(iten, index) { %>
+                        <li class="album-item">
+                        <!--li class="album-item" style="position: absolute; top: 0px; left: 0px;"-->
+                            <div class="album-content">
+                                <p class="datacont"><%= iten.content %></p>
+                                <% if (iten.image) { %>
+                                    <div class="album-container-img">
+                                        <% iten.image.forEach(function(itel, indey) { %>
+                                            <a class="album-content-img" href="<%= iten.image[indey] %>" target="_blank" data-fancybox="gallery" data-caption="">
+                                                <img src="<%= iten.image[indey] %>" data-lazy-src="<%= iten.image[indey] %>" data-ll-status="'loaded" class="'entered loaded">
+                                            </a>
+                                        <% }) %>
+                                        <div class="album-content-noimg"></div>
+                                        <div class="album-content-noimg"></div>
+                                        <div class="album-content-noimg"></div>
+                                    </div>
+                                    <hr>
+                                    <div class="album-bottom">
+                                        <div class="album-info">
+                                            <div class="album-info-time">
+                                                <%# var datedata = new Date(item.date).toISOString() %>
+                                                <i class="fa-brands fa-instagram"></i>
+                                                <time class="datatime" datetime="<%= moment(iten.date).format() %>"></time>
+                                            </div>
+                                            <% if (item.link) { %>
+                                                <a class="album-content-link" target="_blank" title="跳转到短文指引的链接" href="<%= item.link %>" rel="external nofollow">
+                                                    <i class="fas fa-link"></i>
+                                                    链接
+                                                </a>
+                                            <% } %>
+                                            <% if (item.address) { %>
+                                                <div class="album-info-address">
+                                                    <i class="far fa-location-dot"></i>
+                                                    <span><%= item.address %></span>
+                                                </div>
+                                            <% } %>
+                                            <div class="album-info-from">
+                                                <i class="far fa-popsicle"></i>
+                                                <% if (item.from) { %>
+                                                    <span><%= item.from %></span>
+                                                <% } else { %>
+                                                    <span>管弦乐</span>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </li>
+                    <% }) %>
+                </ul>
+            </section>
+            <!--/hr-->
+        <% } %>
+    <% } %>
+</div>

@@ -32,6 +32,15 @@
   --hlnumber-color: rgba(238, 255, 255, 0.5);
   --hlscrollbar-bg: #121212;
   --hlexpand-bg: linear-gradient(180deg, rgba(33, 33, 33, 0.6), rgba(33, 33, 33, 0.9));
+  /* 相册变量定义 */
+  --album-background-dark: #2d3548;
+  --album-text-light: rgba(255, 255, 255, 0.6);
+  --album-text-lighter: rgba(255, 255, 255, 0.9);
+  --album-spacing-s: 8px;
+  --album-spacing-m: 16px;
+  --album-spacing-l: 24px;
+  --album-spacing-xl: 32px;
+  --album-spacing-xxl: 64px;
 }
 
 ::selection {
