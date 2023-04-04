@@ -149,4 +149,5 @@ const utils = {
       return child !== ele
     })
   },
+  isMobile: () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
 }
