@@ -159,8 +159,12 @@ const percent = () => {
 
 class toc {
     static init() {
+        const tocContainer = document.getElementById('card-toc')
+        if (!tocContainer || !tocContainer.querySelector('.toc a')) {
+            tocContainer.style.display = 'none'
+            return
+        }
         const el = document.querySelectorAll('.toc a')
-        if (!el) return
         el.forEach((e) => {
             e.addEventListener('click', (event) => {
                 event.preventDefault()
