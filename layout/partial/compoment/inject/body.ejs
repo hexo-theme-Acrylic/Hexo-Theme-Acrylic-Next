@@ -2,15 +2,40 @@
 <%- js(cdn.pjaxjs) %>
 <% if(theme.lazyload.enable){ %>
     <%- js(cdn.lazyloadjs) %>
-    <%- partial('partial/compoment/third-party/lazyload') %>
 <% } %>
 <%- js(cdn.snackbarjs) %>
-<%- js(cdn.viewimagejs) %>
-<%- js(cdn.waterfalljs) %>
+<% if(theme.lightbox){ %>
+    <%- js(cdn.viewimagejs) %>
+<% } %>
 <% if(theme.hometop.bbtime){ %>
     <%- css(cdn.swipercss) %>
     <%- js(cdn.swiperjs) %>
 <% } %>
+<div id="js-pjax">
+    <% if(page.type === 'says'){ %>
+        <%- js(cdn.waterfalljs) %>
+        <script>
+            window.addEventListener('resize', utils.throttle(function () {
+                if (document.getElementById('waterfall')) {
+                    acrylic.reflashEssayWaterFall();
+                }
+            }), 500);
+        </script>
+    <% } %>
+    <% if(theme.thirdparty.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)){ %>
+        <script async src="<%= cdn.busuanzijs %>"></script>
+    <% } %> 
+</div>
+<% if(theme.thirdparty.aplayer.enable){ %>
+    <%- css(cdn.aplayercss) %>
+    <%- js(cdn.aplayerjs) %>
+    <%- js(cdn.metingjs) %>
+<% } %>
+<% if(theme.post.covercolor && !theme.post.covercolor.local){ %>
+    <%- js('/js/extend/covercolor/web') %>
+<% }else{ %>
+    <%- js('/js/extend/covercolor/local') %>
+<% } %>        
 <% if(theme.footer.randomlink){ %>
     <%- randomLinks() %>
 <% } %>

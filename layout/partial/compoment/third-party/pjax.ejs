@@ -2,8 +2,9 @@
   let pjaxSelectors = [
     'title',
     '#body-wrap',
-    '.site-config',
-    'meta[name="description"]'
+    '#site-config',
+    'meta[name="description"]',
+    '#js-pjax'
   ]
   
   const pjax = new Pjax({
@@ -13,30 +14,13 @@
     analytics: false,
     scrollRestoration: false
   })
-  
-  window.addEventListener('DOMContentLoaded', () => {
-    <% if(theme.lazyload.enable){ -%>
-      lazyLoadInstance.update()
-    <% } %>  
-    <% if(theme.loading.enable){ -%>
-      preloader.endLoading() 
-    <% } %>   
-  })
-  document.addEventListener('pjax:send', () => {
-    <% if(theme.loading.enable){ -%> 
-      preloader.initLoading() 
-    <% } %>
-  })
-  document.addEventListener('pjax:complete', () => { 
-    <% if(theme.loading.enable){ -%>
-      preloader.endLoading()
-      <% if(theme.loading.pace){ -%>
-        preloader.removePaceDone()
-      <% } %> 
-    <% } %>  
-    <% if(theme.lazyload.enable){ -%>
-      lazyLoadInstance.update()
-    <% } %>   
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
   })
 
   document.addEventListener('pjax:error', (e) => {

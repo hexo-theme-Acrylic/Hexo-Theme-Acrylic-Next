@@ -1,14 +1,28 @@
 <div class="aside-content" id="aside-content">
-    <%- partial('partial/compoment/aside/infoCard') %>
-    <!-- <div class="card-widget heo-right-widget" id="card-wechat" onclick="window.open('/wechat/')">
-        <div id="flip-wrapper">
-            <div id="flip-content">
-                <div class="face"></div>
-                <div class="back face"></div>
-            </div>
-        </div>
-    </div> -->
+    <% 
+        var noSticky, Sticky;
+        if(is_home()){
+            noSticky = theme.aside.home.noSticky  
+            Sticky = theme.aside.home.Sticky  
+        }
+        if(is_post()){
+            noSticky = theme.aside.post.noSticky  
+            Sticky = theme.aside.post.Sticky  
+        }
+        if(is_page() || is_archive() || is_tag() || is_category()){
+            noSticky = theme.aside.page.noSticky  
+            Sticky = theme.aside.page.Sticky  
+        }
+    %>
+    <% if(noSticky)noSticky.forEach(item => { %>
+        <%- partial('partial/compoment/aside/asideSwitch', {item: item}) %>
+    <% }); %>
     <div class="sticky_layout">
-        <%- partial('partial/compoment/aside/asideSticky') %>
+        <% if(page.toc){ %>
+            <%- partial('partial/compoment/aside/asideToc') %>
+        <% } %>    
+        <% if(Sticky)Sticky.forEach(item => { %>
+            <%- partial('partial/compoment/aside/asideSwitch', {item: item}) %>
+        <% }); %>
     </div>
 </div>

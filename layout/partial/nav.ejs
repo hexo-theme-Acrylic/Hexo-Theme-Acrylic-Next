@@ -8,9 +8,13 @@
                 </div>
             <% } %>
             <a id="site-name" href="/" title="返回博客主页">
-                <span class="heoicon">
-                    <%= theme.site.name %>
-                </span>
+                    <% if (theme.site.name.class === 'i_class') { %>
+                        <i class="<%= theme.site.name.custom %>" style="font-size: 25px;"></i>
+                      <% } else if (theme.site.name.class === 'img') { %>
+                        <i style="background-image: url('<%= url_for(theme.site.name.custom) %>')"></i>
+                      <% } else if (theme.site.name.class === 'text') { %>
+                        <span class="heoicon"><%= theme.site.name.custom %></span>
+                    <% } %>
             </a>
         </div>
         <div id="page-name-mask">

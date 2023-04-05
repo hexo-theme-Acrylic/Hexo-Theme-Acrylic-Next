@@ -29,8 +29,4 @@
 <% if (theme.extends.head) for (const i of theme.extends.head){ %>
     <%- i %>
 <% } %>
-<div class="site-config">
-    <script>
-        var GOBALPAGE = "<%= is_home() ? 'home' : (is_post() ? 'post' : (is_page() ? 'page' : 'temp')) %>"
-    </script> 
-</div>
+<%- export_config() %>

@@ -54,7 +54,7 @@ const utils = {
   },
 
   fadeOut: (ele, time) => {
-    ele.addEventListener('animationend', function f () {
+    ele.addEventListener('animationend', function f() {
       ele.style.cssText = "display: none; animation: '' "
       ele.removeEventListener('animationend', f)
     })
@@ -73,7 +73,7 @@ const utils = {
   snackbarShow: (text, showAction, duration) => {
     const sa = (typeof showAction !== 'undefined') ? showAction : false
     const dur = (typeof duration !== 'undefined') ? duration : 5000
-    document.styleSheets[0].addRule(':root','--heo-snackbar-time:'+ dur +'ms!important')
+    document.styleSheets[0].addRule(':root', '--heo-snackbar-time:' + dur + 'ms!important')
     Snackbar.show({
       text: text,
       showAction: sa,
@@ -81,7 +81,16 @@ const utils = {
       pos: 'top-center'
     })
   },
-  
+
+  copy: async (text) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      utils.snackbarShow(GLOBALCONFIG.lang.copy.success, false, 2000)
+    } catch (err) {
+      utils.snackbarShow(GLOBALCONFIG.lang.copy.error, false, 2000)
+    }
+  },
+
   getEleTop: ele => {
     let actualTop = ele.offsetTop
     let current = ele.offsetParent
@@ -115,8 +124,8 @@ const utils = {
       return
     }
     let start = null
-    pos =+ pos
-    window.requestAnimationFrame(function step (currentTime) {
+    pos = + pos
+    window.requestAnimationFrame(function step(currentTime) {
       start = !start ? currentTime : start
       const progress = currentTime - start
       if (currentPos < pos) {
@@ -131,4 +140,14 @@ const utils = {
       }
     })
   },
+  
+  siblings: (ele, selector) => {
+    return [...ele.parentNode.children].filter((child) => {
+      if (selector) {
+        return child !== ele && child.matches(selector)
+      }
+      return child !== ele
+    })
+  },
+  isMobile: () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
 }

@@ -1,5 +1,5 @@
 <% const cdn = theme.cdn.head %>
-<% if(theme.loading.enable && theme.loading.pace){ %>
+<% if(theme.loading.pace){ %>
     <script data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}" src="<%= cdn.pacejs %>"></script>
 <% } %>
 <%- css(cdn.fontawesomecss) %>    
@@ -7,4 +7,8 @@
 <%- js(cdn.qrcodejs) %>
 <% if(theme.comment.enable){ %>
     <%- js(cdn.twikoojs) %>
+<% } %>
+<% if(theme.nav.right.search && theme.thirdparty.search.algolia_search.enable){ %>
+    <%- js(cdn.instantsearch) %>
+    <%- js(cdn.algolia) %>
 <% } %>

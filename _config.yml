@@ -1,9 +1,19 @@
+## Acrylic主题配置文件
+############################################################################################################
+# 为避免主题更新后，配置文件被覆盖，请复制一份此文件到站点根目录下的_config.Acrylic.yml文件中，修改_config.Acrylic.yml文件中的配置
+############################################################################################################
+# 修改此文件前，请仔细阅读官方文档：https://next-docs.acrylic.org.cn/
+############################################################################################################
+
+
 # 站点设置
 site:
-  name: Rot               # 左上角首页名称
-  icon: /img/avatar.webp  # 页脚的icon
-  icp:                    # ICP
-  siteIcon: /img/avatar.webp # 主页的icon
+  name:                   # 左上角显示内容
+    class:  text          #i_class/text/img 
+    custom: Acrylic       #自定义内容
+  siteIcon: /img/avatar.webp # 网页icon
+  icon: /img/avatar.webp     # 页脚的icon、加载动画默认的icon
+  icp:                       # ICP
 
 # 导航栏
 nav:
@@ -11,10 +21,10 @@ nav:
   left:
     enable: true
     menu:
-      我的:
-        博客:
-          icon: /img/avatar.webp
-          url: /
+      # 我的:
+      #   博客:
+      #     icon: /img/avatar.webp
+      #     url: /
 # 导航栏内容
   menu:
     # 文库:
@@ -46,52 +56,52 @@ nav:
   right: # @todo 允许用户自定义
     travellings: true   #开往
     random: true        #
-    search: false       #刷新按钮
     console: true       #控制台
 
 # heo式顶部一大坨
 hometop:
   bbtime: false
   banner:
+    enable: true
     title: 分享设计<br>与科技生活
     url: blog.zhheo.com
     icon:
-      AE:
-        img: /img/icon/ae.png
-        color: '#989bf8'
-      Sketch:
-        img: /img/icon/Sketch.png
-        color: '#ffffff'
-      Docker:
-        img: /img/icon/docker.png
-        color: '#57b6e6'
-      ps:
-        img: /img/icon/ps.png
-        color: '#4082c3'
-      FinalCutPro:
-        img: /img/icon/FinalCutPro.png
-        color: '#ffffff'
-      Python:
-        img: /img/icon/Python.png
-        color: '#ffffff'
-      Swift:
-        img: /img/icon/Swift.png
-        color: '#eb6840'
-      Principle:
-        img: /img/icon/Principle.png
-        color: '#8f55ba'
-      illustrator:
-        img: /img/icon/illustrator.png
-        color: '#f29e39'
-      CSS3:
-        img: /img/icon/CSS3.png
-        color: '#2c51db'
-      JS:
-        img: /img/icon/JS.png
-        color: '#f7cb4f'
-      Git:
-        img: /img/icon/git.png
-        color: '#df5b40'
+      # AE:
+      #   img: /img/icon/ae.png
+      #   color: '#989bf8'
+      # Sketch:
+      #   img: /img/icon/Sketch.png
+      #   color: '#ffffff'
+      # Docker:
+      #   img: /img/icon/docker.png
+      #   color: '#57b6e6'
+      # ps:
+      #   img: /img/icon/ps.png
+      #   color: '#4082c3'
+      # FinalCutPro:
+      #   img: /img/icon/FinalCutPro.png
+      #   color: '#ffffff'
+      # Python:
+      #   img: /img/icon/Python.png
+      #   color: '#ffffff'
+      # Swift:
+      #   img: /img/icon/Swift.png
+      #   color: '#eb6840'
+      # Principle:
+      #   img: /img/icon/Principle.png
+      #   color: '#8f55ba'
+      # illustrator:
+      #   img: /img/icon/illustrator.png
+      #   color: '#f29e39'
+      # CSS3:
+      #   img: /img/icon/CSS3.png
+      #   color: '#2c51db'
+      # JS:
+      #   img: /img/icon/JS.png
+      #   color: '#f7cb4f'
+      # Git:
+      #   img: /img/icon/git.png
+      #   color: '#df5b40'
 
   categoryGroup:
     G1:
@@ -116,59 +126,97 @@ hometop:
 
 # 个人卡片
 aside:
+  home:
+    noSticky: ['about', 'flip']
+    Sticky: ['newestPost', 'allInfo']
+  post:
+    noSticky: ['about']
+    Sticky: ['newestPost']   
+  page:
+    noSticky: ['about', 'flip']
+    Sticky: ['newestPost', 'allInfo']
+
   card:
     content: 这有关于<b>开发</b>、<b>技术</b>相关的问题和看法，还有对于动漫的一些<b>杂评</b>。<br>相信你可以在这里找到对你有用的知识和教程。
     information:
-      Github:
-        icon: fa-brands fa-github
-        url: https://github.com/rootlexblog
-      Mail:
-        icon: fa-solid fa-envelope
-        url: mailto:a@nalex.top
+      # Github:
+      #   icon: fa-brands fa-github
+      #   url: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next
+      # Mail:
+      #   icon: fa-solid fa-envelope
+      #   url: mailto:a@nalex.top
     button:
       text: 个人主页
       url: /
-# 建站时间
-  analytics:
+
+  flip:
+    color: '#0099FF'
+    face:
+      title: QQ群
+      desc: 加入官方QQ群与我们交流
+    backface:
+      title: 扫一扫
+      desc: 获取最新信息和帮助
+      img: /img/qqgroup.png
+
+  toc: 
+    post: true
+    page: false
+
+  # 建站时间
+  siteinfo:
+    postcount: true
+    wordcount: false
+    pv: false
+    uv: false
+    updatetime: false
+    runtimeenable: true
     runtime: '2021-12-12 00:00:00'
 
 # 页脚
 footer:
   information:
     left:
-      Github:
-        icon: fa-brands fa-github
-        url: /
-      Mail:
-        icon: fa-solid fa-envelope
-        url: /
+      # Github:
+      #   icon: fa-brands fa-github
+      #   url: /
+      # Mail:
+      #   icon: fa-solid fa-envelope
+      #   url: /
     right:
-      网易云:
-        icon: fa-solid fa-music
-        url: /
-      bilibili:
-        icon: fa-brands fa-bilibili
-        url: /
+      # 网易云:
+      #   icon: fa-solid fa-music
+      #   url: /
+      # bilibili:
+      #   icon: fa-brands fa-bilibili
+      #   url: /
 
   group:
-    导航:
-      文章归档: /archives/
-      文章分类: /categories/
-      文章标签: /tags/
-      友链: /link/
-    服务:
-      51la统计: https://51.la/
-      百度统计: https://tongji.baidu.com/
-      TianliCDN: https://ql.tianli0.top/
-    Acrylic:
-      主题官网: https://acrylic.zhheo.com/
-      Github: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic
-      Heo: https://blog.zhheo.com/
-    推荐友链:
-      Heo: https://blog.zhheo.com/
-      Akilar: https://akilar.top
+    # 导航:
+    #   文章归档: /archives/
+    #   文章分类: /categories/
+    #   文章标签: /tags/
+    #   友链: /link/
+    # 服务:
+    #   51la统计: https://51.la/
+    #   百度统计: https://tongji.baidu.com/
+    #   TianliCDN: https://ql.tianli0.top/
+    # Acrylic:
+    #   主题官网: https://acrylic.zhheo.com/
+    #   Github: https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic
+    #   Heo: https://blog.zhheo.com/
+    # 推荐友链:
+    #   Heo: https://blog.zhheo.com/
+    #   Akilar: https://akilar.top
 
   randomlink: false
+
+page:
+  error: true
+  tags: true
+  categories: true
+  default:
+    cover: /img/hello.jpg   
 
 # 文章页默认设置
 post:
@@ -177,13 +225,27 @@ post:
     locate: 北京
     copyright: 原创
     excerpt: 100
+  meta:
+    date: true
+    updated: false
+    locate: true
+    wordcount: false
+    readtime: false
+    pv: false
+    comment: false      
   award:
     enable: false
     wechat:
     alipay:
     url:
+  covercolor: #文章cover取色  
+    enable: false
+    local: false  
 
-# 404
+# 关于界面
+about: false
+
+# 404页面
 errorpage:
   img: /img/acrylic.png
   text: =awa= 页面走丢了
@@ -195,20 +257,48 @@ lazyload:
   placeholder: /img/acrylic.png
   errorimg: /img/acrylic.png
 
+# 图片灯箱
+lightbox: true
+
+#代码高亮增强
+hightlight:
+  enable: false
+  hightlimit: 200
+
 # 加载动画
 loading:
-  enable: false
+  fullpage: false
   pace: false
 
 # 第三方设置
 thirdparty:
   wordcount: false
+  busuanzi: 
+    enable: false
+    usecomment: false #当评论系统开启时文章页面使用评论系统的统计数据
+  search:
+    algolia_search:
+      enable: false
+      # hits:
+      #   per_page: 6
+    local_search:
+      enable: false
+      preload: false
+      CDN:
+    
+  aplayer:
+    enable: false
+    server: tencent
+    id: 1708664797      
 
 # 评论
 comment:
   enable: false
   twikoo:
     envId:
+    # region: ap-shanghai
+    path: window.location.pathname
+
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # 插入额外代码 如：统计，广告等
@@ -225,6 +315,8 @@ cdn:
     snackbarcss: /lib/snackbar.min.css
     qrcodejs: /lib/qrcode.min.js
     twikoojs: https://cdn.staticfile.org/twikoo/1.6.10/twikoo.all.min.js
+    instantsearch: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantsearch.js/4.39.0/instantsearch.production.min.js
+    algolia: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/algoliasearch/4.12.1/algoliasearch-lite.umd.min.js
   body:
     swipercss: /lib/swiper.min.css
     pjaxjs: /lib/pjax.min.js
@@ -233,3 +325,7 @@ cdn:
     viewimagejs: /lib/view-image.min.js
     waterfalljs: /lib/waterfall.min.js
     swiperjs: /lib/swiper.min.js
+    busuanzijs: https://npm.elemecdn.com/penndu@1.0.0/bsz.js
+    aplayercss: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
+    aplayerjs: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
+    metingjs: https://cdn1.tianli0.top/npm/meting@2.0.1/dist/Meting.min.js

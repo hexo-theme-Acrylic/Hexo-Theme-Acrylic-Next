@@ -4,7 +4,7 @@
         <%- partial('partial/head', {cache: true}) %>
     </head>
     <body id="body">
-        <% if(theme.loading.enable){ %>
+        <% if(theme.loading.fullpage){ %>
             <%- partial('partial/loading', {cache: true}) %>
         <% } %>
         <%- partial('partial/console', {cache: true}) %>
@@ -21,7 +21,9 @@
             <div class="error" id="body-wrap">
                 <%- body %>
             </div>
-         <% } %>   
+         <% } %> 
         <%- partial('partial/body', {cache: true}) %>
+        <%- partial('partial/compoment/third-party/search/index', {cache: true}) %>
+        <%- partial('partial/compoment/third-party/music', {cache: true}) %>    
     </body>
 </html>

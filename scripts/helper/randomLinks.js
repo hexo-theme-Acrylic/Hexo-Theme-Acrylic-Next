@@ -1,6 +1,7 @@
 hexo.extend.helper.register('randomLinks', function(){
     const links = []
     const data = this.site.data.links.links
+    if(!data)return
     data.forEach(x => {
         x.link_list.forEach(y => {
             links.push({

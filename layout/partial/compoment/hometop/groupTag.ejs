@@ -9,18 +9,17 @@
 <div class="tags-group-all">
     <div class="tags-group-wrapper">
         <% for(let i = 1; i <= 2; i++){ %>
-            <% let index = 1 %>
-            <% for(const i in theme.hometop.banner.icon){ %>
-                <% if(index % 2 == 1){ %>
+            <% for(let j = 0; j < Object.keys(theme.hometop.banner.icon).length; j++){ %>
+                <% const key = Object.keys(theme.hometop.banner.icon)[j] %>
+                <% if(j % 2 == 0){ %>
                     <div class="tags-group-icon-pair">
                 <% } %>    
-                    <div class="tags-group-icon" style="background: <%- theme.hometop.banner.icon[i].color %>">
-                        <img src="<%= theme.hometop.banner.icon[i].img %>" title="<%= i %>" loading="lazy">
+                    <div class="tags-group-icon" style="background: <%- theme.hometop.banner.icon[key].color %>">
+                        <img src="<%= theme.hometop.banner.icon[key].img %>" title="<%= key %>">
                     </div>
-                <% if(index % 2 == 0){ %>
+                <% if(j % 2 == 1 || j == Object.keys(theme.hometop.banner.icon).length - 1){ %>
                     </div>
                 <% } %>
-                <% index++ %>
             <% } %>   
         <% } %>    
     </div>
