@@ -264,10 +264,14 @@ class acrylic {
         window.ViewImage && ViewImage.init(el);
     }
     static initTheme() {
-        const nowMode = localStorage.getItem('theme')
-        if (nowMode) {
-            document.documentElement.setAttribute('data-theme', nowMode)
+        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let nowMode = isDarkMode ? 'dark' : 'light';
+        const cachedMode = localStorage.getItem('theme');
+        if (cachedMode && (cachedMode === 'dark' || cachedMode === 'light')) {
+            nowMode = cachedMode;
         }
+        document.documentElement.setAttribute('data-theme', nowMode);
+        localStorage.setItem('theme', nowMode);
     }
     static reflashEssayWaterFall() {
         if (document.getElementById('waterfall')) {
@@ -394,17 +398,12 @@ class tabs {
     }
 }
 
-const setTheme = () => {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-};
 
 window.refreshFn = () => {
     scrollFn()
     sidebarFn()
     setTimeState()
     chageTimeFormate()
-    setTheme()
     acrylic.addRuntime()
     GLOBALCONFIG.lazyload.enable && acrylic.lazyloadImg()
     GLOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #bber .bber-content-img img, #album_detail album-content-img img')
