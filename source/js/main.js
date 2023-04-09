@@ -264,12 +264,21 @@ class acrylic {
         window.ViewImage && ViewImage.init(el);
     }
     static initTheme() {
-        const cachedMode = localStorage.getItem('theme');
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const nowMode = (cachedMode === 'light' && isDarkMode) ? 'dark' : (cachedMode || (isDarkMode ? 'dark' : 'light'));
+        const cachedMode = localStorage.getItem('theme');
+        const isLightMode = !isDarkMode;
+        
+        const nowMode =
+          cachedMode && (cachedMode === 'dark' || cachedMode === 'light')
+            ? cachedMode === 'dark' && isLightMode ? 'light'
+            : cachedMode === 'light' && isDarkMode ? 'dark'
+            : cachedMode
+            : isDarkMode ? 'dark'
+            : 'light';
+        
         document.documentElement.setAttribute('data-theme', nowMode);
         localStorage.setItem('theme', nowMode);
-      }              
+      }                  
     static reflashEssayWaterFall() {
         if (document.getElementById('waterfall')) {
             setTimeout(function () {
