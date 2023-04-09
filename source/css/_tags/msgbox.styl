@@ -1,0 +1,102 @@
+//default color:
+:root
+  --msgbox-name-color: #888888
+  --guest-font-color: #000000
+  --guest-background-color: #cbcbcb
+  --admin-font-color: #ffffff
+  --admin-background-color: #12b7f5
+[data-theme="dark"]
+  --msgbox-name-color: #888888
+  --guest-font-color: #e3e8e9
+  --guest-background-color: #303646
+  --admin-font-color: #ffffff
+  --admin-background-color: darken(#12b7f5,0.8)
+
+.msgbox
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  width: 100%
+  height: auto
+  .msg-main
+    width: 100%
+    height: auto
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    margin: 0 0 25px 0
+    .msg-avatar-box
+      width: 30px
+      min-width: 30px
+      img.msg-avatar
+        border-radius: 50%
+        width: 30px    
+        height: 30px
+        position: relative
+      .img-alt
+        display: none
+    .msg-content
+      width: 90%
+      display: flex
+      flex-direction: column
+      flex-wrap: nowrap
+      .msg-name
+        font-size: 12px
+        color: var(--msgbox-name-color)
+        line-height: 1em
+        height: 1.5em
+      .msg-content-text
+        border-radius: 8px
+        width: auto
+        max-width: calc(100% - 30px)
+        padding: 5px 5px 0px 20px
+        clip-path: polygon(0 15px,10px 16px,10px 5px,15px 0,100% 0,100% 100%,15px 100%,10px calc(100% - 5px),10px 25px)   
+        &>p
+          margin: 0 0 0!important
+          img
+            border-radius: 6px
+    &.msgguest
+      .msg-avatar-box
+        img.msg-avatar
+          top: 0
+          right: 0
+      .msg-content
+        align-items: flex-start
+        .msg-name
+          margin-left: 15px
+        .msg-content-text
+          background: var(--guest-background-color)
+          color: var(--guest-font-color)
+    &.msgadmin
+      flex-direction: row-reverse
+      .msg-avatar-box
+        img.msg-avatar
+          top: 0
+          left: 0
+      .msg-content
+        align-items: flex-end
+        .msg-name
+          margin-right: 15px
+        .msg-content-text
+          background: var(--admin-background-color)
+          color: var(--admin-font-color)
+          padding: 5px 20px 0px 5px
+          clip-path: polygon(100% 15px,calc(100% - 10px) 16px,calc(100% - 10px) 5px,calc(100% - 15px) 0,0 0,0 100%,calc(100% - 15px) 100%,calc(100% - 10px) calc(100% - 5px),calc(100% - 10px) 25px)
+          max-width: calc(100% - 30px)
+@media screen and (max-width:496px)
+  .msgbox
+    .msg-main
+      &.msgadmin
+        flex-direction: row
+        .msg-avatar-box
+          img.msg-avatar
+            top: 0
+            right: 0
+        .msg-content
+          align-items: flex-start
+          .msg-name
+            margin-left: 15px
+          .msg-content-text
+            padding: 5px 5px 0px 20px
+            clip-path: polygon(0 15px,10px 16px,10px 5px,15px 0,100% 0,100% 100%,15px 100%,10px calc(100% - 5px),10px 25px)
+            max-width: calc(100% - 30px)

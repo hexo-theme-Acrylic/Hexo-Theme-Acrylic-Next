@@ -1,0 +1,55 @@
+.progress
+  display flex
+  font-size var(--global-font-size)
+  background-color rgba(88,88,88,0.6)
+  border-radius .25rem
+  margin 1rem 0
+  height 2rem
+  overflow hidden
+  p
+    margin 0 0 0 10px !important
+
+  .progress-bar-animated
+    background-color #a7b5fd !important
+    animation progress-bar-stripes 1s linear infinite
+
+  .progress-bar-striped
+    background-image linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+    background-size 1rem 1rem
+
+  .progress-bar
+    display flex
+    flex-direction column
+    justify-content center
+    overflow visible
+    color #fff
+    text-align center
+    white-space nowrap
+    background-color #0d6efd
+    transition width .6s ease
+
+  @media (prefers-reduced-motion:reduce)
+    .progress-bar
+      transition none
+
+  .bg-green
+    background-color #28a745 !important
+
+  .bg-yellow
+    background-color #ffc107 !important
+
+  .bg-red
+    background-color #dc3545 !important
+
+  .bg-cyan
+    background-color #17a2b8 !important
+
+  .bg-blue
+    background-color #0d6efd !important
+
+  .bg-gray
+    background-color #7f838a !important
+
+@keyframes progress-bar-stripes
+  0%
+    background-position-x 1rem

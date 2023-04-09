@@ -1,0 +1,104 @@
+details
+  display: block
+  padding: 10px
+  margin: 10px-p 0
+  border-radius: 15px
+  background: var(--color-card)
+  font-size: $fontsize-list
+  trans()
+  summary
+    cursor: pointer
+    padding: 10px
+    margin: 0 - 10px
+    border-radius: 15px
+    color: black
+    font-size: 1rem
+    font-weight: bold
+    position: relative
+    line-height: normal
+    >
+      p,h1,h2,h3,h4,h5,h6
+        display: inline
+        border-bottom: none !important
+    &:hover
+      color: var(--color-p)
+      &:after
+        position: absolute
+        content: '+'
+        text-align: center
+        top: 50%
+        transform: translateY(-50%)
+        right: 10px
+
+  border: 1px solid var(--color-block)
+  >summary
+    background: var(--color-block)
+  &[blue]
+    border-color: #2196f3
+    >summary
+      background: #2196f3
+  &[cyan]
+    border-color: #1bcdfc
+    >summary
+      background: #1bcdfc
+  &[green]
+    border-color: #3dc550
+    >summary
+      background: #3dc550
+  &[yellow]
+    border-color: #ffbd2b
+    >summary
+      background: #ffbd2b
+  &[red]
+    border-color: #fe5f58
+    >summary
+      background: #fe5f58
+
+details[open]
+  border-color: alpha(blue, .2)
+  >summary
+    border-bottom: 1px solid alpha(blue, .2)
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+  &[blue]
+    border-color: #2196f3
+    >summary
+      border-bottom-color: #2196f3
+  &[cyan]
+    border-color: #1bcdfc
+    >summary
+      border-bottom-color: #1bcdfc
+  &[green]
+    border-color: #3dc550
+    >summary
+      border-bottom-color: #3dc550
+  &[yellow]
+    border-color: #ffbd2b
+    >summary
+      border-bottom-color: #ffbd2b
+  &[red]
+    border-color: #fe5f58
+    >summary
+      border-bottom-color: #fe5f58
+  >summary
+    color: black
+    margin-bottom: 0
+    &:hover
+      &:after
+        content: '-'
+  >div.content
+    padding: 10px
+    margin: 0 - 10px
+    margin-top: 0
+    p>a:hover
+      text-decoration: underline
+    >
+      p,.tabs,ul,ol,.highlight,.note,details
+        &:first-child
+          margin-top: 0
+        &:last-child
+          margin-bottom: 0
+
+details
+    margin-bottom 20px
+    box-shadow 0 0 0 1px #aaa
