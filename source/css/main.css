@@ -13194,17 +13194,27 @@ a.bb-link-info:hover {
   display: none;
 }
 
-/* 喜欢的游戏 lol */
-.author-content-item.game-lol {
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  min-height: 300px;
-  overflow: hidden;
+.author-content-item.left-side {
   color: var(--heo-white);
   width: 59%;
+  min-height: 300px;
+  background-color: var(--heo-shadow-red);
+}
+.author-content-item.right-side {
+  color: var(--heo-white);
+  width: 39%;
+  min-height: 300px;
+  background-color: var(--heo-shadow-red);
 }
 
+.author-content-item>img{
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  object-position: no-repeat top;
+}
 .author-content-item .card-content {
   position: absolute;
   width: 100%;
@@ -13221,16 +13231,6 @@ a.bb-link-info:hover {
   .author-content-item .card-content {
     padding: 1rem;
   }
-}
-
-.author-content-item.game-lol::after {
-  box-shadow: 0 -69px 203px 11px #04120f inset;
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
 }
 
 .author-content-item .content-bottom {
@@ -13259,26 +13259,8 @@ a.bb-link-info:hover {
   background: url('https://p.zhheo.com/20233ca3efe8e906c7361f4cafec0465fbda083602.png!cover');
 }
 
-/* 喜欢的游戏 狼人杀 */
-.author-content-item.game-wolf {
-  width: 39%;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  min-height: 300px;
-  overflow: hidden;
-  color: var(--heo-white);
-}
 
-.author-content-item.game-wolf::after {
-  box-shadow: 0 -69px 203px 11px #415dc9 inset;
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
+
 
 /* 关注领域 */
 .author-content-item.like-technology {
