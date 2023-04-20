@@ -415,7 +415,7 @@ window.refreshFn = () => {
     GLOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #bber .bber-content-img img, #album_detail album-content-img img')
     GLOBALCONFIG.randomlinks && randomLinksList()
     PAGECONFIG.toc && toc.init()
-    if (PAGECONFIG.is_post) {
+    if (PAGECONFIG.is_post || PAGECONFIG.is_page) {
         GLOBALCONFIG.hightlight.enable && hightlight.init()
         tabs.init()
     }
