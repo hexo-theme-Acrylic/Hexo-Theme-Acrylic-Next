@@ -12498,6 +12498,7 @@ a.bb-link-info:hover {
 
 .author-content-item.single {
   width: 100%;
+  overflow: visible;
 }
 
 .author-content-item .author-content-item-title {
