@@ -37,6 +37,8 @@ cp -rf ./themes/Acrylic/_config.yml ./_config.Acrylic.yml
 ## ✨ 贡献者
 > 欢迎你加入我们Acrylic组织
 
+[贡献指南](https://opensource.guide/zh-hans/how-to-contribute/#%E5%A6%82%E4%BD%95%E6%8F%90%E4%BA%A4%E8%B4%A1%E7%8C%AE)
+
 ### 参与开发
 [@rootlex](https://github.com/rootlexblog)
 [@timigomen](https://github.com/timigomen)
