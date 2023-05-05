@@ -137,5 +137,4 @@ window.addEventListener('load', () => {
 
 window.addEventListener('pjax:complete', () => {
   searchClickFn()
-  search.closeSearch()
 })
