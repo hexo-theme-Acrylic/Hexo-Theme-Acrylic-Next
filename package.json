@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-acrylic",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A beautiful, powerful, and efficient Hexo theme developed by the hexo-theme-Acrylic team",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
