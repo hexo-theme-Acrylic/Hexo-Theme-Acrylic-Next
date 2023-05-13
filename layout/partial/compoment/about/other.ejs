@@ -26,10 +26,15 @@
         }
       });
     </script>
-
+<style>
+    :root {
+        --site-about-oneself-map--light: url(<%= site.data.about.oneself.map.light %>);
+        --site-about-oneself-map--dark: url(<%= site.data.about.oneself.map.dark %>);
+    }
+</style>
 <% const oneself = site.data.about.oneself; %>
 <div class="author-content-item-group column mapAndInfo">
-    <div class="author-content-item map single" style="background: url(<%= oneself.map %> )">
+    <div class="author-content-item map single">
       <span class="map-title">我现在住在 <b><%= oneself.location %></b></span></div>
     <div class="author-content-item selfInfo single">
       <div><span class="selfInfo-title">生于</span><span class="selfInfo-content" style="color: #43a6c6;"><%= oneself.birthYear %></span></div>
