@@ -2,6 +2,34 @@
     <div class="close-btn" onclick="acrylic.hideConsole()" href="javascript:void(0);">
         <i class="fas fa-circle-xmark"></i>
     </div>
+    <div class="console-card-group">
+      <div class="console-card-group-left">
+        <div id="card-newest-comments" class="console-card" onclick="heo.hideConsole()">
+          <div class="card-content">
+            .author-content-item-tips 互动
+            span.author-content-item-title 最近评论
+          </div>
+          <div class="aside-list">
+            <span><%= aside.card_newest_comments.loading_text %></span>
+          </div>
+        </div>
+      </div>
+      <div class="console-card-group-right">
+        <div class="console-card tags" onclick="heo.hideConsole()"
+          - let tagLimit = theme.aside.card_tags.limit === 0 ? 0 : theme.aside.card_tags.limit || 40
+          .card-content
+              .author-content-item-tips 标签
+              span.author-content-item-title 寻找感兴趣的领域
+          .card-tag-cloud!= tagcloud({min_font: 1, max_font: 1, amount: tagLimit , color: true, start_color: '#D3D3D3', end_color: '#D3D3D3', unit: 'em'})
+        </div>
+      </div>
+        <div class="console-card.history" onclick="heo.hideConsole()">
+          let format = ['YYYY'],
+              order = ['-1'],
+              limit = ['8']
+          != aside_archives({ type:type, format: format, order: order, limit: limit })
+        </div>
+    </div>
     <div class="button-group">
         <div class="console-btn-item"> <a class="darkmode_switchbutton" onclick="acrylic.switchDarkMode()" title="显示模式切换"
                 href="javascript:void(0);" rel="external nofollow" data-pjax-state=""><i class="fas fa-moon"
