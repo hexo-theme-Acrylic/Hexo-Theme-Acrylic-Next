@@ -12570,7 +12570,6 @@ a.bb-link-info:hover {
 
 .author-content-item-group.column.mapAndInfo {
   width: 59%;
-  height: max-content;
 }
 
 /* 关于页面地图 */
@@ -12646,6 +12645,7 @@ a.bb-link-info:hover {
   flex-wrap: wrap;
   height: -webkit-fill-available;
   height: 40%;
+  min-height: max-content;
 }
 
 @media screen and (max-width: 1300px) {
