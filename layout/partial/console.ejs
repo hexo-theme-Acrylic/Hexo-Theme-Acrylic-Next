@@ -6,8 +6,8 @@
       <div class="console-card-group-left">
         <div id="card-newest-comments" class="console-card" onclick="heo.hideConsole()">
           <div class="card-content">
-            .author-content-item-tips 互动
-            span.author-content-item-title 最近评论
+            <div class="author-content-item-tips">互动</div>
+            <span class="author-content-item-title">最近评论</span>
           </div>
           <div class="aside-list">
             <span><%= aside.card_newest_comments.loading_text %></span>
@@ -17,9 +17,10 @@
       <div class="console-card-group-right">
         <div class="console-card tags" onclick="heo.hideConsole()"
           let tagLimit = ['40']
-          .card-content
-              .author-content-item-tips 标签
-              span.author-content-item-title 寻找感兴趣的领域
+          <div class="card-content">
+            <div class="author-content-item-tips">标签</div>
+            <span class="author-content-item-title">寻找感兴趣的领域</span>
+          </div>
           .card-tag-cloud!= tagcloud({min_font: 1, max_font: 1, amount: tagLimit , color: true, start_color: '#D3D3D3', end_color: '#D3D3D3', unit: 'em'})
         </div>
       </div>
