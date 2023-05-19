@@ -409,6 +409,7 @@ window.refreshFn = () => {
     scrollFn()
     sidebarFn()
     setTimeState()
+    GLOBALCONFIG.consolePlus.enable && newestCommentInit()
     chageTimeFormate()
     acrylic.addRuntime()
     GLOBALCONFIG.lazyload.enable && acrylic.lazyloadImg()
@@ -432,6 +433,7 @@ window.refreshFn = () => {
 }
 
 acrylic.initTheme()
+
 let acrylic_musicPlaying = false
 document.addEventListener('DOMContentLoaded', function () {
     refreshFn()
