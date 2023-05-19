@@ -2,6 +2,37 @@
     <div class="close-btn" onclick="acrylic.hideConsole()" href="javascript:void(0);">
         <i class="fas fa-circle-xmark"></i>
     </div>
+    <% if(theme.thirdparty.consolePlus){ %>
+        <div class="console-card-group">
+            <div class="console-card-group-left">
+                <div class="console-card" id="card-newest-comments" onclick="acrylic.hideConsole()">
+                    <div class="card-content">
+                        <div class="author-content-item-tips">互动</div>
+                        <div class="author-content-item-title">最新评论</div>
+                    </div>
+                    <div class="aside-list"></div>
+                </div>
+    
+            </div>
+            <div class="console-card-group-right">
+                <div class="console-card tags" onclick="acrylic.hideConsole()">
+                    <div class="card-content">
+                        <div class="author-content-item-tips">标签</div>
+                        <div class="author-content-item-title">寻找感兴趣的领域</div>
+                    </div>
+                    <div class="card-tag-cloud">
+                        <% site.tags.data.forEach(data => { %>
+                            <a href="<%= url_for(data.path) %>" style="font-size: 0.8rem; color: #d3d3d3"><%= data.name %><sup><%= data.length %></sup></a>
+                        <% }) %>
+                    </div>
+                </div>
+                <div class="console-card history" onclick="acrylic.hideConsole()">
+                    <%- partial('partial/compoment/aside/asideArchive' , { type: 'month' }) %>
+                </div>
+            </div>
+        </div>
+    <% } %>
+    
     <div class="button-group">
         <div class="console-btn-item"> <a class="darkmode_switchbutton" onclick="acrylic.switchDarkMode()" title="显示模式切换"
                 href="javascript:void(0);" rel="external nofollow" data-pjax-state=""><i class="fas fa-moon"
@@ -9,8 +40,6 @@
         <% if(theme.thirdparty.aplayer.enable){ %>            
             <div class="console-btn-item" id="consoleMusic" onclick="acrylic.musicToggle()" title="音乐开关"><a class="music-switch"><i class="fas fa-music"></i></a></div>
         <% } %>
-        <div class="console-btn-item" id="consoleFPS" onclick="acrylic.FPSToggle()" title="帧率显示开关"><a class="FPS-switch"
-                data-pjax-state=""><i class="fas fa-gauge"></i></a></div>
     </div>
     <div class="console-mask" onclick="acrylic.hideConsole()" href="javascript:void(0);" rel="external nofollow"></div>
 </div>

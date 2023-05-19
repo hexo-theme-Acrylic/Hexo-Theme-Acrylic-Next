@@ -44,7 +44,12 @@ hexo.extend.helper.register('export_config', function() {
                 placeholder: lang['search.placeholder'],
             }
         },
-        covercolor: theme.post.covercolor.enable
+        covercolor: theme.post.covercolor.enable,
+        consolePlus: {
+            enable: theme.thirdparty.consolePlus,
+            twikooUrl: theme.comment.twikoo.envId
+
+        }
     }
 
     // 搜索数据
