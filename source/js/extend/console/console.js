@@ -32,11 +32,6 @@ const changeContent = (content) => {
           'date': new Date(e.created).toISOString()
         }))
   
-        try {
-            localStorage.setItem('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
-        } catch (err) {
-          console.error('Error stringifying data:', err)
-        }
         generateHtml(twikooArray)
       }).catch(function (err) {
         $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
@@ -65,22 +60,13 @@ const changeContent = (content) => {
     $dom.innerHTML = result
     window.lazyLoadInstance && window.lazyLoadInstance.update()
     window.pjax && window.pjax.refresh($dom)
+    chageTimeFormate()
   }
   
   const newestCommentInit = () => {
     const $asideList = document.querySelector('#card-newest-comments .aside-list')
     if ($asideList) {
-      let data = localStorage.getItem('twikoo-newest-comments')
-      if (data) {
-        try {
-          generateHtml(JSON.parse(data))
-        } catch (err) {
-          console.error('Error parsing data:', err)
-          getComment()
-        }
-      } else {
-        getComment()
-      }
+      getComment()
     }
   }
   
