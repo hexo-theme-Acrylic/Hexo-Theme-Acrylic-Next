@@ -315,6 +315,22 @@ class acrylic {
             });
         }
     }
+    static addPhotoFigcaption() {
+        const images = document.querySelectorAll('#article-container img');
+      
+        images.forEach((image) => {
+          const imageParent = image.parentNode;
+          const captionText = image.getAttribute('alt');
+      
+          if (captionText) {
+            const captionElement = document.createElement('div');
+            captionElement.className = 'img-alt is-center';
+            captionElement.textContent = captionText;
+      
+            imageParent.insertBefore(captionElement, image.nextSibling);
+          }
+        });
+      }
     static musicToggle(){
         const $music = document.querySelector('#nav-music'),
         $meting = document.querySelector('meting-js'),
@@ -415,6 +431,7 @@ window.refreshFn = () => {
     GLOBALCONFIG.consolePlus.enable && newestCommentInit()
     chageTimeFormate()
     acrylic.addRuntime()
+    acrylic.addPhotoFigcaption()
     GLOBALCONFIG.lazyload.enable && acrylic.lazyloadImg()
     GLOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #bber .bber-content-img img, #album_detail album-content-img img')
     GLOBALCONFIG.randomlinks && randomLinksList()
