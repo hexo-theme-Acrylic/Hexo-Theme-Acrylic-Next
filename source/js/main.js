@@ -331,6 +331,9 @@ class acrylic {
             $meting.aplayer.play();
         }
     }
+    static scrollToComment() {
+        utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
+    }
 }
 
 class hightlight {
