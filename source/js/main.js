@@ -315,6 +315,22 @@ class acrylic {
             });
         }
     }
+    static addPhotoFigcaption() {
+        const images = document.querySelectorAll('#article-container img');
+      
+        images.forEach((image) => {
+          const imageParent = image.parentNode;
+          const captionText = image.getAttribute('alt');
+      
+          if (captionText) {
+            const captionElement = document.createElement('div');
+            captionElement.className = 'img-alt is-center';
+            captionElement.textContent = captionText;
+      
+            imageParent.insertBefore(captionElement, image.nextSibling);
+          }
+        });
+      }
     static musicToggle(){
         const $music = document.querySelector('#nav-music'),
         $meting = document.querySelector('meting-js'),
@@ -330,6 +346,9 @@ class acrylic {
             acrylic_musicPlaying = true;
             $meting.aplayer.play();
         }
+    }
+    static scrollToComment() {
+        utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
     }
 }
 
@@ -409,8 +428,10 @@ window.refreshFn = () => {
     scrollFn()
     sidebarFn()
     setTimeState()
+    GLOBALCONFIG.consolePlus.enable && newestCommentInit()
     chageTimeFormate()
     acrylic.addRuntime()
+    acrylic.addPhotoFigcaption()
     GLOBALCONFIG.lazyload.enable && acrylic.lazyloadImg()
     GLOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #bber .bber-content-img img, #album_detail album-content-img img')
     GLOBALCONFIG.randomlinks && randomLinksList()
@@ -432,6 +453,7 @@ window.refreshFn = () => {
 }
 
 acrylic.initTheme()
+
 let acrylic_musicPlaying = false
 document.addEventListener('DOMContentLoaded', function () {
     refreshFn()

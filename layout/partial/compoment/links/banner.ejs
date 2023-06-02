@@ -3,11 +3,13 @@
     <div class="banners-title-big"><%= page.desc %></div>
 </div>
 <div class="banner-button-group">
+  <% if (theme.footer.randomlink){ %>
     <a class="banner-button secondary" onclick="travelling()">
         <i class="fas fa-shuffle"></i>
         <span class="banner-button-text">随机访问</span>
     </a>
-    <a class="banner-button" onclick="addFriendLink()" href="javascript:;" rel="external nofollow">
+  <% } %>
+    <a class="banner-button" onclick="acrylic.scrollToComment()">
         <i class="fas fa-circle-chevron-right"></i>
         <span class="banner-button-text">申请友链</span>
     </a>

@@ -12575,8 +12575,9 @@ a.bb-link-info:hover {
 /* 关于页面地图 */
 
 .author-content-item.map {
-  background-repeat: no-repeat ;  
-  background-position: center ;
+  background-image: var(--site-about-oneself-map--light);
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 160px;
   max-height: 400px;
   position: relative;
@@ -12588,9 +12589,10 @@ a.bb-link-info:hover {
 }
 
 [data-theme=dark] .author-content-item.map {
+  background-image: var(--site-about-oneself-map--dark);
   background-size: 100% ;
-  background-repeat: no-repeat ;  
-  background-position: center ;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .author-content-item.map:hover {
@@ -12643,6 +12645,7 @@ a.bb-link-info:hover {
   flex-wrap: wrap;
   height: -webkit-fill-available;
   height: 40%;
+  min-height: max-content;
 }
 
 @media screen and (max-width: 1300px) {
@@ -13342,7 +13345,6 @@ a.bb-link-info:hover {
   justify-content: space-between;
   align-items: center;
   margin: 0 30px;
-  max-width: 2000px;
   transform: translateY(20px);
   transition: 0.3s;
   opacity: 0;
@@ -13384,16 +13386,36 @@ a.bb-link-info:hover {
     width: 100%;
     margin: 0;
   }
+
+  #consoleMusic {
+    display: none;
+  }
+
+  #consoleCommentBarrage {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
   #console .console-card-group {
     display: none;
   }
+
+  #consoleHideAside {
+    display: none;
+  }
 }
 
 @media screen and (max-height: 800px) {
   #console .console-card-group {
+    display: none;
+  }
+
+  #consoleMusic {
+    display: none;
+  }
+
+  #consoleCommentBarrage {
     display: none;
   }
 }
@@ -13455,7 +13477,7 @@ a.bb-link-info:hover {
 }
 
 #card-newest-comments .aside-list-item:hover {
-  background: var(--heo-theme);
+  background: var(--heo-main);
   color: var(--heo-white);
 }
 
@@ -13485,7 +13507,6 @@ a.bb-link-info:hover {
 #console .aside-list-item .thumbnail {
   display: flex;
   align-items: center;
-  width: fit-content;
 }
 
 #console .aside-list-item:hover .thumbnail {
@@ -13573,6 +13594,10 @@ a.bb-link-info:hover {
   color: var(--heo-fontcolor);
 }
 
+#console .button-group .console-btn-item a i {
+  font-size: 24px;
+}
+
 #console .button-group .console-btn-item.on a {
   background: var(--heo-orange);
   color: var(--heo-white);
@@ -13587,21 +13612,65 @@ a.bb-link-info:hover {
   color: var(--heo-white);
 }
 
+.console-card.tags .card-tag-cloud {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.console-card.tags .card-tag-cloud a {
+  color: var(--heo-fontcolor) !important;
+  margin: 6px 4px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: var(--heo-card-bg);
+  border: var(--style-border);
+  font-size: 14px !important;
+  font-weight: bold;
+}
+
+.console-card.tags .card-tag-cloud a:hover {
+  background: var(--heo-main);
+  color: var(--heo-white) !important;
+}
+
+.console-card.tags .card-tag-cloud a sup {
+  opacity: 0.6;
+}
+
 #console .close-btn {
-  width: 35px;
-  height: 35px;
+  width: 100%;
+  height: 60px;
   position: fixed;
-  right: 100px;
-  top: 50px;
+  right: max(0, calc((100% - 1400px) / 2));
+  top: 0;
   font-size: 35px;
   color: var(--heo-fontcolor);
   cursor: pointer;
   transition: 0.3s;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1400px;
 }
 
-#console .close-btn:hover {
+#console .close-btn i {
+  font-size: 32px;
+  margin-right: 1.5rem;
+  margin-left: auto;
+  line-height: 1;
+  transform: rotate(-30deg);
+  transition: 0.6s;
+}
+
+#console.show .close-btn i {
+  transform: rotate(0deg);
+}
+
+#console .close-btn i:hover {
   color: var(--heo-hovertext);
+  background: var(--heo-main-op);
+  border-radius: 32px;
 }
 
 #console .console-card.history {
@@ -13662,35 +13731,6 @@ a.bb-link-info:hover {
   }
 }
 
-#fps {
-  z-index:10000;
-  font-size:12px;
-  font-weight:bold;
-  transition: 0.3s;
-  line-height: 1;
-}
-
-.nav-fixed #fps-group, .not-top-img #fps-group {
-  color: var(--heo-fontcolor);
-}
-
-#fps-group {
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  margin-left: 16px;
-  color: var(--heo-white);
-}
-
-#fps-group.show {
-  opacity: 1;
-}
-
-#fps-group .fpsText {
-  font-size: 12px;
-  line-height: 1;
-  opacity: 0.6;
-}
 
 .pagination input {
   width: 40px;
