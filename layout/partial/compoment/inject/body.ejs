@@ -30,6 +30,9 @@
     <%- css(cdn.aplayercss) %>
     <%- js(cdn.aplayerjs) %>
     <%- js(cdn.metingjs) %>
+    <script>
+        var meting_api = "<%- theme.thirdparty.aplayer.api %>";
+    </script>
 <% } %>
 <% if(theme.post.covercolor && !theme.post.covercolor.local){ %>
     <%- js('/js/extend/covercolor/web') %>

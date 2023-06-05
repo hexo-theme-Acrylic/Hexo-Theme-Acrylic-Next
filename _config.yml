@@ -288,7 +288,8 @@ thirdparty:
   aplayer:
     enable: false
     server: tencent
-    id: 1708664797      
+    id: 1708664797  
+    api: "https://music.startly.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api    
   #中控台拓展
   consolePlus: true
 
