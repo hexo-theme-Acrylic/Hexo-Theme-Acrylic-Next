@@ -580,6 +580,7 @@ hr {
 
 .table-wrap {
   overflow-x: scroll;
+  scrollbar-width: thin;
   margin: 0px 0px 1rem;
 }
 
@@ -6515,6 +6516,7 @@ a.categoryButton:hover {
 .category-bar-items {
   white-space: nowrap;
   overflow-x: scroll;
+  scrollbar-width: none;
   overflow-y: hidden;
   display: flex;
   border-radius: 8px;
@@ -6947,6 +6949,7 @@ ul, li {
   flex-wrap: nowrap;
   width: 100%;
   overflow-x: scroll;
+  scrollbar-width: none;
 }
 
 .recent-post-top::-webkit-scrollbar {
