@@ -1,10 +1,9 @@
 # Hexo-Theme-Acrylic-Next
+> 下一代Acrylic何必是butterfly
 
 ![封面图](https://tucdn.wpon.cn/2023/04/03/0c5c23ecf8a5e.jpg)
 
-下一代Acrylic何必是butterfly
-
-主题预览:  🤟[Heo](https://blog.zhheo.com/) 👋[acrylic](https://next.acrylic.org.cn/) 
+主题预览:  🤟[adil](https://blog.adil.com.cn) 👋[acrylic](https://next.acrylic.org.cn/) 
 
 文档: [📖文档](https://next-docs.acrylic.org.cn/)
 
@@ -37,6 +36,8 @@ cp -rf ./themes/Acrylic/_config.yml ./_config.Acrylic.yml
 
 ## ✨ 贡献者
 > 欢迎你加入我们Acrylic组织
+
+[贡献指南](https://opensource.guide/zh-hans/how-to-contribute/#%E5%A6%82%E4%BD%95%E6%8F%90%E4%BA%A4%E8%B4%A1%E7%8C%AE)
 
 ### 参与开发
 [@rootlex](https://github.com/rootlexblog)

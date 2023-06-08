@@ -428,7 +428,7 @@ window.refreshFn = () => {
     scrollFn()
     sidebarFn()
     setTimeState()
-    GLOBALCONFIG.consolePlus.enable && newestCommentInit()
+    GLOBALCONFIG.comment.enable && newestCommentInit()
     chageTimeFormate()
     acrylic.addRuntime()
     acrylic.addPhotoFigcaption()

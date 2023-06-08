@@ -33,7 +33,7 @@
                 <i class="post-meta-icon fa-fw fas fa-calendar"></i>
                 <time datetime="<%= moment(page.date).format() %>"></time>
             </span>
-            <% if(theme.post.meta.locate){ %>
+            <% if(theme.post.meta.updated){ %>
                 <span class="post-meta-date" title="更新于">
                     <i class="post-meta-icon fa-solid fa-clock-rotate-left"></i>
                     <time datetime="<%= moment(page.updated).format() %>"></time>
