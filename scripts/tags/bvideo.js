@@ -7,7 +7,7 @@ function bilibili(args) {
   const id = args[0].replace(/.*video\/(.*)\/.*/, '$1')
   const time = args[1]
   return `
-  <a href="https://www.bilibili.com/video/${id}/" class="bilibili_box" id="${id}"></a>
+  <a href="https://www.bilibili.com/video/${id}/" class="bilibili_box" id="${id}" onclick="event.stopPropagation()"></a>
 
   <script>
     bilibili()
