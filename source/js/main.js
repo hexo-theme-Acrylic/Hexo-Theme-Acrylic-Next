@@ -303,6 +303,22 @@ class acrylic {
             }
         })
     }
+    static toTalk(txt) {
+        const input = document.querySelector('.el-textarea__inner');
+        const evt = new Event('input', { bubbles: true, cancelable: true });
+        const inputValue = txt.replace(/\n/g, '\n> ');
+        input.value = '> ' + inputValue + '\n\n';
+        input.dispatchEvent(evt);
+        utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
+        input.focus();
+        input.setSelectionRange(-1, -1);
+        const commentTips = document.querySelector("#comment-tips");
+        if (commentTips) {
+          commentTips.classList.add("show");
+        }
+    }
+
+
     static initbbtalk() {
         if (document.querySelector('#bber-talk')) {
             var swiper = new Swiper('.swiper-container', {

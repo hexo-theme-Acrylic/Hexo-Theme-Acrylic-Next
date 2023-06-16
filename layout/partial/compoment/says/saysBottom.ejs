@@ -8,6 +8,10 @@
             <a class="bber-content-link" href="<%= url_for(item.link) %>" title="跳转到短文指引的链接">
                 链接
             </a>   
-        <% } %>    
+        <% } %> 
     </div>
+    <a class="bber-reply" onclick="acrylic.toTalk('<%- item.content %>')" >
+        <i class="fa-solid fa-comment" style="font-size: 1rem;">
+        </i>
+      </a>
 </div>

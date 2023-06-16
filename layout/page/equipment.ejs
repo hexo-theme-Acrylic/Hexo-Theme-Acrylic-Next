@@ -22,8 +22,12 @@
                                         <% } else { %>
                                             <a class="equipment-item-content-item-link" href="<%= item.link %>" target="_blank">查看文章</a>
                                         <% } %>
+                                        <a class="bber-reply" onclick="acrylic.toTalk('<%- item.description %>')" >
+                                            <i class="fa-solid fa-comment" style="font-size: 1rem;">
+                                            </i>
+                                          </a>
                                     </div>
-                                <% } %>
+                                <% } %>       
                             </div>
                         </div>
                     <% }) %>
