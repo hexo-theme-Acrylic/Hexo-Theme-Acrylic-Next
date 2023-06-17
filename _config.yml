@@ -211,6 +211,16 @@ footer:
 
   randomlink: false
 
+  cdn:
+    url: 
+    desc: 
+  rss:
+    url: 
+  license:
+    url: https://creativecommons.org/licenses/by/4.0/
+    icon: fas fa-closed-captioning
+
+
 page:
   error: true
   tags: true
