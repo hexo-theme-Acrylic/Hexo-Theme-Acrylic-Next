@@ -1,3 +1,9 @@
+/*
+ * @Date: 2023-06-17 17:22:54
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-06-17 18:19:25
+ * @FilePath: \bloge:\Hexo-Theme-Acrylic-Next\_config.yml
+ */
 ## Acrylic主题配置文件
 ############################################################################################################
 # 为避免主题更新后，配置文件被覆盖，请复制一份此文件到站点根目录下的_config.Acrylic.yml文件中，修改_config.Acrylic.yml文件中的配置
@@ -210,6 +216,16 @@ footer:
     #   Akilar: https://akilar.top
 
   randomlink: false
+
+  cdn:
+    url: 
+    desc: 
+  rss:
+    url: 
+  license:
+    url: https://creativecommons.org/licenses/by/4.0/
+    icon: fas fa-closed-captioning
+
 
 page:
   error: true
