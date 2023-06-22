@@ -37,22 +37,22 @@
                                                 <i class="fa-brands fa-instagram"></i>
                                                 <time class="datatime" datetime="<%= moment(iten.date).format() %>"></time>
                                             </div>
-                                            <% if (item.link) { %>
-                                                <a class="album-content-link" target="_blank" title="跳转到短文指引的链接" href="<%= item.link %>" rel="external nofollow">
+                                            <% if (iten.link) { %>
+                                                <a class="album-content-link" target="_blank" title="跳转到短文指引的链接" href="<%= iten.link %>" rel="external nofollow">
                                                     <i class="fas fa-link"></i>
                                                     链接
                                                 </a>
                                             <% } %>
-                                            <% if (item.address) { %>
+                                            <% if (iten.address) { %>
                                                 <div class="album-info-address">
                                                     <i class="far fa-location-dot"></i>
-                                                    <span><%= item.address %></span>
+                                                    <span><%= iten.address %></span>
                                                 </div>
                                             <% } %>
                                             <div class="album-info-from">
                                                 <i class="far fa-popsicle"></i>
-                                                <% if (item.from) { %>
-                                                    <span><%= item.from %></span>
+                                                <% if (iten.from) { %>
+                                                    <span><%= iten.from %></span>
                                                 <% } else { %>
                                                     <span>Acrylic</span>
                                                 <% } %>
