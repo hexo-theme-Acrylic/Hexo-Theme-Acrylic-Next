@@ -8,3 +8,10 @@
         </div>
     <% } %>    
 </div>
+<% if(item.music){ %>
+    <div class="bber-music">
+        <meting-js id="<%= item.music.id %>" server="<%= item.music.server %>" type="song" mutex="true"
+            preload="none" data-lrctype="0"  theme="var(--heo-main)">
+        </meting-js>
+    </div>
+<% } %>
