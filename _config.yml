@@ -137,6 +137,7 @@ aside:
     Sticky: "newestPost,allInfo"
 
   card:
+    avatar: 
     content: 这有关于<b>开发</b>、<b>技术</b>相关的问题和看法，还有对于动漫的一些<b>杂评</b>。<br>相信你可以在这里找到对你有用的知识和教程。
     information:
       # Github:
@@ -210,6 +211,16 @@ footer:
     #   Akilar: https://akilar.top
 
   randomlink: false
+
+  cdn:
+    url: 
+    desc: 
+  rss:
+    url: 
+  license:
+    url: https://creativecommons.org/licenses/by/4.0/
+    icon: fas fa-closed-captioning
+
 
 page:
   error: true
@@ -330,4 +341,4 @@ cdn:
     busuanzijs: https://npm.elemecdn.com/penndu@1.0.0/bsz.js
     aplayercss: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
     aplayerjs: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
-    metingjs: https://cdn1.tianli0.top/npm/meting@2.0.1/dist/Meting.min.js
+    metingjs: lib/meting.min.js

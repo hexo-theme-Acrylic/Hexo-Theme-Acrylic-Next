@@ -1783,10 +1783,6 @@ blockquote footer cite::before {
   text-align: center;
 }
 
-#aside-content .aside-list>.aside-list-item:last-child {
-  padding-bottom: 0px;
-}
-
 #aside-content .aside-list>.aside-list-item .thumbnail {
   overflow: hidden;
   width: 4.2em;
@@ -7563,6 +7559,24 @@ div#author-info__sayhi:hover {
   line-height: 1.1;
   margin-top: 0.8rem;
   margin-bottom: 1rem;
+}
+
+/* 作者卡片头像 */
+#aside-content .card-info img {
+  width: 118px;
+  right: -16px;
+  top: -20px;
+  border-radius: 500px;
+  transition: all 0.5s ease 0s;
+  position: absolute;
+  opacity: 0.2;
+  filter: blur(5px);
+  transition: 0.6s;
+}
+
+#aside-content .card-info:hover img {
+  opacity: 0;
+  transform: scale(1.2);
 }
 
 /* 作者卡片背景 */

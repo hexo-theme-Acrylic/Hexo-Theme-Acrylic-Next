@@ -3,6 +3,7 @@
         <div class="card-info-avatar is-center">
             <div class="author-info__sayhi" id="author-info__sayhi">
             </div>
+            <img class="avatar-img entered loaded" data-lazy-src="<%- theme.lazyload.placeholder %>" onerror="this.onerror=null;this.src='<%- theme.lazyload.errorimg %>'" alt="avatar" data-ll-status="loaded" src="<%- theme.aside.card.avatar %>">
             <div class="author-info__name">
                 <%= config.author %>
             </div>

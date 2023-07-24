@@ -12,7 +12,7 @@
     <%- js(cdn.swiperjs) %>
 <% } %>
 <div id="js-pjax">
-    <% if(page.type === 'says'){ %>
+    <% if(page.type === 'says' || page.type === 'album' || page.type === 'album_detail'){ %>
         <%- js(cdn.waterfalljs) %>
         <script>
             window.addEventListener('resize', utils.throttle(function () {

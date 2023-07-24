@@ -43,18 +43,19 @@
                 <div class="copyright">©<%= moment(theme.aside.siteinfo.runtime).year() %> - <%= new Date().getFullYear() %> By 
                     <a class="footer-section-link" href="/" rel="external nofollow"><%= config.author %></a>
                     <a class="footer-section-link" href="https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next" rel="external nofollow" target="_blank"> Theme By Acrylic-Next</a>
+                    <a class="footer-section-link" href="<%- theme.footer.cdn.url %>" rel="external nofollow" target="_blank"><%- theme.footer.cdn.desc %></a>
                 </div>
             </div>
         </div>
         <div class="footer-section-right">
-            <a class="footer-section-link" href="/rss/">订阅</a>
+            <a class="footer-section-link" href="<%- theme.footer.rss.url %>">订阅</a>
             <% if(theme.site.icp){ %>
                 <a class="footer-section-link" target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index" rel="noopener external nofollow noreferrer noopener">
                     <%= theme.site.icp %>
                 </a>
             <% } %>
-            <a class="footer-section-link cc" target="_blank" href="https://creativecommons.org/licenses/by/4.0/" title="cc协议">
-                <i class="fa-solid fa-closed-captioning"></i>
+            <a class="footer-section-link cc" target="_blank" href="<%- theme.footer.license.url %>" title="cc协议">
+                <i class="<%- theme.footer.license.icon %>"></i>
             </a>
         </div>
     </div>
