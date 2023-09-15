@@ -1,4 +1,4 @@
-# Hexo-Theme-Acrylic-Next
+# Hexo-Theme-Acrylic-Next # ！！！本项目将停止维护
 > 下一代Acrylic何必是butterfly
 
 ![封面图](https://tucdn.wpon.cn/2023/04/03/0c5c23ecf8a5e.jpg)
